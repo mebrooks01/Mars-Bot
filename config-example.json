@@ -1,0 +1,20 @@
+{
+    "token": "",
+    "prefix": "",
+    "modfix": "",
+    "userid": {
+        "owner": ""
+    },
+    "roleid": {
+        "dev": "",
+        "admin": "",
+        "mod": "",
+        "helper": ""
+    },
+    "serverid": {
+        "main_server": ""
+    },
+    "channelid": {
+        "apod_for_main": ""
+    }
+}
