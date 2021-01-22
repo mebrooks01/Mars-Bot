@@ -1,6 +1,9 @@
 const { Command } = require("discord.js-commando");
 const axios = require("axios");
 const moment = require("moment");
+const config = require("./../../config.json");
+const api_key = config.api_key;
+const invite = config.invite;
 module.exports = class APOD extends Command {
   constructor(client) {
     super(client, {
@@ -24,7 +27,7 @@ module.exports = class APOD extends Command {
 
     axios
       .get(
-        `https://api.nasa.gov/planetary/apod?date=${apod_date}&api_key=RfChsgY4x5bxykBYjbmfyrYo7hawtVthuvietqgp`
+        `https://api.nasa.gov/planetary/apod?date=${apod_date}&api_key=${api_key}`
       )
       .then((res) => {
         message.embed({
@@ -35,10 +38,14 @@ module.exports = class APOD extends Command {
           image: {
             url: res.data.url,
           },
+          footer: {
+            text: "Profile Photo Credit: NASA/JPL-Caltech",
+            icon_url: "",
+          },
         });
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.stack);
         message.say(
           `An error occurred while running the command: ${error}\nFor help solving this problem please join are support server: ${invite}`
         );
