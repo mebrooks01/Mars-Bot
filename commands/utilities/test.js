@@ -1,6 +1,4 @@
 const { Command } = require("discord.js-commando");
-const axios = require("axios");
-const moment = require("moment");
 module.exports = class Test extends Command {
   constructor(client) {
     super(client, {
