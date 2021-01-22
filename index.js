@@ -1,33 +1,40 @@
-const Commando = require('discord.js-commando');
-const path = require('path');
-const config = require("./config.json")
-/*
+const Commando = require("discord.js-commando");
+const path = require("path");
+const config = require("./config.json");
 const axios = require("axios");
 const moment = require("moment");
-*/
 
 const client = new Commando.CommandoClient({
-    commandPrefix: config.prefix,
-    owner: config.user_id.owner,
-    invite: config.invite,
+  commandPrefix: config.prefix,
+  owner: config.user_id.owner,
+  invite: config.invite,
 });
-client.config = config
+client.config = config;
 
 client.registry
-    .registerDefaultTypes()
-    .registerGroups([
-        ['missions', 'I have info on all of there missions'],
-        ['api calls', 'I also have access to images for these'],
-        ['utilities', 'Other useful commands'],
-    ])
-    .registerDefaultGroups()
-    .registerDefaultCommands()
-    .registerCommandsIn(path.join(__dirname, 'commands'));
+  .registerDefaultTypes()
+  .registerGroups([
+    ["missions", "I have info on all of there missions"],
+    ["api calls", "I also have access to images for these"],
+    ["utilities", "Other useful commands"],
+  ])
+  .registerDefaultGroups()
+  .registerDefaultCommands()
+  .registerCommandsIn(path.join(__dirname, "commands"));
 
-client.once('ready', () => {
-    let now = Date();
-    console.log(`Logged in as ${client.user.tag} at ${now}`);
-    client.user.setActivity(`=Help for help.`, { type: "WATCHING" });
+client.once("ready", () => {
+  let now = Date();
+  console.log(`Logged in as ${client.user.tag} at ${now}`);
+  client.user.setActivity(`=Help for help.`, { type: "WATCHING" });
+  console.log(client.config);
+  axios
+    .get(`https://api.nasa.gov/planetary/apod?api_key=${client.config.api_key}`)
+    .then((res) => {
+      console.log(res.headers);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 });
-client.on('error', console.error);
+client.on("error", console.error);
 client.login(client.config.token);

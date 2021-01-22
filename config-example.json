@@ -1,21 +1,21 @@
 {
-    "token": "",
-    "api_key": "",
-    "prefix": "=",
-    "invite": "",
-    "user_id": {
-        "owner": ""
-    },
-    "role_id": {
-        "dev": "",
-        "admin": "",
-        "mod": "",
-        "helper": ""
-    },
-    "server_id": {
-        "main_server": ""
-    },
-    "channel_id": {
-        "apod_for_main": ""
-    }
+  "token": "",
+  "api_key": "",
+  "prefix": "=",
+  "invite": "",
+  "user_id": {
+    "owner": ""
+  },
+  "role_id": {
+    "dev": "",
+    "admin": "",
+    "mod": "",
+    "helper": ""
+  },
+  "server_id": {
+    "main_server": ""
+  },
+  "channel_id": {
+    "apod_for_main": ""
+  }
 }
