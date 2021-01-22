@@ -1,7 +1,8 @@
 {
     "token": "",
+    "api_key": "",
     "prefix": "",
-    "modfix": "",
+    "invite": "",
     "userid": {
         "owner": ""
     },
