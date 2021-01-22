@@ -24,9 +24,8 @@ client.registry
     .registerDefaultCommands()
     .registerCommandsIn(path.join(__dirname, 'commands'));
 
-    
 client.once('ready', () => {
-    let now =Date();
+    let now = Date();
     console.log(`Logged in as ${client.user.tag} at ${now}`);
     client.user.setActivity(`=Help for help.`, { type: "WATCHING" });
 });
