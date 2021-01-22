@@ -30,7 +30,7 @@ client.registry
 client.once("ready", () => {
   let now = Date();
   console.log(`Logged in as ${client.user.tag} at ${now}`);
-  client.user.setActivity(`=Help for help.`, { type: "WATCHING" });
+  client.user.setActivity(`${prefix}Help for help.`, { type: "WATCHING" });
   console.log(client.config);
   axios
     .get(`https://api.nasa.gov/planetary/apod?api_key=${api_key}`)

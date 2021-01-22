@@ -31,7 +31,7 @@ module.exports = class ClimateOrbiter extends Command {
           "https://mars.nasa.gov/system/content_pages/main_images/375_mco_mapping.jpg",
       },
       footer: {
-        text: "Profile Photo Credit: NASA/JPL-Caltech",
+        text: "Photo Credit: NASA/JPL-Caltech",
         icon_url: "",
       },
     });

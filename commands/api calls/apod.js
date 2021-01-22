@@ -39,7 +39,7 @@ module.exports = class APOD extends Command {
             url: res.data.url,
           },
           footer: {
-            text: "Profile Photo Credit: NASA/JPL-Caltech",
+            text: `Photo Credit: ${res.data.copyright}`,
             icon_url: "",
           },
         });

@@ -29,7 +29,7 @@ module.exports = class Bug extends Command {
           "https://mars.nasa.gov/system/resources/detail_files/25058_PIA23900-web.jpg",
       },
       footer: {
-        text: "Profile Photo Credit: NASA/JPL-Caltech",
+        text: "Photo Credit: NASA/JPL-Caltech",
         icon_url: "",
       },
     });
