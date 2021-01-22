@@ -1,19 +1,17 @@
-const { CommandoClient } = require('discord.js/commando');
+const Commando = require('discord.js-commando');
 const path = require('path');
+const config = require("./config.json")
+/*
 const axios = require("axios");
 const moment = require("moment");
-client.config = require("./config.json")
-/*
-const discord = require("discord.js");
-const client = new discord.Client();
-const fs = require("fs");
 */
 
-const client = new CommandoClient({
-    commandPrefix: client.config.prefix,
-    owner: client.config.user_id.owner,
-    invite: client.config.invite,
+const client = new Commando.CommandoClient({
+    commandPrefix: config.prefix,
+    owner: config.user_id.owner,
+    invite: config.invite,
 });
+client.config = config
 
 client.registry
     .registerDefaultTypes()
@@ -28,9 +26,9 @@ client.registry
 
     
 client.once('ready', () => {
-    console.log(`Logged in as ${client.user.tag} at ${Date}`);
+    let now =Date();
+    console.log(`Logged in as ${client.user.tag} at ${now}`);
     client.user.setActivity(`=Help for help.`, { type: "WATCHING" });
 });
 client.on('error', console.error);
-
 client.login(client.config.token);

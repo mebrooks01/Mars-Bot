@@ -7,10 +7,12 @@
   "author": "Mebrooks01#3354",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "commando": "0.0.2",
     "cron": "^1.8.2",
     "discord.js": "^12.3.1",
+    "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
+    "module-alias": "^2.2.2",
     "moment": "^2.29.1",
     "new": "^0.1.1",
     "node-fetch": "^2.6.1",
