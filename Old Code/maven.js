@@ -1,0 +1,18 @@
+module.exports = {
+  name: "maven",
+  description: "used to test parts of the bot",
+  execute(message, args) {
+    message.channel.send({
+      embed: {
+        title: "Mars Atmospheric and Volatile EvolutioN (Maven)",
+        description:
+          "Launched on November 18, 2013\nLaunched from Cape Canaveral Air Force Station, Florida\nOrbit insertion on September 22, 2014\nMission ongoing\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/maven/",
+        color: "#5A2017",
+        image: {
+          url:
+            "https://mars.nasa.gov/system/content_pages/main_images/378_maven.jpg",
+        },
+      },
+    });
+  },
+};

@@ -3,18 +3,11 @@ const path = require("path");
 const config = require("./config.json");
 const axios = require("axios");
 const moment = require("moment");
-//config Files
 const token = config.token;
 const api_key = config.api_key;
 const prefix = config.prefix;
 const invite = config.invite;
 const owner_id = config.user_id.owner;
-const dev_id = config.role_id.dev;
-const admin_id = config.role_id.admin;
-const mod_id = config.role_id.mod;
-const helper_id = config.role_id.helper;
-const main_server_id = config.server_id.main_server;
-const apod_channel_id = config.channel_id.apod_for_main;
 
 const client = new Commando.CommandoClient({
   commandPrefix: prefix,
