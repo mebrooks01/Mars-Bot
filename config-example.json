@@ -1,21 +1,21 @@
 {
     "token": "",
     "api_key": "",
-    "prefix": "",
+    "prefix": "=",
     "invite": "",
-    "userid": {
+    "user_id": {
         "owner": ""
     },
-    "roleid": {
+    "role_id": {
         "dev": "",
         "admin": "",
         "mod": "",
         "helper": ""
     },
-    "serverid": {
+    "server_id": {
         "main_server": ""
     },
-    "channelid": {
+    "channel_id": {
         "apod_for_main": ""
     }
 }

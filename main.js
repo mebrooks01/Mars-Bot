@@ -6,21 +6,11 @@ const moment = require("moment");
 const { CommandoClient } = require('discord.js-commando');
 const path = require('path');
 client.config = require("./config.json")
-const token = client.config.token
-const prefix = client.config.prefix
-const invite = client.config.invite
-const ownerid = client.config.userid.owner
-const devid = client.config.roleid.dev
-const adminid = client.config.roleid.admin
-const modid = client.config.roleid.mod
-const helperid = client.config.roleid.helper
-const main_server = client.config.serverid.main_server
-const api_key = client.config.api_key
 
 const client = new CommandoClient({
-    commandPrefix: prefix,
-    owner: ownerid,
-    invite: invite,
+    commandPrefix: client.config.prefix,
+    owner: client.config.user_id.owner,
+    invite: client.config.invite,
 });
 
 client.registry
@@ -41,4 +31,4 @@ client.once('ready', () => {
 });
 client.on('error', console.error);
 
-client.login(token);
+client.login(client.config.token);
