@@ -11,6 +11,6 @@ module.exports = class Test extends Command {
 
 	run(message) {
 		message.say('tested');
-		message.say()
+		message.say(client.config)
 	}
 };

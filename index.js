@@ -1,11 +1,13 @@
+const { CommandoClient } = require('discord.js/commando');
+const path = require('path');
+const axios = require("axios");
+const moment = require("moment");
+client.config = require("./config.json")
+/*
 const discord = require("discord.js");
 const client = new discord.Client();
 const fs = require("fs");
-const axios = require("axios");
-const moment = require("moment");
-const { CommandoClient } = require('discord.js-commando');
-const path = require('path');
-client.config = require("./config.json")
+*/
 
 const client = new CommandoClient({
     commandPrefix: client.config.prefix,

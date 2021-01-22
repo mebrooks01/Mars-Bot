@@ -2,9 +2,8 @@
   "name": "mars-bot",
   "version": "1.0.0",
   "description": "Using NASA's API it send mars related stuff via commands.",
-  "main": "main.js",
-  "scripts": {
-  },
+  "main": "index.js",
+  "scripts": {},
   "author": "Mebrooks01#3354",
   "license": "ISC",
   "dependencies": {
@@ -15,6 +14,7 @@
     "moment": "^2.29.1",
     "new": "^0.1.1",
     "node-fetch": "^2.6.1",
+    "path": "^0.12.7",
     "typi": "^3.2.0"
   },
   "devDependencies": {
