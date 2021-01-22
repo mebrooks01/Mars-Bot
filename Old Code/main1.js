@@ -84,7 +84,7 @@ client.on("message", async (message) => {
             }, 86400000);
           } else if (command === "stop") {
             clearInterval(interval);
-            message.reply("DAPOD Stoped");
+            message.reply("DAPOD Stopped");
           }
           if (command === "say") {
             message.delete();
@@ -129,7 +129,7 @@ client.on("message", async (message) => {
               };
               try {
                 const code = args.join(" ");
-                let evaled = eval(code);
+                let = eval(code);
 
                 if (typeof evaled !== "string")
                   evaled = require("util").inspect(evaled);

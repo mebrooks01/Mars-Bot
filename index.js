@@ -42,4 +42,29 @@ client.once("ready", () => {
     });
 });
 client.on("error", console.error);
+//86400000
 client.login(token);
+
+/*
+let date = moment().utcOffset(-12).format("YYYY-M-D");
+    axios
+      .get(
+        `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api_key}`
+      )
+      .then((res) => {
+        client.channels.cache.get(client.config.channel_id.apod_for_main).send({
+          embed: {
+            title: res.data.title,
+            url: res.data.url,
+            description: res.data.explanation,
+            color: "#5A2017",
+            image: {
+              url: res.data.url,
+            },
+          },
+        });
+      })
+      .catch(function (error) {
+        console.log(error.stack);
+      });
+*/
