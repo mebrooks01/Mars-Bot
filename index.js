@@ -40,13 +40,16 @@ client.once("ready", () => {
     .catch(function (error) {
       console.log(error);
     });
-});
-client.on("error", console.error);
-//86400000
-client.login(token);
 
-/*
-let date = moment().utcOffset(-12).format("YYYY-M-D");
+  let time_of_day = moment();
+  let time_of_day_ms =
+    time_of_day.milliseconds() +
+    1000 *
+      (time_of_day.seconds() +
+        60 * (time_of_day.minutes() + 60 * time_of_day.hours()));
+  let time_of_day_dif = 86400000 - time_of_day_ms + 43200000;
+  function Dpod() {
+    let date = moment().utcOffset(-12).format("YYYY-M-D");
     axios
       .get(
         `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api_key}`
@@ -67,4 +70,14 @@ let date = moment().utcOffset(-12).format("YYYY-M-D");
       .catch(function (error) {
         console.log(error.stack);
       });
-*/
+  }
+  setTimeout(function () {
+    Dpod();
+    interval = setInterval(function () {
+      Dpod();
+    }, 86400000);
+  }, time_of_day_dif);
+});
+client.on("error", console.error);
+//86400000
+client.login(token);
