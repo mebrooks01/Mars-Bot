@@ -6,7 +6,7 @@ module.exports = {
       embed: {
         title: "Mars Global Surveyor",
         description:
-          "Lanched on November 7, 1996\nLanched from Cape Canaveral Air Force Station, Florida\nOrbit Insertion September 12, 1997\nMission Complete, ended on November 14, 2006\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-global-surveyor/",
+          "Launched on November 7, 1996\nLaunched from Cape Canaveral Air Force Station, Florida\nOrbit Insertion September 12, 1997\nMission Complete, ended on November 14, 2006\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-global-surveyor/",
         color: "#5A2017",
         image: {
           url:
