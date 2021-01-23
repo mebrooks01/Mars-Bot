@@ -34,8 +34,8 @@ module.exports = class NAME extends Command {
       group: "",
       aliases: [""],
       memberName: "",
-      description: "",
-      examples: [""],
+      description: "Find Information on the BLANK mission",
+      examples: [`${config.prefix}`],
       guildOnly: false,
       ownerOnly: false,
       throttling: {
