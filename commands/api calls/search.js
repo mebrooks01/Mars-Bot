@@ -10,7 +10,7 @@ module.exports = class NAME extends Command {
       aliases: ["image", "images", "lookup", "photo", "photos"],
       memberName: "search",
       description: "search the NASA image library for a image",
-      examples: [`${config.prefix}search <search term> [page number]`],
+      examples: [`${config.prefix}search <search term>`],
       guildOnly: false,
       ownerOnly: false,
       throttling: {
@@ -19,22 +19,15 @@ module.exports = class NAME extends Command {
       },
       args: [
         {
-          key: "search_terms",
+          key: "search_term",
           prompt: "Please choose a search term to look for",
           type: "string",
-        },
-        {
-          key: "page_number",
-          prompt: "Please choose a page number to look for",
-          type: "integer",
-          default: "1",
         },
       ],
     });
   }
-  run(message, { type, sol, page_number }) {
-    search_terms = search_term.replace(/\s/g, "%20");
-    date = moment().utcOffset(-12).format("YYYY-M-D");
+  run(message, { search_term }) {
+    let date = moment().utcOffset(-12).format("YYYY-M-D");
 
     axios
       .get("https://images-api.nasa.gov/search?q=" + search_term)
@@ -43,8 +36,11 @@ module.exports = class NAME extends Command {
           message.reply("that search term found no results");
           return;
         }
-        img = res.data.collection.items[1].links[0].href.replace(/\s/g, "%20");
-        data = res.data.collection.items[1].data[0];
+        let img = res.data.collection.items[1].links[0].href.replace(
+          /\s/g,
+          "%20"
+        );
+        let data = res.data.collection.items[1].data[0];
 
         message.channel.send({
           embed: {
