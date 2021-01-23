@@ -9,7 +9,7 @@ module.exports = class Bug extends Command {
       aliases: ["report", "bugs"],
       memberName: "bug",
       description: "Report any and all bugs here",
-      examples: ["=bug"],
+      examples: [`${config.prefix}bug`],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

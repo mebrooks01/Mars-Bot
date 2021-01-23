@@ -54,7 +54,7 @@ module.exports = class NAME extends Command {
         url: "",
       },
       footer: {
-        text: "Profile Photo Credit: NASA/JPL-Caltech",
+        text: "Photo Credit: NASA/JPL-Caltech",
         icon_url: "",
       },
     });

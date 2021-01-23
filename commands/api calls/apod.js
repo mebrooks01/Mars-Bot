@@ -13,7 +13,7 @@ module.exports = class APOD extends Command {
       memberName: "apod",
       description:
         "Astronomy Picture of the Day. Get NASA's Picture of the Day right to your discord",
-      examples: ["=apod"],
+      examples: [`${config.prefix}apod`],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

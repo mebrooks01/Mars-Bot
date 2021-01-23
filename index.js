@@ -47,9 +47,9 @@ client.once("ready", () => {
     1000 *
       (time_of_day.seconds() +
         60 * (time_of_day.minutes() + 60 * time_of_day.hours()));
-  if (86400000 - time_of_day_ms <= 43200000){
-    let time_of_day_dif = 86400000 - time_of_day_ms;
-  } else let time_of_day_dif = 86400000 - time_of_day_ms + 43200000;
+  if (86400000 - time_of_day_ms <= 43200000) {
+    time_of_day_dif = 86400000 - time_of_day_ms;
+  } else time_of_day_dif = 86400000 - time_of_day_ms + 43200000;
   function Dpod() {
     let date = moment().utcOffset(-12).format("YYYY-M-D");
     axios

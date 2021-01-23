@@ -8,8 +8,11 @@ module.exports = class ClimateOrbiter extends Command {
       group: "missions",
       aliases: ["climate-orbiter", "climate-orbiter"],
       memberName: "climate-orbiter",
-      description: "",
-      examples: ["=climateorbiter", "=climate-orbiter"],
+      description: "Find Information on the climate orbiter mission",
+      examples: [
+        `${config.prefix}climateorbiter`,
+        `${config.prefix}climate-orbiter`,
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {
