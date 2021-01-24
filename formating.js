@@ -140,3 +140,68 @@ module.exports = class NAME extends Command {
     });
   }
 };
+
+let sol2 = sol_keys[array_length - 1];
+let sol2_data = res.data[Object.keys(res.data)[array_length - 1]];
+//check to see if temp data available
+if (!sol2_data.AT.av) {
+  var sol2_av_temp = "NA";
+} else var sol2_av_temp = sol2_data.AT.av + "°C";
+if (!sol2_data.AT.mn) {
+  var sol2_mn_temp = "NA";
+} else var sol2_mn_temp = sol2_data.AT.mn + "°C";
+if (!sol2_data.AT.mx) {
+  var sol2_mx_temp = "NA";
+} else var sol2_mx_temp = sol2_data.AT.mx + "°C";
+//checks for wind data
+if (!sol2_data.HWS.av) {
+  var sol2_av_wind = "NA";
+} else var sol2_av_wind = sol2_data.HWS.av + "m/s";
+if (!sol2_data.HWS.mn) {
+  var sol2_mn_wind = "NA";
+} else var sol2_mn_wind = sol2_data.HWS.mn + "m/s";
+if (!sol2_data.HWS.mx) {
+  var sol2_mx_wind = "NA";
+} else var sol2_mx_wind = sol2_data.HWS.mx + "m/s";
+//checks pr data
+if (!sol2_data.PRE.av) {
+  var sol2_av_pr = "NA";
+} else var sol2_av_pr = sol2_data.PRE.av + "Pa";
+if (!sol2_data.PRE.mn) {
+  var sol2_mn_pr = "NA";
+} else var sol2_mn_pr = sol2_data.PRE.mn + "Pa";
+if (!sol2_data.PRE.mx) {
+  var sol2_mx_pr = "NA";
+} else var sol2_mx_pr = sol2_data.PRE.mx + "Pa";
+let sol3 = sol_keys[array_length - 1];
+let sol3_data = res.data[Object.keys(res.data)[array_length - 1]];
+//check to see if temp data available
+if (!sol3_data.AT.av) {
+  var sol3_av_temp = "NA";
+} else var sol3_av_temp = sol3_data.AT.av + "°C";
+if (!sol3_data.AT.mn) {
+  var sol3_mn_temp = "NA";
+} else var sol3_mn_temp = sol3_data.AT.mn + "°C";
+if (!sol3_data.AT.mx) {
+  var sol3_mx_temp = "NA";
+} else var sol3_mx_temp = sol3_data.AT.mx + "°C";
+//checks for wind data
+if (!sol3_data.HWS.av) {
+  var sol3_av_wind = "NA";
+} else var sol3_av_wind = sol3_data.HWS.av + "m/s";
+if (!sol3_data.HWS.mn) {
+  var sol3_mn_wind = "NA";
+} else var sol3_mn_wind = sol3_data.HWS.mn + "m/s";
+if (!sol3_data.HWS.mx) {
+  var sol3_mx_wind = "NA";
+} else var sol3_mx_wind = sol3_data.HWS.mx + "m/s";
+//checks pr data
+if (!sol3_data.PRE.av) {
+  var sol3_av_pr = "NA";
+} else var sol3_av_pr = sol3_data.PRE.av + "Pa";
+if (!sol3_data.PRE.mn) {
+  var sol3_mn_pr = "NA";
+} else var sol3_mn_pr = sol3_data.PRE.mn + "Pa";
+if (!sol3_data.PRE.mx) {
+  var sol3_mx_pr = "NA";
+} else var sol3_mx_pr = sol3_data.PRE.mx + "Pa";

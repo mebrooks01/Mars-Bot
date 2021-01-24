@@ -65,118 +65,76 @@ module.exports = class Insight extends Command {
           //sol 1 data checks
           let sol1 = sol_keys[array_length - 1];
           let sol1_data = res.data[Object.keys(res.data)[array_length - 1]];
-          //check to see if temp data available
-          if (!sol1_data.AT.av) {
+          if (!sol1_data.AT) {
             var sol1_av_temp = "NA";
-          } else var sol1_av_temp = sol1_data.AT.av + "°C";
-          if (!sol1_data.AT.mn) {
             var sol1_mn_temp = "NA";
-          } else var sol1_mn_temp = sol1_data.AT.mn + "°C";
-          if (!sol1_data.AT.mx) {
             var sol1_mx_temp = "NA";
-          } else var sol1_mx_temp = sol1_data.AT.mx + "°C";
-          //checks for wind data
-          if (!sol1_data.HWS.av) {
+          } else {
+            var sol1_av_temp = sol1_data.AT.av + "°C";
+            var sol1_mn_temp = sol1_data.AT.mn + "°C";
+            var sol1_mx_temp = sol1_data.AT.mx + "°C";
+          }
+          if (!sol1_data.HWS) {
             var sol1_av_wind = "NA";
-          } else var sol1_av_wind = sol1_data.HWS.av + "m/s";
-          if (!sol1_data.HWS.mn) {
             var sol1_mn_wind = "NA";
-          } else var sol1_mn_wind = sol1_data.HWS.mn + "m/s";
-          if (!sol1_data.HWS.mx) {
             var sol1_mx_wind = "NA";
-          } else var sol1_mx_wind = sol1_data.HWS.mx + "m/s";
-          //checks pr data
-          if (!sol1_data.PRE.av) {
+          } else {
+            var sol1_av_wind = sol1_data.HWS.av + " m/s";
+            var sol1_mn_wind = sol1_data.HWS.mn + " m/s";
+            var sol1_mx_wind = sol1_data.HWS.mx + " m/s";
+          }
+          if (!sol1_data.PRE) {
             var sol1_av_pr = "NA";
-          } else var sol1_av_pr = sol1_data.PRE.av + "Pa";
-          if (!sol1_data.PRE.mn) {
             var sol1_mn_pr = "NA";
-          } else var sol1_mn_pr = sol1_data.PRE.mn + "Pa";
-          if (!sol1_data.PRE.mx) {
             var sol1_mx_pr = "NA";
-          } else var sol1_mx_pr = sol1_data.PRE.mx + "Pa";
-          let sol2 = sol_keys[array_length - 1];
-          let sol2_data = res.data[Object.keys(res.data)[array_length - 1]];
-          //check to see if temp data available
-          if (!sol2_data.AT.av) {
+          } else {
+            var sol1_av_pr = sol1_data.PRE.av + " Pa";
+            var sol1_mn_pr = sol1_data.PRE.mn + " Pa";
+            var sol1_mx_pr = sol1_data.PRE.mx + " Pa";
+          }
+          //sol 2 data checks
+          let sol2 = sol_keys[array_length - 2];
+          let sol2_data = res.data[Object.keys(res.data)[array_length - 2]];
+          if (!sol2_data.AT) {
             var sol2_av_temp = "NA";
-          } else var sol2_av_temp = sol2_data.AT.av + "°C";
-          if (!sol2_data.AT.mn) {
             var sol2_mn_temp = "NA";
-          } else var sol2_mn_temp = sol2_data.AT.mn + "°C";
-          if (!sol2_data.AT.mx) {
             var sol2_mx_temp = "NA";
-          } else var sol2_mx_temp = sol2_data.AT.mx + "°C";
-          //checks for wind data
-          if (!sol2_data.HWS.av) {
+          } else {
+            var sol2_av_temp = sol2_data.AT.av + "°C";
+            var sol2_mn_temp = sol2_data.AT.mn + "°C";
+            var sol2_mx_temp = sol2_data.AT.mx + "°C";
+          }
+          if (!sol2_data.HWS) {
             var sol2_av_wind = "NA";
-          } else var sol2_av_wind = sol2_data.HWS.av + "m/s";
-          if (!sol2_data.HWS.mn) {
             var sol2_mn_wind = "NA";
-          } else var sol2_mn_wind = sol2_data.HWS.mn + "m/s";
-          if (!sol2_data.HWS.mx) {
             var sol2_mx_wind = "NA";
-          } else var sol2_mx_wind = sol2_data.HWS.mx + "m/s";
-          //checks pr data
-          if (!sol2_data.PRE.av) {
+          } else {
+            var sol2_av_wind = sol2_data.HWS.av + " m/s";
+            var sol2_mn_wind = sol2_data.HWS.mn + " m/s";
+            var sol2_mx_wind = sol2_data.HWS.mx + " m/s";
+          }
+          if (!sol2_data.PRE) {
             var sol2_av_pr = "NA";
-          } else var sol2_av_pr = sol2_data.PRE.av + "Pa";
-          if (!sol2_data.PRE.mn) {
             var sol2_mn_pr = "NA";
-          } else var sol2_mn_pr = sol2_data.PRE.mn + "Pa";
-          if (!sol2_data.PRE.mx) {
             var sol2_mx_pr = "NA";
-          } else var sol2_mx_pr = sol2_data.PRE.mx + "Pa";
-          let sol3 = sol_keys[array_length - 1];
-          let sol3_data = res.data[Object.keys(res.data)[array_length - 1]];
-          //check to see if temp data available
-          if (!sol3_data.AT.av) {
-            var sol3_av_temp = "NA";
-          } else var sol3_av_temp = sol3_data.AT.av + "°C";
-          if (!sol3_data.AT.mn) {
-            var sol3_mn_temp = "NA";
-          } else var sol3_mn_temp = sol3_data.AT.mn + "°C";
-          if (!sol3_data.AT.mx) {
-            var sol3_mx_temp = "NA";
-          } else var sol3_mx_temp = sol3_data.AT.mx + "°C";
-          //checks for wind data
-          if (!sol3_data.HWS.av) {
-            var sol3_av_wind = "NA";
-          } else var sol3_av_wind = sol3_data.HWS.av + "m/s";
-          if (!sol3_data.HWS.mn) {
-            var sol3_mn_wind = "NA";
-          } else var sol3_mn_wind = sol3_data.HWS.mn + "m/s";
-          if (!sol3_data.HWS.mx) {
-            var sol3_mx_wind = "NA";
-          } else var sol3_mx_wind = sol3_data.HWS.mx + "m/s";
-          //checks pr data
-          if (!sol3_data.PRE.av) {
-            var sol3_av_pr = "NA";
-          } else var sol3_av_pr = sol3_data.PRE.av + "Pa";
-          if (!sol3_data.PRE.mn) {
-            var sol3_mn_pr = "NA";
-          } else var sol3_mn_pr = sol3_data.PRE.mn + "Pa";
-          if (!sol3_data.PRE.mx) {
-            var sol3_mx_pr = "NA";
-          } else var sol3_mx_pr = sol3_data.PRE.mx + "Pa";
-
+          } else {
+            var sol2_av_pr = sol2_data.PRE.av + " Pa";
+            var sol2_mn_pr = sol2_data.PRE.mn + " Pa";
+            var sol2_mx_pr = sol2_data.PRE.mx + " Pa";
+          }
           message.channel.send({
             embed: {
-              title: "Whether on mars for the last 3 days",
+              title: "Whether on mars for the last 2 days",
               url: "https://mars.nasa.gov/insight/weather/",
               description: ``,
               fields: [
                 {
                   name: `Weather From Sol: ${sol1}`,
-                  value: `**Average Temp:** ${sol1_av_temp} **Min:** ${sol1_mn_temp} **Max:** ${sol1_mx_temp}\n**Average Wind Speed:** ${sol1_av_wind} **Min:** ${sol1_mn_wind} **Max:** ${sol1_mx_wind}\n**Average Air Pressure :** ${sol1_av_pr} **Min:** ${sol1_mn_pr} **Max:** ${sol1_mx_pr}`,
+                  value: `__**Temperature  Info**__\nAverage: ${sol1_av_temp}\nMax: ${sol1_mx_temp}\nMin: ${sol1_mn_temp}\n__**Wind Speed Info**__\nAverage: ${sol1_av_wind}\nMax: ${sol1_mx_wind}\nMin: ${sol1_mn_wind}\n__**Air Pressure Info**__\nAverage: ${sol1_av_pr}\nMax: ${sol1_mx_pr}\nMin: ${sol1_mn_pr}\n**Season:** ${sol1_data.Season}`,
                 },
                 {
                   name: `Weather From Sol: ${sol2}`,
-                  value: `**Average Temp:** ${sol2_av_temp} **Min:** ${sol2_mn_temp} **Max:** ${sol2_mx_temp}\n**Average Wind Speed:** ${sol2_av_wind} **Min:** ${sol2_mn_wind} **Max:** ${sol1_mx_wind}\n**Average Air Pressure :** ${sol2_av_pr} **Min:** ${sol2_mn_pr} **Max:** ${sol2_mx_pr}`,
-                },
-                {
-                  name: `Weather From Sol: ${sol3}`,
-                  value: `**Average Temp:** ${sol3_av_temp} **Min:** ${sol3_mn_temp} **Max:** ${sol3_mx_temp}\n**Average Wind Speed:** ${sol3_av_wind} **Min:** ${sol3_mn_wind} **Max:** ${sol3_mx_wind}\n**Average Air Pressure :** ${sol3_av_pr} **Min:** ${sol3_mn_pr} **Max:** ${sol3_mx_pr}`,
+                  value: `__**Temperature  Info**__\nAverage: ${sol2_av_temp}\nMax: ${sol2_mx_temp}\nMin: ${sol2_mn_temp}\n__**Wind Speed Info**__\nAverage: ${sol2_av_wind}\nMax: ${sol2_mx_wind}\nMin: ${sol2_mn_wind}\n__**Air Pressure Info**__\nAverage: ${sol2_av_pr}\nMax: ${sol2_mx_pr}\nMin: ${sol2_mn_pr}\n**Season:** ${sol2_data.Season}`,
                 },
               ],
               color: "#5A2017",
