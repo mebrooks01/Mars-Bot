@@ -1,7 +1,7 @@
 const { Command } = require("discord.js-commando");
 const moment = require("moment");
 const config = require("./../../config.json");
-module.exports = class NAME extends Command {
+module.exports = class Explore extends Command {
   constructor(client) {
     super(client, {
       name: "explore",

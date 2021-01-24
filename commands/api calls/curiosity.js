@@ -4,7 +4,7 @@ const moment = require("moment");
 const config = require("./../../config.json");
 const api_key = config.api_key;
 const invite = config.invite;
-module.exports = class NAME extends Command {
+module.exports = class Curiosity extends Command {
   constructor(client) {
     super(client, {
       name: "curiosity",
