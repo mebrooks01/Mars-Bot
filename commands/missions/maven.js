@@ -8,7 +8,8 @@ module.exports = class Maven extends Command {
       group: "missions",
       aliases: ["maven"],
       memberName: "maven",
-      description: "Find Information on the BLANK mission",
+      description:
+        "Find Information on the Mars Atmospheric and Volatile EvolutioN (Maven) mission",
       examples: [`${config.prefix}maven`],
       guildOnly: false,
       ownerOnly: false,
