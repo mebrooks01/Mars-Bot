@@ -8,7 +8,7 @@ module.exports = class Odyssey extends Command {
       group: "missions",
       aliases: ["odyssey"],
       memberName: "odyssey",
-      description: "Find Information on the BLANK mission",
+      description: "Find Information on the odyssey mission",
       examples: [`${config.prefix}`],
       guildOnly: false,
       ownerOnly: false,
