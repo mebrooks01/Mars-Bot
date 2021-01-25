@@ -4,10 +4,10 @@ const config = require("./../../config.json");
 module.exports = class ClimateOrbiter extends Command {
   constructor(client) {
     super(client, {
-      name: "climateorbiter",
+      name: "climate-orbiter",
       group: "missions",
       aliases: ["climate-orbiter", "climate-orbiter"],
-      memberName: "climate-orbiter",
+      memberName: "climateorbiter",
       description: "Find Information on the climate orbiter mission",
       examples: [
         `${config.prefix}climateorbiter`,

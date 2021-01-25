@@ -6,7 +6,7 @@ module.exports = class Mars extends Command {
     super(client, {
       name: "mars",
       group: "utilities",
-      aliases: ["Mars"],
+      aliases: ["mars"],
       memberName: "mars",
       description: "Find Information about the Red Planet",
       examples: [`${config.prefix}`],

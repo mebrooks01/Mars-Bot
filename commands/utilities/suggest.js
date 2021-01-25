@@ -22,7 +22,7 @@ module.exports = class NAME extends Command {
     message.embed({
       title: "Suggestions?",
       url: "https://github.com/mebrooks01/Mars-Bot/issues",
-      description: `If you have a suggest for Mars Bot please post it on the Git hub repository\nhttps://github.com/mebrooks01/Mars-Bot/issues\nOr join our server and talk to us about it\n${invite}`,
+      description: `If you have a suggest for Mars Bot please post it on the Git hub repository\nhttps://github.com/mebrooks01/Mars-Bot/issues\nOr join our server and talk to us about it\n${config.invite}`,
       color: "#5A2017",
       thumbnail: {
         url:

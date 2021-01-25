@@ -4,10 +4,10 @@ const config = require("./../../config.json");
 module.exports = class NAME extends Command {
   constructor(client) {
     super(client, {
-      name: "",
-      group: "",
-      aliases: [""],
-      memberName: "",
+      name: "pathfinder",
+      group: "missions",
+      aliases: ["pathfinder"],
+      memberName: "pathfinder",
       description: "Find Information on the pathfinder mission",
       examples: [`${config.prefix}`],
       guildOnly: false,
