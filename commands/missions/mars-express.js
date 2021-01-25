@@ -5,7 +5,7 @@ module.exports = class MarsExpress extends Command {
   constructor(client) {
     super(client, {
       name: "mars-express",
-      group: "",
+      group: "missions",
       aliases: ["mars express"],
       memberName: "mars-express",
       description: "Find Information on the mars express mission",
