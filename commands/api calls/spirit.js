@@ -1,4 +1,3 @@
-//api calls
 const { Command } = require("discord.js-commando");
 const axios = require("axios");
 const moment = require("moment");
@@ -6,12 +5,15 @@ const config = require("./../../config.json");
 module.exports = class NAME extends Command {
   constructor(client) {
     super(client, {
-      name: "",
-      group: "",
-      aliases: [""],
-      memberName: "",
-      description: "",
-      examples: [""],
+      name: "spirit",
+      group: "api calls",
+      aliases: ["spirit"],
+      memberName: "spirit",
+      description: "Get info about spirit and look up the images it has taken",
+      examples: [
+        `${config.prefix}spirit`,
+        `${config.prefix}spirit <'info' | 'image> <sol> <page number>`,
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {
@@ -44,12 +46,15 @@ module.exports = class NAME extends Command {
   run(message) {
     if (type === "info") {
       message.embed({
-        title: "",
-        url: "",
-        description: "",
+        title: "Mars Exploration Rover Spirit",
+        url:
+          "https://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/",
+        description:
+          "**API data available for this mission** Do `=spirit image (sol) (page number)`\nLaunched on June 10, 2003\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on January 4, 2004\nLanded at Gusev Crater\nMission Complete, ended on March 22, 2010\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/",
         color: "#5A2017",
         image: {
-          url: "",
+          url:
+            "https://mars.nasa.gov/system/content_pages/main_images/365_MER-1280.jpg",
         },
         footer: {
           text: "Credit: NASA/JPL-Caltech",
@@ -65,7 +70,9 @@ module.exports = class NAME extends Command {
         );
       } else {
         axios
-          .get(`URL&api_key=${api_key}`)
+          .get(
+            `https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos?sol=${sol}&api_key=${config.api_key}`
+          )
           .then((res) => {
             if (!res.data.photos[page_number - 1]) {
               message.reply("No results found");
@@ -100,43 +107,5 @@ module.exports = class NAME extends Command {
           });
       }
     }
-  }
-};
-
-//missions
-const { Command } = require("discord.js-commando");
-const moment = require("moment");
-const config = require("./../../config.json");
-module.exports = class NAME extends Command {
-  constructor(client) {
-    super(client, {
-      name: "",
-      group: "",
-      aliases: [""],
-      memberName: "",
-      description: "Find Information on the BLANK mission",
-      examples: [`${config.prefix}`],
-      guildOnly: false,
-      ownerOnly: false,
-      throttling: {
-        usages: 2,
-        duration: 1,
-      },
-    });
-  }
-  run(message) {
-    message.embed({
-      title: "",
-      url: "",
-      description: "",
-      color: "#5A2017",
-      image: {
-        url: "",
-      },
-      footer: {
-        text: "Photo Credit: NASA/JPL-Caltech",
-        icon_url: "",
-      },
-    });
   }
 };
