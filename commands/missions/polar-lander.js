@@ -5,7 +5,7 @@ module.exports = class NAME extends Command {
   constructor(client) {
     super(client, {
       name: "polar-lander",
-      group: "",
+      group: "missions",
       aliases: ["polar lander"],
       memberName: "polar-lander",
       description:
