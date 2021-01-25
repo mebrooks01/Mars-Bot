@@ -24,7 +24,7 @@ module.exports = class Bug extends Command {
       url: "https://github.com/mebrooks01/Mars-Bot/issues",
       description: `If you found a bug in Mars Bot please report it on the Git hub repository\nhttps://github.com/mebrooks01/Mars-Bot/issues\nOr join our server and talk to us about it\n${invite}`,
       color: "#5A2017",
-      image: {
+      thumbnail: {
         url:
           "https://mars.nasa.gov/system/resources/detail_files/25058_PIA23900-web.jpg",
       },
