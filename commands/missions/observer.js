@@ -9,7 +9,7 @@ module.exports = class Observer extends Command {
       aliases: ["observer"],
       memberName: "observer",
       description: "Find Information on the Observer mission",
-      examples: [`${config.prefix}`],
+      examples: [`${config.prefix}observer`],
       guildOnly: false,
       ownerOnly: false,
       throttling: {
