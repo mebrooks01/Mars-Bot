@@ -13,7 +13,7 @@ module.exports = class Opportunity extends Command {
         "Get info about opportunity and look up the images it has taken",
       examples: [
         `${config.prefix}opportunity`,
-        `${config.prefix}opportunity <'info' | 'image> <sol> <page number>`,
+        `${config.prefix}opportunity <'info' | 'image'> <sol> <page number>`,
       ],
       guildOnly: false,
       ownerOnly: false,

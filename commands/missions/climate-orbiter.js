@@ -6,7 +6,7 @@ module.exports = class ClimateOrbiter extends Command {
     super(client, {
       name: "climate-orbiter",
       group: "missions",
-      aliases: ["climate-orbiter", "climate-orbiter"],
+      aliases: ["climate-orbiter"],
       memberName: "climateorbiter",
       description: "Find Information on the climate orbiter mission",
       examples: [

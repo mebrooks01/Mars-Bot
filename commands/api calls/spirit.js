@@ -12,7 +12,7 @@ module.exports = class NAME extends Command {
       description: "Get info about spirit and look up the images it has taken",
       examples: [
         `${config.prefix}spirit`,
-        `${config.prefix}spirit <'info' | 'image> <sol> <page number>`,
+        `${config.prefix}spirit <'info' | 'image'> <sol> <page number>`,
       ],
       guildOnly: false,
       ownerOnly: false,

@@ -13,7 +13,7 @@ module.exports = class Perseverance extends Command {
         "Get info about perseverance and look up the images it has taken",
       examples: [
         `${config.prefix}perseverance`,
-        `${config.prefix}perseverance <'info' | 'image> <sol> <page number>`,
+        `${config.prefix}perseverance <'info' | 'image'> <sol> <page number>`,
       ],
       guildOnly: false,
       ownerOnly: false,

@@ -15,7 +15,7 @@ module.exports = class Curiosity extends Command {
         "Get info about curiosity and look up the images it has taken",
       examples: [
         `${config.prefix}curiosity`,
-        `${config.prefix}curiosity <'info' | 'image> <sol> <page number>`,
+        `${config.prefix}curiosity <'info' | 'image'> <sol> <page number>`,
       ],
       guildOnly: false,
       ownerOnly: false,
