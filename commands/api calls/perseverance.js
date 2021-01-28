@@ -2,17 +2,18 @@ const { Command } = require("discord.js-commando");
 const axios = require("axios");
 const moment = require("moment");
 const config = require("./../../config.json");
-module.exports = class NAME extends Command {
+module.exports = class Perseverance extends Command {
   constructor(client) {
     super(client, {
-      name: "spirit",
+      name: "perseverance",
       group: "api calls",
-      aliases: ["spirit"],
-      memberName: "spirit",
-      description: "Get info about spirit and look up the images it has taken",
+      aliases: ["perseverance"],
+      memberName: "perseverance",
+      description:
+        "Get info about perseverance and look up the images it has taken",
       examples: [
-        `${config.prefix}spirit`,
-        `${config.prefix}spirit <'info' | 'image> <sol> <page number>`,
+        `${config.prefix}perseverance`,
+        `${config.prefix}perseverance <'info' | 'image> <sol> <page number>`,
       ],
       guildOnly: false,
       ownerOnly: false,
@@ -43,18 +44,19 @@ module.exports = class NAME extends Command {
       ],
     });
   }
-  run(message, { type, sol, page_number }) {
+  run(message) {
+    message.reply(
+      "Currently Unavailable\nAs soon as Perseverance lands I will have info"
+    );
+    /*
     if (type === "info") {
       message.embed({
-        title: "Mars Exploration Rover Spirit",
-        url:
-          "https://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/",
-        description:
-          "**API data available for this mission** Do `=spirit image (sol) (page number)`\nLaunched on June 10, 2003\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on January 4, 2004\nLanded at Gusev Crater\nMission Complete, ended on March 22, 2010\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/",
+        title: "",
+        url: "",
+        description: "",
         color: "#5A2017",
         image: {
-          url:
-            "https://mars.nasa.gov/system/content_pages/main_images/365_MER-1280.jpg",
+          url: "",
         },
         footer: {
           text: "Credit: NASA/JPL-Caltech",
@@ -66,13 +68,11 @@ module.exports = class NAME extends Command {
     if (type === "image") {
       if (!sol || !page_number) {
         message.reply(
-          "Please choose a sol and or page number to look for\n`=spirit image <sol> <page number>`"
+          "Please choose a sol and or page number to look for\n`=curiosity image <sol> <page number>`"
         );
       } else {
         axios
-          .get(
-            `https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos?sol=${sol}&api_key=${config.api_key}`
-          )
+          .get(`URL&api_key=${api_key}`)
           .then((res) => {
             if (!res.data.photos[page_number - 1]) {
               message.reply("No results found");
@@ -107,5 +107,6 @@ module.exports = class NAME extends Command {
           });
       }
     }
+    */
   }
 };
