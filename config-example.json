@@ -6,12 +6,6 @@
   "user_id": {
     "owner": ""
   },
-  "role_id": {
-    "dev": "",
-    "admin": "",
-    "mod": "",
-    "helper": ""
-  },
   "server_id": {
     "main_server": ""
   },
