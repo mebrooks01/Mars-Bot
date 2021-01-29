@@ -5,8 +5,7 @@ You can add it to your server with [this link](https://discord.com/oauth2/author
 
 ## Contributations
 
-Writen By: [Mebrooks01#3354](https://github.com/mebrooks01)
-Help Fixing my shitty ass code By: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
+Writen By: [Mebrooks01#3354](https://github.com/mebrooks01). Help Fixing my shitty ass code By: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
 
 ## Commands
 
@@ -85,8 +84,7 @@ You will need to rename `config-example.json` to `config.json` and fill in all t
 
 # Credits
 
-Code Writen By: [Mebrooks01#3354](https://github.com/mebrooks01)
-Anti shitty ass code: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
+Code Writen By: [Mebrooks01#3354](https://github.com/mebrooks01). Anti shitty ass code: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
 
 API Calls use [NASA's API](https://api.nasa.gov/) to pull data. The part of the API I use is mantained by [Chris Cerami](https://github.com/chrisccerami/mars-photo-api).
 
