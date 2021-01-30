@@ -13,6 +13,7 @@ const client = new Commando.CommandoClient({
   commandPrefix: prefix,
   owner: owner_id,
   invite: invite,
+  unknownCommandResponse: false,
 });
 client.config = config;
 
