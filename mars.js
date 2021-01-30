@@ -41,15 +41,6 @@ client.once("ready", () => {
       console.log(error);
     });
 
-  let time_of_day = moment();
-  let time_of_day_ms =
-    time_of_day.milliseconds() +
-    1000 *
-      (time_of_day.seconds() +
-        60 * (time_of_day.minutes() + 60 * time_of_day.hours()));
-  if (86400000 - time_of_day_ms <= 43200000) {
-    time_of_day_dif = 86400000 - time_of_day_ms;
-  } else time_of_day_dif = 86400000 - time_of_day_ms + 43200000;
   function Dpod() {
     let date = moment().utcOffset(-12).format("YYYY-M-D");
     axios
@@ -73,12 +64,22 @@ client.once("ready", () => {
         console.log(error.stack);
       });
   }
-  setTimeout(function () {
+  function Dpod_1() {
     Dpod();
     interval = setInterval(function () {
       Dpod();
     }, 86400000);
-  }, time_of_day_dif);
+  }
+  let time_of_day = moment();
+  let time_of_day_ms =
+    time_of_day.milliseconds() +
+    1000 *
+      (time_of_day.seconds() +
+        60 * (time_of_day.minutes() + 60 * time_of_day.hours()));
+  if (86400000 - time_of_day_ms <= 43200000) {
+    time_of_day_dif = 86400000 - time_of_day_ms;
+  } else time_of_day_dif = 86400000 - time_of_day_ms + 43200000;
+  setTimeout(Dpod_1, time_of_day_dif);
 });
 client.on("error", console.error);
 client.login(token);
