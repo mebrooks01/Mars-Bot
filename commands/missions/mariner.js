@@ -8,7 +8,7 @@ module.exports = class NAME extends Command {
       group: "missions",
       aliases: ["mariner"],
       memberName: "mariner",
-      description: "Find Information on the mariner mission",
+      description: "Find Information on the Mariner 3-9 missions",
       examples: [`${config.prefix}mariner`],
       guildOnly: false,
       ownerOnly: false,

@@ -9,7 +9,7 @@ module.exports = class Search extends Command {
       group: "api calls",
       aliases: ["image", "images", "lookup", "photo", "photos"],
       memberName: "search",
-      description: "search the NASA image library for a image",
+      description: "Look for an image in the NASA image library.",
       examples: [`${config.prefix}search <search term>`],
       guildOnly: false,
       ownerOnly: false,

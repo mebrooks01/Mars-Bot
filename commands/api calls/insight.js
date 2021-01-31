@@ -13,7 +13,7 @@ module.exports = class Insight extends Command {
       group: "api calls",
       aliases: ["insight", "weather"],
       memberName: "insight",
-      description: "Get info about insight and look up the images it has taken",
+      description: "Get info about insight and find weather data",
       examples: [
         `${config.prefix}insight`,
         `${config.prefix}insight <'info' | 'weather'>`,
