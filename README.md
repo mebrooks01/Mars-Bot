@@ -94,4 +94,4 @@ API calls use [NASA's API](https://api.nasa.gov/) to pull data. The part of the 
 
 All photos are used via [JPL's Image Use Policy](https://www.jpl.nasa.gov/jpl-image-use-policy/) and are provided Courtesy of NASA/JPL-Caltech.
 
-I do not own any of the photos, videos and or sensor data "Mars Bot" uses.
+I do not own any of the photos, videos, and/or sensor data "Mars Bot" uses.
