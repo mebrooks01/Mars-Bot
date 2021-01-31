@@ -1,6 +1,6 @@
 # Mars Bot Documentation
 
-Mars Bot is an open source discord bot developed by [Mebrooks01#3354](https://github.com/mebrooks01)
+Mars Bot is an open source discord bot developed by [Mebrooks01#3354](https://github.com/mebrooks01)<br/>
 You can add it to your server with [this link](https://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945) if you have any questions you can join [our discord server](https://discord.gg/yKnBYJE).
 
 Mars bot uses NASA's API and other sources to give you plenty of cool info about missions and even look at the weather on mars (when NASA/JPL-Caltech decide to give the data to the api).
@@ -11,42 +11,42 @@ Written By: [Mebrooks01#3354](https://github.com/mebrooks01). Help Fixing my shi
 
 ## Commands
 
-There are currently `26` commands for the bot they are split into 3 sections `missions`, `api calls` and `utilities`.
+There are currently `26` commands for the bot they are split into 3 sections `missions`, `api calls` and `utilities`.<br/>
 I have information on all NASA missions that have been launched as of January 2021.
 
 ### Missions
 
-`=climate-orbiter` Find Information on the Mars Climate Orbiter mission.
-`=exomars` Find Information on ExoMars 2016 Mission the mission.
-`=global-surveyor` Find Information on the Mars Global Surveyor mission.
-`=mariner` Find Information on the Mariner 3-9 missions.
-`=mars-express` Find Information on the Mars Express mission.
-`=maven` Find Information on the Mars Atmospheric and Volatile EvolutioN (Maven) mission.
-`=mro` Find Information on the Mars Reconnaissance Orbiter (MRO) mission.
-`=observer` Find Information on the Mars Observer mission.
-`=odyssey` Find Information on the Mars Odyssey mission.
-`=pathfinder` Find Information on the Mars Pathfinder mission.
-`=phoenix` Find Information on the Mars Phoenix mission.
-`=polar-lander` Find Information on the Mars Polar Lander/Deep Space 2 missions.
-`=viking` Find Information on the Find Information on the Viking 1 & 2 missions missions.
+`=climate-orbiter` Find Information on the Mars Climate Orbiter mission.<br/>
+`=exomars` Find Information on ExoMars 2016 Mission the mission.<br/>
+`=global-surveyor` Find Information on the Mars Global Surveyor mission.<br/>
+`=mariner` Find Information on the Mariner 3-9 missions.<br/>
+`=mars-express` Find Information on the Mars Express mission.<br/>
+`=maven` Find Information on the Mars Atmospheric and Volatile EvolutioN (Maven) mission.<br/>
+`=mro` Find Information on the Mars Reconnaissance Orbiter (MRO) mission.<br/>
+`=observer` Find Information on the Mars Observer mission.<br/>
+`=odyssey` Find Information on the Mars Odyssey mission.<br/>
+`=pathfinder` Find Information on the Mars Pathfinder mission.<br/>
+`=phoenix` Find Information on the Mars Phoenix mission.<br/>
+`=polar-lander` Find Information on the Mars Polar Lander/Deep Space 2 missions.<br/>
+`=viking` Find Information on the Find Information on the Viking 1 & 2 missions missions.<br/>
 
 ### API Calls
 
-`=apod` Every day NASA publishes an "Astronomy Picture of the Day" use this command to see today's.
-`=insight <'info' | 'weather'>` Get info about insight and find weather data.
-`=curiosity <'info' | 'image'> [sol] [page number]` Get info about curiosity and look up the images it has taken.
-`=opportunity <'info' | 'image'> [sol] [page number]` Get info about opportunity and look up the images it has taken.
-`=spirit <'info' | 'image'> [sol] [page number]` Get info about spirit and look up the images it has taken.
-`=search <search term>` Look for an image in the NASA image library.
+`=apod` Every day NASA publishes an "Astronomy Picture of the Day" use this command to see today's.<br/>
+`=insight <'info' | 'weather'>` Get info about insight and find weather data.<br/>
+`=curiosity <'info' | 'image'> [sol] [page number]` Get info about curiosity and look up the images it has taken.<br/>
+`=opportunity <'info' | 'image'> [sol] [page number]` Get info about opportunity and look up the images it has taken.<br/>
+`=spirit <'info' | 'image'> [sol] [page number]` Get info about spirit and look up the images it has taken.<br/>
+`=search <search term>` Look for an image in the NASA image library.<br/>
 
 ### Other Commands
 
-`=bug` Report a Bug.
-`=explore` Look at where all the Mars missions are.
-`=invite` Add it to your server.
-`=mars` Info about Mars.
-`=suggest` Suggest something to be added.
-`=support` Get support with the bot.
+`=bug` Report a Bug.<br/>
+`=explore` Look at where all the Mars missions are.<br/>
+`=invite` Add it to your server.<br/>
+`=mars` Info about Mars.<br/>
+`=suggest` Suggest something to be added.<br/>
+`=support` Get support with the bot.<br/>
 
 For more info on a command use `=help <Command>`
 
@@ -84,7 +84,8 @@ You will need to rename `config-example.json` to `config.json` and fill in all t
 
 # Credits
 
-Code Written By: [Mebrooks01#3354](https://github.com/mebrooks01). Anti shitty ass code: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
+Code Written By: [Mebrooks01#3354](https://github.com/mebrooks01).<br/>
+Anti shitty ass code: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
 
 API Calls use [NASA's API](https://api.nasa.gov/) to pull data. The part of the API I use is maintained by [Chris Cerami](https://github.com/chrisccerami/mars-photo-api).
 
