@@ -1,13 +1,13 @@
 const { Command } = require("discord.js-commando");
 const moment = require("moment");
 const config = require("./../../config.json");
-module.exports = class Mars extends Command {
+module.exports = class Stats extends Command {
   constructor(client) {
     super(client, {
-      name: "mars",
+      name: "stats",
       group: "utilities",
-      aliases: ["mars"],
-      memberName: "mars",
+      aliases: ["stats"],
+      memberName: "stats",
       description: "Find Information about the Red Planet",
       examples: [`${config.prefix}`],
       guildOnly: false,
@@ -25,8 +25,9 @@ module.exports = class Mars extends Command {
       url: "",
       description: `I am on ${this.client.guilds.cache.size} servers.\n`,
       color: "#5A2017",
-      image: {
-        url: "https://solarsystem.nasa.gov/internal_resources/3841/",
+      thumbnail: {
+        url:
+          "https://mars.nasa.gov/system/resources/detail_files/25058_PIA23900-web.jpg",
       },
       footer: {
         text: "Photo Credit: NASA/JPL-Caltech",

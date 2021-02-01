@@ -3,6 +3,7 @@ const path = require("path");
 const config = require("./config.json");
 const axios = require("axios");
 const moment = require("moment");
+const schedule = require("node-schedule");
 const token = config.token;
 const api_key = config.api_key;
 const prefix = config.prefix;
@@ -42,7 +43,7 @@ client.once("ready", () => {
       console.log(error);
     });
 
-  function Dpod() {
+  const job = schedule.scheduleJob("* * 11 * *", function () {
     let date = moment().utcOffset(-12).format("YYYY-M-D");
     axios
       .get(
@@ -64,23 +65,7 @@ client.once("ready", () => {
       .catch(function (error) {
         console.log(error.stack);
       });
-  }
-  function Dpod_1() {
-    Dpod();
-    interval = setInterval(function () {
-      Dpod();
-    }, 86400000);
-  }
-  let time_of_day = moment();
-  let time_of_day_ms =
-    time_of_day.milliseconds() +
-    1000 *
-      (time_of_day.seconds() +
-        60 * (time_of_day.minutes() + 60 * time_of_day.hours()));
-  if (86400000 - time_of_day_ms <= 43200000) {
-    time_of_day_dif = 86400000 - time_of_day_ms;
-  } else time_of_day_dif = 86400000 - time_of_day_ms + 43200000;
-  setTimeout(Dpod_1, time_of_day_dif);
+  });
 });
 client.on("error", console.error);
 client.login(token);
