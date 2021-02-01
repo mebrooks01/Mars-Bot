@@ -43,7 +43,10 @@ client.once("ready", () => {
       console.log(error);
     });
 
-  const job = schedule.scheduleJob("* * 11 * *", function () {
+  const rule = new schedule.RecurrenceRule();
+  (rule.hour = 12), (rule.tz = "Etc/UTC");
+
+  const job = schedule.scheduleJob(rule, function () {
     let date = moment().utcOffset(-12).format("YYYY-M-D");
     axios
       .get(
