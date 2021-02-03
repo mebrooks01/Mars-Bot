@@ -55,6 +55,7 @@ module.exports = class Perseverance extends Command {
       "Currently Unavailable\nAs soon as Perseverance lands I will have info"
     );
     /*
+    https://mars.nasa.gov/resources/25118/portrait-of-perseverance-and-ingenuity-artists-concept/
     if (type === "info") {
       message.embed({
         title: "",

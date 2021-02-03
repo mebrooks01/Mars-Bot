@@ -61,7 +61,7 @@ module.exports = class Opportunity extends Command {
         color: "#5A2017",
         image: {
           url:
-            "https://mars.nasa.gov/system/content_pages/main_images/365_MER-1280.jpg",
+            "https://mars.nasa.gov/resources/3904/artists-concept-of-rover-on-mars/",
         },
         footer: {
           text: "Credit: NASA/JPL-Caltech",

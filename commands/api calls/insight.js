@@ -51,7 +51,7 @@ module.exports = class Insight extends Command {
         color: "#5A2017",
         image: {
           url:
-            "https://mars.nasa.gov/system/content_pages/main_images/370_insight-lander-PIA22743-16x9.jpg",
+            "https://mars.nasa.gov/system/resources/detail_files/22116_PIA22743-16x9.jpg",
         },
         footer: {
           text: "Credit: NASA/JPL-Caltech",

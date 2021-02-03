@@ -63,7 +63,7 @@ module.exports = class Curiosity extends Command {
         color: "#5A2017",
         image: {
           url:
-            "https://mars.nasa.gov/system/content_pages/main_images/379_msl20110519_PIA14156.jpg",
+            "https://mars.nasa.gov/system/resources/detail_files/3504_msl20110519_PIA14156-full2.jpg",
         },
         footer: {
           text: "Credit: NASA/JPL-Caltech",
