@@ -10,6 +10,12 @@ module.exports = class NAME extends Command {
       memberName: "mariner",
       description: "Find Information on the Mariner 3-9 missions",
       examples: [`${config.prefix}mariner`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

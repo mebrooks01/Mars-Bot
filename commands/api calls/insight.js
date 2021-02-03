@@ -18,6 +18,12 @@ module.exports = class Insight extends Command {
         `${config.prefix}insight`,
         `${config.prefix}insight <'info' | 'weather'>`,
       ],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

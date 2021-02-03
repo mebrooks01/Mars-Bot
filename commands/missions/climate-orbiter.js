@@ -13,6 +13,12 @@ module.exports = class ClimateOrbiter extends Command {
         `${config.prefix}climateorbiter`,
         `${config.prefix}climate-orbiter`,
       ],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

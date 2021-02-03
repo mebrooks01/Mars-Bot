@@ -10,6 +10,12 @@ module.exports = class ExoMars extends Command {
       memberName: "exomars",
       description: "Find Information on the exo mars mission",
       examples: [`${config.prefix}exomars`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

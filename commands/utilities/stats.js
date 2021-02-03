@@ -12,6 +12,12 @@ module.exports = class Stats extends Command {
       memberName: "stats",
       description: "Find Information about the Red Planet",
       examples: [`${config.prefix}`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       hidden: true,

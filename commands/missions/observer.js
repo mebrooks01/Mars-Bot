@@ -10,6 +10,12 @@ module.exports = class Observer extends Command {
       memberName: "observer",
       description: "Find Information on the Observer mission",
       examples: [`${config.prefix}observer`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

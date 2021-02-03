@@ -11,6 +11,12 @@ module.exports = class MRO extends Command {
       description:
         "Find Information on the Mars Reconnaissance Orbiter (MRO) mission",
       examples: [`${config.prefix}mro`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

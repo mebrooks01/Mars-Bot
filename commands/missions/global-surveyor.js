@@ -10,6 +10,12 @@ module.exports = class globalsurveyor extends Command {
       memberName: "global-surveyor",
       description: "Find Information on the global surveyor mission",
       examples: [`${config.prefix}global-surveyor`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

@@ -10,6 +10,12 @@ module.exports = class NAME extends Command {
       memberName: "viking",
       description: "Find Information on the Viking 1 & 2 missions",
       examples: [`${config.prefix}`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

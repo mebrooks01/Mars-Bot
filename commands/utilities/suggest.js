@@ -10,6 +10,12 @@ module.exports = class NAME extends Command {
       memberName: "suggest",
       description: "Find Information on the BLANK mission",
       examples: [`${config.prefix}suggest`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

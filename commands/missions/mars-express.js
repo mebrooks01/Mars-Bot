@@ -10,6 +10,12 @@ module.exports = class MarsExpress extends Command {
       memberName: "mars-express",
       description: "Find Information on the mars express mission",
       examples: [`${config.prefix}mars-express`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

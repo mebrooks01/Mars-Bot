@@ -10,6 +10,12 @@ module.exports = class Support extends Command {
       memberName: "support",
       description: "Get Help",
       examples: [`${config.prefix}support`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

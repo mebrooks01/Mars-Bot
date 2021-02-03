@@ -8,6 +8,12 @@ module.exports = class Test extends Command {
       memberName: "testing",
       description: "A Command used for testing the bot",
       examples: ["=test"],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: true,
       throttling: {

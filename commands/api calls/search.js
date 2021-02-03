@@ -11,6 +11,12 @@ module.exports = class Search extends Command {
       memberName: "search",
       description: "Look for an image in the NASA image library.",
       examples: [`${config.prefix}search <search term>`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

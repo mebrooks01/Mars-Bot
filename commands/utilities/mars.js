@@ -10,6 +10,12 @@ module.exports = class Mars extends Command {
       memberName: "mars",
       description: "Find Information about the Red Planet",
       examples: [`${config.prefix}`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

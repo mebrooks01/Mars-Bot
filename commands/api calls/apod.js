@@ -14,6 +14,12 @@ module.exports = class APOD extends Command {
       description:
         'Every day NASA publishes an "Astronomy Picture of the Day" use this command to see today',
       examples: [`${config.prefix}apod`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

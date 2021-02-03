@@ -15,6 +15,12 @@ module.exports = class Opportunity extends Command {
         `${config.prefix}opportunity`,
         `${config.prefix}opportunity <'info' | 'image'> <sol> <page number>`,
       ],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

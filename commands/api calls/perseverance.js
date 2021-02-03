@@ -15,6 +15,12 @@ module.exports = class Perseverance extends Command {
         `${config.prefix}perseverance`,
         `${config.prefix}perseverance <'info' | 'image'> <sol> <page number>`,
       ],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

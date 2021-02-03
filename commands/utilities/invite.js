@@ -10,6 +10,12 @@ module.exports = class Invite extends Command {
       memberName: "invite",
       description: "Invite me to your server",
       examples: [`${config.prefix}invite`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

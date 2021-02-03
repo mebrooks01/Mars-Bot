@@ -10,6 +10,12 @@ module.exports = class Explore extends Command {
       memberName: "explore",
       description: "Look at all the missions to mars and where they are",
       examples: [`${config.prefix}explore`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

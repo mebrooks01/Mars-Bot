@@ -11,6 +11,12 @@ module.exports = class NAME extends Command {
       description:
         "Find Information on the Mars Polar Lander/Deep Space 2 mission",
       examples: [`${config.prefix}`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {

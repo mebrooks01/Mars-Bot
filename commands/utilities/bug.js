@@ -10,6 +10,12 @@ module.exports = class Bug extends Command {
       memberName: "bug",
       description: "Report any and all bugs here",
       examples: [`${config.prefix}bug`],
+      clientPermissions: [
+        "SEND_MESSAGES",
+        "EMBED_LINKS",
+        "ATTACH_FILES",
+        "READ_MESSAGE_HISTORY",
+      ],
       guildOnly: false,
       ownerOnly: false,
       throttling: {
