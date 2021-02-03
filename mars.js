@@ -4,6 +4,7 @@ const config = require("./config.json");
 const axios = require("axios");
 const moment = require("moment");
 const schedule = require("node-schedule");
+const prettyMilliseconds = require("pretty-ms");
 const token = config.token;
 const api_key = config.api_key;
 const prefix = config.prefix;
@@ -44,7 +45,7 @@ client.once("ready", () => {
     });
 
   const rule = new schedule.RecurrenceRule();
-  (rule.hour = 12), (rule.tz = "Etc/UTC");
+  (rule.hour = 12), (rule.minute = 00), (rule.tz = "Etc/UTC");
 
   const job = schedule.scheduleJob(rule, function () {
     let date = moment().utcOffset(-12).format("YYYY-M-D");

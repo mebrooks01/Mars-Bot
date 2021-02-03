@@ -1,6 +1,8 @@
 const { Command } = require("discord.js-commando");
 const moment = require("moment");
 const config = require("./../../config.json");
+const prettyMilliseconds = require("pretty-ms");
+
 module.exports = class Stats extends Command {
   constructor(client) {
     super(client, {
@@ -21,9 +23,16 @@ module.exports = class Stats extends Command {
   }
   run(message) {
     message.embed({
-      title: "Mars Bot Stats",
+      title: "Mars Bot's Statistics",
       url: "",
-      description: `I am on ${this.client.guilds.cache.size} servers.\n`,
+      description:
+        "**Client Info**\n```asciidoc\n" +
+        `Servers   :: ${
+          this.client.guilds.cache.size
+        }\nWS Ping   :: ${Math.round(
+          this.client.ws.ping
+        )}ms\nUptime    :: ${prettyMilliseconds(this.client.uptime)}` +
+        "```",
       color: "#5A2017",
       thumbnail: {
         url:

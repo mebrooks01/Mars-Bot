@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "commando": "0.0.2",
+    "commando-provider-mongo": "^2.0.2",
     "cron": "^1.8.2",
     "discord-blackhole.logger": "^1.1.6",
     "discord.js": "^12.3.1",
@@ -16,10 +17,12 @@
     "mkdirp-sync": "0.0.3",
     "module-alias": "^2.2.2",
     "moment": "^2.29.1",
+    "mongodb": "^3.6.4",
     "new": "^0.1.1",
     "node-fetch": "^2.6.1",
     "node-schedule": "^2.0.0",
     "path": "^0.12.7",
+    "pretty-ms": "^7.0.1",
     "typi": "^3.2.0"
   },
   "devDependencies": {
