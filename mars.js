@@ -4,6 +4,10 @@ const config = require("./config.json");
 const axios = require("axios");
 const moment = require("moment");
 const schedule = require("node-schedule");
+const sqlite = require("sqlite");
+const { CommandoClient } = require("discord.js-commando");
+const mysql = require("mysql2/promise");
+const mysqlProvider = require("commando-provider-mysql");
 const prettyMilliseconds = require("pretty-ms");
 const token = config.token;
 const api_key = config.api_key;
@@ -18,6 +22,20 @@ const client = new Commando.CommandoClient({
   unknownCommandResponse: false,
 });
 client.config = config;
+
+mysql
+  .createConnection({
+    host: config.mysql.host,
+    user: config.mysql.user,
+    password: config.mysql.pwd,
+    database: config.mysql.db,
+  })
+  .then((db) => {
+    client.setProvider(new mysqlProvider(db));
+    console.log(
+      `Successfully successfully to mysql\nDB Host: ${config.mysql.host}\nDB User: ${config.mysql.user}\nDB Name: ${config.mysql.db}`
+    );
+  });
 
 client.registry
   .registerDefaultTypes()
@@ -34,7 +52,6 @@ client.once("ready", () => {
   let now = Date();
   console.log(`Logged in as ${client.user.tag} at ${now}`);
   client.user.setActivity(`${prefix}Help for help.`, { type: "WATCHING" });
-  console.log(client.config);
   axios
     .get(`https://api.nasa.gov/planetary/apod?api_key=${api_key}`)
     .then((res) => {

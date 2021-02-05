@@ -3,8 +3,14 @@
   "api_key": "",
   "prefix": "=",
   "invite": "",
+  "mysql": {
+    "host": "",
+    "user": "",
+    "pwd": "",
+    "db": ""
+  },
   "user_id": {
-    "owner": ""
+    "owner": [""]
   },
   "server_id": {
     "main_server": ""

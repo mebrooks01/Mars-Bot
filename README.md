@@ -79,7 +79,7 @@ You will need to rename `config-example.json` to `config.json` and fill in all t
 - prefix: The prefix the bot uses.
 - invite: The invite to your Discord server.
 - user_id
-  - owner: The user ID of the bot application owner.
+  - owner: The user ID of the bot application owner(can have multiple in an array).
 - server_id
   - main_server: The guild ID of the main server the bot is on.
 - channel_id
