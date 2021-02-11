@@ -33,9 +33,6 @@ module.exports = class globalsurveyor extends Command {
         "Launched on November 7, 1996\nLaunched from Cape Canaveral Air Force Station, Florida\nOrbit Insertion September 12, 1997\nMission Complete, ended on November 14, 2006\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-global-surveyor/",
       color: this.client.config.embed_color,
       timestamp: new Date(),
-      thumbnail: {
-        url: this.client.config.pfp,
-      },
       image: {
         url:
           "https://mars.nasa.gov/system/content_pages/main_images/376_marsglobalsurveyor.jpg",

@@ -32,9 +32,6 @@ module.exports = class NAME extends Command {
         "Launched Between November 28, 1964 and May 30, 1971\nLaunched from Cape Canaveral Air Force Station, Florida\nMissions complete between, December 21, 1967 and October 27, 1972\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mariner-3-4/\nhttps://mars.nasa.gov/mars-exploration/missions/mariner-6-7/\nhttps://mars.nasa.gov/mars-exploration/missions/mariner-8-9/",
       color: this.client.config.embed_color,
       timestamp: new Date(),
-      thumbnail: {
-        url: this.client.config.pfp,
-      },
       image: {
         url:
           "https://mars.nasa.gov/system/content_pages/main_images/373_mariner9.jpg",

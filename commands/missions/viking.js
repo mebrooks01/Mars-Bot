@@ -36,9 +36,6 @@ module.exports = class NAME extends Command {
       },
       color: this.client.config.embed_color,
       timestamp: new Date(),
-      thumbnail: {
-        url: this.client.config.pfp,
-      },
       footer: {
         text: "Photo Credit: NASA/JPL-Caltech",
         icon_url: "",

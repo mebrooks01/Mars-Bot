@@ -50,9 +50,6 @@ module.exports = class Insight extends Command {
           "Launched on May 5, 2018\nLaunched from Vandenberg Air Force Base, California\nLanded on November 26, 2018\nLanded at Elysium Planitia, Mars\nMission Ongoing\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/insight/",
         color: this.client.config.embed_color,
         timestamp: new Date(),
-        thumbnail: {
-          url: this.client.config.pfp,
-        },
         image: {
           url:
             "https://mars.nasa.gov/system/resources/detail_files/22116_PIA22743-16x9.jpg",
@@ -149,9 +146,6 @@ module.exports = class Insight extends Command {
               ],
               color: this.client.config.embed_color,
               timestamp: new Date(),
-              thumbnail: {
-                url: this.client.config.pfp,
-              },
               image: {
                 url: "",
               },

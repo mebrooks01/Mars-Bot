@@ -33,9 +33,6 @@ module.exports = class Maven extends Command {
         "Launched on November 18, 2013\nLaunched from Cape Canaveral Air Force Station, Florida\nOrbit insertion on September 22, 2014\nMission ongoing\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/maven/",
       color: this.client.config.embed_color,
       timestamp: new Date(),
-      thumbnail: {
-        url: this.client.config.pfp,
-      },
       image: {
         url:
           "https://mars.nasa.gov/system/content_pages/main_images/378_maven.jpg",

@@ -32,9 +32,6 @@ module.exports = class NAME extends Command {
         "Launched  on August 4, 2007\nLaunched From Cape Canaveral Air Force Station, Florida\nLanded on May 25, 2008\nLanded at Vastitas Borealis, the arctic plains of Mars\nMission Complete, ended on November 2, 2008\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/phoenix/",
       color: this.client.config.embed_color,
       timestamp: new Date(),
-      thumbnail: {
-        url: this.client.config.pfp,
-      },
       image: {
         url:
           "https://mars.nasa.gov/system/content_pages/main_images/383_phoenix-lander.jpg",

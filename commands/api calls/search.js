@@ -57,9 +57,6 @@ module.exports = class Search extends Command {
               .split(/ +/)}\n${data.description}`,
             color: this.client.config.embed_color,
             timestamp: new Date(),
-            thumbnail: {
-              url: this.client.config.pfp,
-            },
             image: {
               url: img,
             },
