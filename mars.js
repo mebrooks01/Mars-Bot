@@ -9,11 +9,19 @@ const { CommandoClient } = require("discord.js-commando");
 const mysql = require("mysql2/promise");
 const mysqlProvider = require("commando-provider-mysql");
 const prettyMilliseconds = require("pretty-ms");
+const chalk = require("chalk");
+const error_log = chalk.red;
+const warning_log = chalk.yellow;
+const success_log = chalk.green;
 const token = config.token;
 const api_key = config.api_key;
 const prefix = config.prefix;
 const invite = config.invite;
 const owner_id = config.user_id.owner;
+const host = config.mysql.host;
+const user = config.mysql.user;
+const pwd = config.mysql.pwd;
+const database = config.mysql.db;
 
 const client = new Commando.CommandoClient({
   commandPrefix: prefix,
@@ -25,15 +33,16 @@ client.config = config;
 
 mysql
   .createConnection({
-    host: config.mysql.host,
-    user: config.mysql.user,
-    password: config.mysql.pwd,
-    database: config.mysql.db,
+    host: host,
+    user: user,
+    password: pwd,
+    database: database,
   })
   .then((db) => {
     client.setProvider(new mysqlProvider(db));
+    console.log(success_log(`Successfully successfully to mysql`));
     console.log(
-      `Successfully successfully to mysql\nDB User: ${config.mysql.user}\nDB Name: ${config.mysql.db}`
+      chalk.bold(`Username: `) + user + chalk.bold(`\nDB Name: `) + database
     );
   });
 
@@ -55,7 +64,8 @@ client.once("ready", () => {
   axios
     .get(`https://api.nasa.gov/planetary/apod?api_key=${api_key}`)
     .then((res) => {
-      console.log(res.headers);
+      if (res.headers) {
+      } else console.log();
     })
     .catch(function (error) {
       console.log(error);

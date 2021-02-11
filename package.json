@@ -8,24 +8,15 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
-    "commando": "0.0.2",
-    "commando-provider-mongo": "^2.0.2",
+    "chalk": "^4.1.0",
     "commando-provider-mysql": "^1.0.1",
-    "cron": "^1.8.2",
-    "discord-blackhole.logger": "^1.1.6",
-    "discord.js": "^12.3.1",
+    "discord.js": "^12.5.1",
     "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
-    "mkdirp-sync": "0.0.3",
-    "module-alias": "^2.2.2",
     "moment": "^2.29.1",
-    "mongodb": "^3.6.4",
-    "new": "^0.1.1",
-    "node-fetch": "^2.6.1",
     "node-schedule": "^2.0.0",
     "path": "^0.12.7",
     "pretty-ms": "^7.0.1",
-    "sqlite": "^4.0.19",
-    "typi": "^3.2.0"
+    "sqlite": "^4.0.19"
   },
   "devDependencies": {
     "prettier": "2.1.2"
