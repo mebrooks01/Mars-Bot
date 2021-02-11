@@ -31,7 +31,11 @@ module.exports = class ExoMars extends Command {
         "https://mars.nasa.gov/mars-exploration/missions/esa-exomars-2016-tgo/",
       description:
         "Launched on March 14, 2016\nLaunched from Baikonur Cosmodrome, Russia\n**Trance Gas Orbiter**\nOrbit Insertion on October 19, 2016\nMission Ongoing\n**Schiaparelli Landing Demo**\nReleased from orbiter on October 16, 2016\nMission Failed, lost on descent\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/esa-exomars-2016-tgo/",
-      color: "#5A2017",
+      color: this.client.config.embed_color,
+      timestamp: new Date(),
+      thumbnail: {
+        url: this.client.config.pfp,
+      },
       image: {
         url:
           "https://mars.nasa.gov/system/content_pages/main_images/367_esa-exomars-2016-tgo.jpg",

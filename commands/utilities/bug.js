@@ -29,10 +29,10 @@ module.exports = class Bug extends Command {
       title: "Bugs?",
       url: "https://github.com/mebrooks01/Mars-Bot/issues",
       description: `If you found a bug in Mars Bot please report it on the Git hub repository\nhttps://github.com/mebrooks01/Mars-Bot/issues\nOr join our server and talk to us about it\n${invite}`,
-      color: "#5A2017",
+      color: this.client.config.embed_color,
+      timestamp: new Date(),
       thumbnail: {
-        url:
-          "https://mars.nasa.gov/system/resources/detail_files/25058_PIA23900-web.jpg",
+        url: this.client.config.pfp,
       },
       footer: {
         text: "Photo Credit: NASA/JPL-Caltech",

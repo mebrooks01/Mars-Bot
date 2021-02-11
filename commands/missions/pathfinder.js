@@ -30,7 +30,11 @@ module.exports = class NAME extends Command {
       url: "https://mars.nasa.gov/mars-exploration/missions/pathfinder/",
       description:
         "Launched on December 4, 1996.\nLaunched from Cape Canaveral Air Force Station, Florida.\nLanded on July 4, 1997.\nLanded at Ares Vallis, Mars\nMission Complete, ended on September 27, 1997.\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/pathfinder/",
-      color: "#5A2017",
+      color: this.client.config.embed_color,
+      timestamp: new Date(),
+      thumbnail: {
+        url: this.client.config.pfp,
+      },
       image: {
         url:
           "https://mars.nasa.gov/system/content_pages/main_images/384_pathfinder.jpg",

@@ -33,7 +33,7 @@ mysql
   .then((db) => {
     client.setProvider(new mysqlProvider(db));
     console.log(
-      `Successfully successfully to mysql\nDB Host: ${config.mysql.host}\nDB User: ${config.mysql.user}\nDB Name: ${config.mysql.db}`
+      `Successfully successfully to mysql\nDB User: ${config.mysql.user}\nDB Name: ${config.mysql.db}`
     );
   });
 
@@ -87,6 +87,34 @@ client.once("ready", () => {
         console.log(error.stack);
       });
   });
+});
+
+client.on("guildCreate", (guild) => {
+  console.log("added to server");
+  const channel = guild.channels.cache.find(
+    (channel) =>
+      channel.type === "text" &&
+      channel.permissionsFor(guild.me).has("SEND_MESSAGES")
+  );
+  channel.send({
+    embed: {
+      title: "Thank You for adding Mars Bot",
+      url: "https://github.com/mebrooks01/Mars-Bot/blob/main/README.md",
+      description: `Thank you for adding Mars Bot to your server. For more information use ${prefix}help or check out my github. https://github.com/mebrooks01/Mars-Bot/blob/main/README.md`,
+      color: "#5A2017",
+      thumbnail: {
+        url:
+          "https://mars.nasa.gov/system/resources/detail_files/25058_PIA23900-web.jpg",
+      },
+      footer: {
+        text: "Photo Credit: NASA/JPL-Caltech",
+        icon_url: "",
+      },
+    },
+  });
+});
+client.on("guildDelete", (guild) => {
+  console.log("removed");
 });
 client.on("error", console.error);
 client.login(token);

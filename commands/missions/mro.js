@@ -32,7 +32,11 @@ module.exports = class MRO extends Command {
         "https://mars.nasa.gov/mars-exploration/missions/mars-reconnaissance-orbiter/",
       description:
         "Launched on August 12, 2005\nLaunched from Cape Canaveral Air Force Station, Florida\nOrbit insertion on March 10, 2006\nMission ongoing\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-reconnaissance-orbiter/",
-      color: "#5A2017",
+      color: this.client.config.embed_color,
+      timestamp: new Date(),
+      thumbnail: {
+        url: this.client.config.pfp,
+      },
       image: {
         url:
           "https://mars.nasa.gov/system/content_pages/main_images/366_mro20100917_PIA05490_modest.jpg",

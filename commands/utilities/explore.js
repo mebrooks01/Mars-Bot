@@ -30,10 +30,14 @@ module.exports = class Explore extends Command {
       url: "https://mars.nasa.gov/explore/mars-now/",
       description:
         "You can see where all the missions are here\nhttps://mars.nasa.gov/explore/mars-now/",
-      color: "#5A2017",
       image: {
         url:
           "https://mars.nasa.gov/system/resources/detail_files/7929_Viking_76-full2.jpg",
+      },
+      color: this.client.config.embed_color,
+      timestamp: new Date(),
+      thumbnail: {
+        url: this.client.config.pfp,
       },
       footer: {
         text: "Photo Credit: NASA/JPL-Caltech",

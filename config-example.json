@@ -3,6 +3,8 @@
   "api_key": "",
   "prefix": "=",
   "invite": "",
+  "embed_color": "",
+  "pfp": "",
   "mysql": {
     "host": "",
     "user": "",

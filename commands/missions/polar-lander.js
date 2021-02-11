@@ -31,7 +31,11 @@ module.exports = class NAME extends Command {
       url: "https://mars.nasa.gov/mars-exploration/missions/polar-lander/",
       description:
         "Launched on January 3, 1999\nLaunched from Cape Canaveral Air Force Station, Florida\nMission Failed, lost on arrival(December 3, 1999)\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/polar-lander/",
-      color: "#5A2017",
+      color: this.client.config.embed_color,
+      timestamp: new Date(),
+      thumbnail: {
+        url: this.client.config.pfp,
+      },
       image: {
         url:
           "https://mars.nasa.gov/system/content_pages/main_images/381_mpl_shadow.jpg",

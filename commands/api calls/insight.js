@@ -48,7 +48,11 @@ module.exports = class Insight extends Command {
         url: "https://mars.nasa.gov/mars-exploration/missions/insight/",
         description:
           "Launched on May 5, 2018\nLaunched from Vandenberg Air Force Base, California\nLanded on November 26, 2018\nLanded at Elysium Planitia, Mars\nMission Ongoing\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/insight/",
-        color: "#5A2017",
+        color: this.client.config.embed_color,
+        timestamp: new Date(),
+        thumbnail: {
+          url: this.client.config.pfp,
+        },
         image: {
           url:
             "https://mars.nasa.gov/system/resources/detail_files/22116_PIA22743-16x9.jpg",
@@ -143,7 +147,11 @@ module.exports = class Insight extends Command {
                   value: `__**Temperature  Info**__\nAverage: ${sol2_av_temp}\nMax: ${sol2_mx_temp}\nMin: ${sol2_mn_temp}\n__**Wind Speed Info**__\nAverage: ${sol2_av_wind}\nMax: ${sol2_mx_wind}\nMin: ${sol2_mn_wind}\n__**Air Pressure Info**__\nAverage: ${sol2_av_pr}\nMax: ${sol2_mx_pr}\nMin: ${sol2_mn_pr}\n**Season:** ${sol2_data.Season}`,
                 },
               ],
-              color: "#5A2017",
+              color: this.client.config.embed_color,
+              timestamp: new Date(),
+              thumbnail: {
+                url: this.client.config.pfp,
+              },
               image: {
                 url: "",
               },

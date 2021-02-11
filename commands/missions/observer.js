@@ -30,7 +30,11 @@ module.exports = class Observer extends Command {
       url: "https://mars.nasa.gov/mars-exploration/missions/mars-observer/",
       description:
         "Launched on September 25, 1992\nlaunched from Cape Canaveral Air Force Station, Florida\nMission Failed, Communication lost prior to orbit insertion\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-observer/",
-      color: "#5A2017",
+      color: this.client.config.embed_color,
+      timestamp: new Date(),
+      thumbnail: {
+        url: this.client.config.pfp,
+      },
       image: {
         url:
           "https://mars.nasa.gov/system/content_pages/main_images/377_mars_observer.jpg",

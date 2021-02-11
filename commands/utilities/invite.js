@@ -31,10 +31,10 @@ module.exports = class Invite extends Command {
         "https://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945",
       description:
         "Invite me to your discord using the following link.\nhttps://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945",
-      color: "#5A2017",
+      color: this.client.config.embed_color,
+      timestamp: new Date(),
       thumbnail: {
-        url:
-          "https://mars.nasa.gov/system/resources/detail_files/25058_PIA23900-web.jpg",
+        url: this.client.config.pfp,
       },
       footer: {
         text: "Photo Credit: NASA/JPL-Caltech",

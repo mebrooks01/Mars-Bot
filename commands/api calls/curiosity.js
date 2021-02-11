@@ -60,7 +60,11 @@ module.exports = class Curiosity extends Command {
           "https://mars.nasa.gov/mars-exploration/missions/mars-science-laboratory",
         description:
           "**API data available for this mission** Do `=curiosity image <sol> <page number>`\nLaunched on November 26, 2011\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on August 6, 2012\nLanded at Gale Crater, Mars\nMission Ongoing\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-science-laboratory/",
-        color: "#5A2017",
+        color: this.client.config.embed_color,
+        timestamp: new Date(),
+        thumbnail: {
+          url: this.client.config.pfp,
+        },
         image: {
           url:
             "https://mars.nasa.gov/system/resources/detail_files/3504_msl20110519_PIA14156-full2.jpg",
@@ -97,7 +101,11 @@ module.exports = class Curiosity extends Command {
                 title: "Photo from " + rover.name + "'s from " + cam.full_name,
                 url: img,
                 description: `**Rover Name:** ${rover.name}\n**Mission Status:** ${rover.status}\n**Sol:** ${data.sol}\n**Date:** ${data.earth_date}\n**Camera Name:** ${cam.full_name} (${cam.name})\n**Photo ID:** ${data.id}`,
-                color: "#5A2017",
+                color: this.client.config.embed_color,
+                timestamp: new Date(),
+                thumbnail: {
+                  url: this.client.config.pfp,
+                },
                 image: {
                   url: img,
                 },

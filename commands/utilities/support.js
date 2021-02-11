@@ -28,10 +28,10 @@ module.exports = class Support extends Command {
     message.embed({
       title: "Support?",
       description: `Join the community discord for advanced support with the bot and get a sneak peak into the development of this bot.\n${config.invite}`,
-      color: "#5A2017",
+      color: this.client.config.embed_color,
+      timestamp: new Date(),
       thumbnail: {
-        url:
-          "https://mars.nasa.gov/system/resources/detail_files/25058_PIA23900-web.jpg",
+        url: this.client.config.pfp,
       },
       footer: {
         text: "Photo Credit: NASA/JPL-Caltech",

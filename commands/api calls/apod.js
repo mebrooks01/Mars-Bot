@@ -40,7 +40,11 @@ module.exports = class APOD extends Command {
           title: res.data.title,
           url: res.data.url,
           description: res.data.explanation,
-          color: "#5A2017",
+          color: this.client.config.embed_color,
+          timestamp: new Date(),
+          thumbnail: {
+            url: this.client.config.pfp,
+          },
           image: {
             url: res.data.url,
           },

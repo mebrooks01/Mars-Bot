@@ -55,7 +55,11 @@ module.exports = class Search extends Command {
             description: `**Taken on:** ${data.date_created
               .slice(0, 10)
               .split(/ +/)}\n${data.description}`,
-            color: "#5A2017",
+            color: this.client.config.embed_color,
+            timestamp: new Date(),
+            thumbnail: {
+              url: this.client.config.pfp,
+            },
             image: {
               url: img,
             },
