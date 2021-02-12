@@ -1,3 +1,3 @@
 module.exports = {
-  execute() {},
+  execute(info, res) {},
 };
