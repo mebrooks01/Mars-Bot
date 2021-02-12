@@ -1,6 +1,6 @@
 const { Command } = require("discord.js-commando");
 const moment = require("moment");
-const config = require("../../config.json");
+const config = require("./../../config.json");
 module.exports = class Invite extends Command {
   constructor(client) {
     super(client, {

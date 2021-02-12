@@ -18,9 +18,6 @@ const client = new Commando.CommandoClient({
   unknownCommandResponse: false,
 });
 client.config = config;
-db_connect = false;
-login = false;
-res = {};
 client.registry
   .registerDefaultTypes()
   .registerGroups([
@@ -29,7 +26,9 @@ client.registry
     ["utilities", "Other useful commands"],
   ])
   .registerDefaultGroups()
-  .registerDefaultCommands({ unknownCommand: false })
+  .registerDefaultCommands({
+    unknownCommand: false,
+  })
   .registerCommandsIn(path.join(__dirname, "commands"));
 
 mysql
@@ -59,7 +58,6 @@ client.once("ready", () => {
   client.user.setActivity(`${config.prefix}Help for help.`, {
     type: "WATCHING",
   });
-  login = true;
   axios
     .get(`https://api.nasa.gov/planetary/apod?api_key=${config.api_key}`)
     .then((res) => {
@@ -72,14 +70,12 @@ client.once("ready", () => {
   if (client.config.dpod == true) {
     dpod.execute();
   }
-  if (db_connect !== true) db_connect = false;
-  if (login !== true) login = false;
   let info = {
     tag: client.user.tag,
     id: client.user.id,
     server: client.guilds.cache.size,
   };
-  load.execute(info, res);
+  load.execute(info);
 });
 client.on("error", console.error);
 client.login(config.token);

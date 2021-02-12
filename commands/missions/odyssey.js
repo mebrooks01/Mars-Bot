@@ -1,5 +1,4 @@
 const { Command } = require("discord.js-commando");
-const moment = require("moment");
 const config = require("./../../config.json");
 module.exports = class Odyssey extends Command {
   constructor(client) {

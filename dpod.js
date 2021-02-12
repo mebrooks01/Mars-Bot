@@ -1,11 +1,11 @@
 const axios = require("axios");
 const schedule = require("node-schedule");
 const moment = require("moment");
+const config = require("./config.json");
 module.exports = {
   execute() {
     const rule = new schedule.RecurrenceRule();
     (rule.hour = 12), (rule.minute = 00), (rule.tz = "Etc/UTC");
-
     const job = schedule.scheduleJob(rule, function () {
       let date = moment().utcOffset(-12).format("YYYY-M-D");
       axios

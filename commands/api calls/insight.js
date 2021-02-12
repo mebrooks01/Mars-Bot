@@ -2,7 +2,6 @@ const { Command } = require("discord.js-commando");
 const { RichEmbed } = require("discord.js");
 
 const axios = require("axios");
-const moment = require("moment");
 const config = require("./../../config.json");
 const api_key = config.api_key;
 const invite = config.invite;

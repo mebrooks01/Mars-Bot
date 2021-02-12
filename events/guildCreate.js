@@ -5,6 +5,8 @@ module.exports = async (client, guild) => {
       channel.type === "text" &&
       channel.permissionsFor(guild.me).has("SEND_MESSAGES")
   );
+
+  //
   channel.send({
     embed: {
       title: "Thank You for adding Mars Bot",

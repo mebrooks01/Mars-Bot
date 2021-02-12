@@ -1,7 +1,7 @@
 const chalk = require("chalk");
 const config = require("./config.json");
 module.exports = {
-  execute(info, res) {
+  execute(info) {
     console.log(
       chalk.bold.blue(`----------------------------------------------------`)
     );
