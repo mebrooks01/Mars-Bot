@@ -7,7 +7,8 @@ Mars Bot uses NASA's API and other sources to give you plenty of cool informatio
 
 ## Contributions
 
-Written By: [Mebrooks01#3354](https://github.com/mebrooks01). Help Fixing my shitty ass code By: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
+Written By: [Mebrooks01#3354](https://github.com/mebrooks01).\
+Help Fixing my shitty ass code By: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte),[XboxBedrock#6958](https://github.com/XboxBedrock) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
 
 ## Commands
 
@@ -88,7 +89,7 @@ You will need to rename `config-example.json` to `config.json` and fill in all t
 # Credits
 
 Code Written By: [Mebrooks01#3354](https://github.com/mebrooks01).\
-Anti shitty-ass code: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
+Anti shitty-ass code: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte),[XboxBedrock#6958](https://github.com/XboxBedrock) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
 
 API calls use [NASA's API](https://api.nasa.gov/) to pull data. The part of the API I use is maintained by [Chris Cerami](https://github.com/chrisccerami/mars-photo-api).
 

@@ -18,6 +18,9 @@ const client = new Commando.CommandoClient({
   unknownCommandResponse: false,
 });
 client.config = config;
+db_connect = false;
+login = false;
+res = {};
 client.registry
   .registerDefaultTypes()
   .registerGroups([
@@ -38,46 +41,45 @@ mysql
   })
   .then((db) => {
     client.setProvider(new mysqlProvider(db));
-    db_connect = true;
+    console.log(chalk.green(`Database Connected Successfully`));
   });
 
 fs.readdir("./events/", (err, files) => {
-  if (error) return console.log(chalk.red(error));
+  if (err) return console.error(err);
   files.forEach((file) => {
     if (!file.endsWith(".js")) return;
-    let properties = require(`./functions/${file}`);
+    let properties = require(`./events/${file}`);
     let functionName = file.split(".")[0];
+    client.functions = {};
     client.functions[functionName] = properties;
   });
 });
 
 client.once("ready", () => {
-  client.user.setActivity(
-    `${config.prefix}Help for help. And ${this.client.guilds.cache.size}`,
-    {
-      type: "WATCHING",
-    }
-  );
+  client.user.setActivity(`${config.prefix}Help for help.`, {
+    type: "WATCHING",
+  });
   login = true;
   axios
     .get(`https://api.nasa.gov/planetary/apod?api_key=${config.api_key}`)
     .then((res) => {
-      api = true;
-      var res = res;
+      console.log(chalk.green(`NASA API Connected Successfully`));
     })
     .catch(function (error) {
-      console.log(chalk.red(error));
-      api = false;
+      console.log(chalk.yellow(error));
     });
 
   if (client.config.dpod == true) {
     dpod.execute();
   }
+  if (db_connect !== true) db_connect = false;
+  if (login !== true) login = false;
+  let info = {
+    tag: client.user.tag,
+    id: client.user.id,
+    server: client.guilds.cache.size,
+  };
+  load.execute(info, res);
 });
-if (db_connect !== true) db_connect = false;
-if (login !== true) login = false;
-if (api !== true) api = false;
-let info = { db: db_connect, login: login, api: api };
-load.execute(info, res);
 client.on("error", console.error);
 client.login(config.token);
