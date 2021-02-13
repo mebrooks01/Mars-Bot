@@ -1,6 +1,6 @@
 const { Command } = require("discord.js-commando");
 const moment = require("moment");
-const config = require("./../../config.json");
+const config = require("$root/config.json");
 const prettyMilliseconds = require("pretty-ms");
 
 module.exports = class Stats extends Command {

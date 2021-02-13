@@ -1,7 +1,7 @@
 const { Command } = require("discord.js-commando");
 const axios = require("axios");
 const moment = require("moment");
-const config = require("./../../config.json");
+const config = require("$root/config.json");
 const api_key = config.api_key;
 const invite = config.invite;
 module.exports = class Curiosity extends Command {

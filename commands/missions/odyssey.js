@@ -1,5 +1,5 @@
 const { Command } = require("discord.js-commando");
-const config = require("./../../config.json");
+const config = require("$root/config.json");
 module.exports = class Odyssey extends Command {
   constructor(client) {
     super(client, {

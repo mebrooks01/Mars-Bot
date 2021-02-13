@@ -1,6 +1,6 @@
 const { Command } = require("discord.js-commando");
 const moment = require("moment");
-const config = require("./../../config.json");
+const config = require("$root/config.json");
 module.exports = class Mars extends Command {
   constructor(client) {
     super(client, {

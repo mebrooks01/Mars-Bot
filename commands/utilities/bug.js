@@ -1,5 +1,5 @@
 const { Command } = require("discord.js-commando");
-const config = require("./../../config.json");
+const config = require("$root/config.json");
 const invite = config.invite;
 module.exports = class Bug extends Command {
   constructor(client) {

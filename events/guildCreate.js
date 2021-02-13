@@ -1,4 +1,4 @@
-const config = require("./../config.json");
+const config = require("$root/config.json");
 module.exports = async (client, guild) => {
   const channel = guild.channels.cache.find(
     (channel) =>
@@ -6,7 +6,6 @@ module.exports = async (client, guild) => {
       channel.permissionsFor(guild.me).has("SEND_MESSAGES")
   );
 
-  //
   channel.send({
     embed: {
       title: "Thank You for adding Mars Bot",

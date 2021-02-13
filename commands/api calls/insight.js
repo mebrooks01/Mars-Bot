@@ -2,7 +2,7 @@ const { Command } = require("discord.js-commando");
 const { RichEmbed } = require("discord.js");
 
 const axios = require("axios");
-const config = require("./../../config.json");
+const config = require("$root/config.json");
 const api_key = config.api_key;
 const invite = config.invite;
 module.exports = class Insight extends Command {

@@ -1,5 +1,5 @@
 const chalk = require("chalk");
-const config = require("./config.json");
+const config = require("$root/config.json");
 module.exports = {
   execute(info) {
     console.log(

@@ -7,9 +7,10 @@ const moment = require("moment");
 const chalk = require("chalk");
 const fs = require("fs");
 const path = require("path");
-const config = require("./config.json");
-const load = require("./load");
-const dpod = require("./dpod");
+require("better-module-alias")(__dirname);
+const config = require("$root/config.json");
+const load = require("$util/load");
+const dpod = require("$util/dpod");
 
 const client = new Commando.CommandoClient({
   commandPrefix: config.prefix,
@@ -43,7 +44,7 @@ mysql
     console.log(chalk.green(`Database Connected Successfully`));
   });
 
-fs.readdir("./events/", (err, files) => {
+fs.readdir("./events", (err, files) => {
   if (err) return console.error(err);
   files.forEach((file) => {
     if (!file.endsWith(".js")) return;
