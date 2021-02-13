@@ -1,20 +1,20 @@
-const { Command } = require("discord.js-commando");
-const moment = require("moment");
-const config = require("$root/config.json");
+const { Command } = require('discord.js-commando')
+const moment = require('moment')
+const config = require('$root/config.json')
 module.exports = class Invite extends Command {
   constructor(client) {
     super(client, {
-      name: "invite",
-      group: "utilities",
-      aliases: ["join", "add", "invites"],
-      memberName: "invite",
-      description: "Invite me to your server",
+      name: 'invite',
+      group: 'utilities',
+      aliases: ['join', 'add', 'invites'],
+      memberName: 'invite',
+      description: 'Invite me to your server',
       examples: [`${config.prefix}invite`],
       clientPermissions: [
-        "SEND_MESSAGES",
-        "EMBED_LINKS",
-        "ATTACH_FILES",
-        "READ_MESSAGE_HISTORY",
+        'SEND_MESSAGES',
+        'EMBED_LINKS',
+        'ATTACH_FILES',
+        'READ_MESSAGE_HISTORY',
       ],
       guildOnly: false,
       ownerOnly: false,
@@ -22,24 +22,24 @@ module.exports = class Invite extends Command {
         usages: 2,
         duration: 1,
       },
-    });
+    })
   }
   run(message) {
     message.embed({
-      title: "Invite Me",
+      title: 'Invite Me',
       url:
-        "https://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945",
+        'https://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945',
       description:
-        "Invite me to your discord using the following link.\nhttps://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945",
+        'Invite me to your discord using the following link.\nhttps://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945',
       color: this.client.config.embed_color,
       timestamp: new Date(),
       thumbnail: {
         url: this.client.config.pfp,
       },
       footer: {
-        text: "Photo Credit: NASA/JPL-Caltech",
-        icon_url: "",
+        text: 'Photo Credit: NASA/JPL-Caltech',
+        icon_url: '',
       },
-    });
+    })
   }
-};
+}

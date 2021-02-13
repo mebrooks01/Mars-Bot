@@ -20,7 +20,7 @@
     "sqlite": "^4.0.19"
   },
   "devDependencies": {
-    "prettier": "^2.2.1"
+    "prettier": "2.2.1"
   },
   "_moduleAliases": {
     "$root": ".",
