@@ -1,7 +1,9 @@
 const { Command } = require('discord.js-commando')
 const axios = require('axios')
 const moment = require('moment')
+
 const config = require('$root/config.json')
+
 module.exports = class Search extends Command {
   constructor(client) {
     super(client, {
@@ -11,18 +13,8 @@ module.exports = class Search extends Command {
       memberName: 'search',
       description: 'Look for an image in the NASA image library.',
       examples: [`${config.prefix}search <search term>`],
-      clientPermissions: [
-        'SEND_MESSAGES',
-        'EMBED_LINKS',
-        'ATTACH_FILES',
-        'READ_MESSAGE_HISTORY',
-      ],
-      guildOnly: false,
-      ownerOnly: false,
-      throttling: {
-        usages: 3,
-        duration: 10,
-      },
+      clientPermissions: ['EMBED_LINKS'],
+      throttling: client.config.command_throttling.api,
       args: [
         {
           key: 'search_term',
@@ -32,9 +24,8 @@ module.exports = class Search extends Command {
       ],
     })
   }
-  run(message, { search_term }) {
-    let date = moment().utcOffset(-12).format('YYYY-M-D')
 
+  run(message, { search_term }) {
     axios
       .get('https://images-api.nasa.gov/search?q=' + search_term)
       .then((res) => {
@@ -65,8 +56,8 @@ module.exports = class Search extends Command {
       })
       .catch(function (error) {
         console.log(error.stack)
-        message.say(
-          `An error occurred while running the command: ${error}\nFor help solving this problem please join are support server: ${invite}`,
+        message.reply(
+          `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`,
         )
       })
   }

@@ -84,7 +84,7 @@ module.exports = class Curiosity extends Command {
         })
         .catch(function (error) {
           console.log(error.stack)
-          message.say(
+          message.reply(
             `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`,
           )
         })

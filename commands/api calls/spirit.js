@@ -1,7 +1,9 @@
 const { Command } = require('discord.js-commando')
 const axios = require('axios')
 const moment = require('moment')
+
 const config = require('$root/config.json')
+
 module.exports = class NAME extends Command {
   constructor(client) {
     super(client, {
@@ -14,18 +16,8 @@ module.exports = class NAME extends Command {
         `${config.prefix}spirit`,
         `${config.prefix}spirit <'info' | 'image'> <sol> <page number>`,
       ],
-      clientPermissions: [
-        'SEND_MESSAGES',
-        'EMBED_LINKS',
-        'ATTACH_FILES',
-        'READ_MESSAGE_HISTORY',
-      ],
-      guildOnly: false,
-      ownerOnly: false,
-      throttling: {
-        usages: 2,
-        duration: 10,
-      },
+      clientPermissions: ['EMBED_LINKS'],
+      throttling: client.config.command_throttling.api,
       args: [
         {
           key: 'type',
@@ -49,6 +41,7 @@ module.exports = class NAME extends Command {
       ],
     })
   }
+
   run(message, { type, sol, page_number }) {
     if (type === 'info') {
       message.embed({
@@ -109,8 +102,8 @@ module.exports = class NAME extends Command {
           })
           .catch(function (error) {
             console.log(error.stack)
-            message.say(
-              `An error occurred while running the command: ${error}\nFor help solving this problem please join are support server: ${invite}`,
+            message.reply(
+              `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`,
             )
           })
       }

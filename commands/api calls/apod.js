@@ -43,7 +43,6 @@ module.exports = class APOD extends Command {
       })
       .catch(function (error) {
         message.reply(
-          //API error catch
           `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`,
         )
       })
