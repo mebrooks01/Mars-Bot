@@ -2,26 +2,16 @@ const { Command } = require("discord.js-commando");
 const axios = require("axios");
 const moment = require("moment");
 const config = require("$root/config.json");
-const api_key = config.api_key;
-const invite = config.invite;
 module.exports = class APOD extends Command {
   constructor(client) {
     super(client, {
       name: "apod",
-      group: "api calls",
-      aliases: ["apod"],
+      group: "API Calls",
       memberName: "apod",
       description:
-        'Every day NASA publishes an "Astronomy Picture of the Day" use this command to see today',
+        'Every day NASA publishes an "Astronomy Picture of the Day" use this command to see todays',
       examples: [`${config.prefix}apod`],
-      clientPermissions: [
-        "SEND_MESSAGES",
-        "EMBED_LINKS",
-        "ATTACH_FILES",
-        "READ_MESSAGE_HISTORY",
-      ],
-      guildOnly: false,
-      ownerOnly: false,
+      clientPermissions: ["EMBED_LINKS"],
       throttling: {
         usages: 2,
         duration: 10,
@@ -33,7 +23,7 @@ module.exports = class APOD extends Command {
 
     axios
       .get(
-        `https://api.nasa.gov/planetary/apod?date=${apod_date}&api_key=${api_key}`
+        `https://api.nasa.gov/planetary/apod?date=${apod_date}&api_key=${config.api_key}`
       )
       .then((res) => {
         message.embed({
@@ -52,9 +42,8 @@ module.exports = class APOD extends Command {
         });
       })
       .catch(function (error) {
-        console.log(error.stack);
         message.say(
-          `An error occurred while running the command: ${error}\nFor help solving this problem please join are support server: ${invite}`
+          `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`
         );
       });
   }

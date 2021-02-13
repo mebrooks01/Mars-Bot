@@ -1,15 +1,11 @@
 const { Command } = require("discord.js-commando");
 const axios = require("axios");
-const moment = require("moment");
 const config = require("$root/config.json");
-const api_key = config.api_key;
-const invite = config.invite;
 module.exports = class Curiosity extends Command {
   constructor(client) {
     super(client, {
       name: "curiosity",
-      group: "api calls",
-      aliases: ["curiosity"],
+      group: "API Calls",
       memberName: "curiosity",
       description:
         "Get info about curiosity and look up the images it has taken",
@@ -17,14 +13,7 @@ module.exports = class Curiosity extends Command {
         `${config.prefix}curiosity`,
         `${config.prefix}curiosity <'info' | 'image'> <sol> <page number>`,
       ],
-      clientPermissions: [
-        "SEND_MESSAGES",
-        "EMBED_LINKS",
-        "ATTACH_FILES",
-        "READ_MESSAGE_HISTORY",
-      ],
-      guildOnly: false,
-      ownerOnly: false,
+      clientPermissions: ["EMBED_LINKS"],
       throttling: {
         usages: 2,
         duration: 10,
@@ -53,26 +42,6 @@ module.exports = class Curiosity extends Command {
     });
   }
   run(message, { type, sol, page_number }) {
-    if (type === "info") {
-      return message.embed({
-        title: "Mars Science Laboratory Curiosity",
-        url:
-          "https://mars.nasa.gov/mars-exploration/missions/mars-science-laboratory",
-        description:
-          "**API data available for this mission** Do `=curiosity image <sol> <page number>`\nLaunched on November 26, 2011\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on August 6, 2012\nLanded at Gale Crater, Mars\nMission Ongoing\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-science-laboratory/",
-        color: this.client.config.embed_color,
-        timestamp: new Date(),
-        image: {
-          url:
-            "https://mars.nasa.gov/system/resources/detail_files/3504_msl20110519_PIA14156-full2.jpg",
-        },
-        footer: {
-          text: "Credit: NASA/JPL-Caltech",
-          icon_url: "",
-        },
-      });
-    }
-
     if (type === "image") {
       if (!sol)
         return message.reply(
@@ -85,7 +54,7 @@ module.exports = class Curiosity extends Command {
 
       axios
         .get(
-          `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&api_key=${api_key}`
+          `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&api_key=${config.api_key}`
         )
         .then((res) => {
           if (!res.data.photos[page_number - 1]) {
@@ -116,9 +85,27 @@ module.exports = class Curiosity extends Command {
         .catch(function (error) {
           console.log(error.stack);
           message.say(
-            `An error occurred while running the command: ${error}\nFor help solving this problem please join are support server: ${invite}`
+            `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`
           );
         });
+    } else {
+      message.embed({
+        title: "Mars Science Laboratory Curiosity",
+        url:
+          "https://mars.nasa.gov/mars-exploration/missions/mars-science-laboratory",
+        description:
+          "**API data available for this mission** Do `=curiosity image <sol> <page number>`\nLaunched on November 26, 2011\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on August 6, 2012\nLanded at Gale Crater, Mars\nMission Ongoing\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-science-laboratory/",
+        color: this.client.config.embed_color,
+        timestamp: new Date(),
+        image: {
+          url:
+            "https://mars.nasa.gov/system/resources/detail_files/3504_msl20110519_PIA14156-full2.jpg",
+        },
+        footer: {
+          text: "Credit: NASA/JPL-Caltech",
+          icon_url: "",
+        },
+      });
     }
   }
 };

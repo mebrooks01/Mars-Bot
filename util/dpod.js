@@ -1,7 +1,7 @@
 const axios = require("axios");
 const schedule = require("node-schedule");
 const moment = require("moment");
-const config = require("$root/config.json");
+const config = require("../commands/API Calls/node_modules/$root/config.json");
 module.exports = {
   execute() {
     const rule = new schedule.RecurrenceRule();

@@ -2,8 +2,6 @@ const Commando = require("discord.js-commando");
 const mysqlProvider = require("commando-provider-mysql");
 const mysql = require("mysql2/promise");
 const axios = require("axios");
-const schedule = require("node-schedule");
-const moment = require("moment");
 const chalk = require("chalk");
 const fs = require("fs");
 const path = require("path");
@@ -23,7 +21,10 @@ client.registry
   .registerDefaultTypes()
   .registerGroups([
     ["missions", "I have info on all of there missions"],
-    ["api calls", "I also have access to images for these"],
+    [
+      "API Calls",
+      "Mission Info on more recent missions and photos/data from these mission",
+    ],
     ["utilities", "Other useful commands"],
   ])
   .registerDefaultGroups()

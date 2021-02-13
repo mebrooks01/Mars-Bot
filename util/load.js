@@ -1,5 +1,5 @@
 const chalk = require("chalk");
-const config = require("$root/config.json");
+const config = require("../commands/API Calls/node_modules/$root/config.json");
 module.exports = {
   execute(info) {
     console.log(
