@@ -38,8 +38,11 @@ module.exports = class Curiosity extends Command {
       ],
     })
   }
+
+  //Code to run
   run(message, { type, sol, page_number }) {
     if (type === 'image') {
+      // Checks for sol and page number
       if (!sol)
         return message.reply(
           'Please choose a sol to look for\n`=curiosity image <sol> <page number>`',
@@ -49,6 +52,7 @@ module.exports = class Curiosity extends Command {
           'Please choose a page number to look for\n`=curiosity image <sol> <page number>`',
         )
 
+      //API Request
       axios
         .get(
           `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&api_key=${config.api_key}`,
@@ -86,6 +90,7 @@ module.exports = class Curiosity extends Command {
           )
         })
     } else {
+      //Send Normal mission info
       message.embed({
         title: 'Mars Science Laboratory Curiosity',
         url:

@@ -2,12 +2,17 @@ const axios = require('axios')
 const schedule = require('node-schedule')
 const moment = require('moment')
 const config = require('$root/config.json')
+
 module.exports = {
   execute() {
+    //How Often to run APOD
     const rule = new schedule.RecurrenceRule()
     ;(rule.hour = 12), (rule.minute = 00), (rule.tz = 'Etc/UTC')
+
+    //Apod Cron Function
     const job = schedule.scheduleJob(rule, function () {
       let date = moment().utcOffset(-12).format('YYYY-M-D')
+
       axios
         .get(
           `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${config.api_key}`,

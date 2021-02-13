@@ -85,6 +85,16 @@ You will need to rename `config-example.json` to `config.json` and fill in all t
   - main_server: The guild ID of the main server the bot is on.
 - channel_id
   - apod_for_main: The channel ID of the channel you want the APOD photo to be sent to each day.
+- command_throttling
+  - api
+    - usages: By default its set to 2
+    - duration: By default its set to 10
+  - missions
+    - usages: By default its set to 2
+    - duration: By default its set to 1
+  - utilities
+    - usages: By default its set to 2
+    - duration: By default its set to 1
 
 # Credits
 

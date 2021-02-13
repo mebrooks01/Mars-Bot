@@ -2,8 +2,8 @@
   "token": "",
   "api_key": "",
   "prefix": "=",
-  "invite": "",
-  "embed_color": "",
+  "invite": "https://discord.gg/yKnBYJE",
+  "embed_color": "#5A2017",
   "pfp": "",
   "mysql": {
     "host": "",
@@ -19,5 +19,19 @@
   },
   "channel_id": {
     "apod_for_main": ""
+  },
+  "command_throttling": {
+    "api": {
+      "usages": 2,
+      "duration": 10
+    },
+    "missions": {
+      "usages": 2,
+      "duration": 1
+    },
+    "utilities": {
+      "usages": 2,
+      "duration": 1
+    }
   }
 }
