@@ -1,34 +1,24 @@
 const { Command } = require('discord.js-commando')
-const { RichEmbed } = require('discord.js')
-
 const axios = require('axios')
+
 const config = require('$root/config.json')
-const api_key = config.api_key
-const invite = config.invite
+
 module.exports = class Insight extends Command {
+  //Commando Info Export
   constructor(client) {
     super(client, {
       name: 'insight',
       group: 'api calls',
-      aliases: ['insight', 'weather'],
+      aliases: ['weather'],
       memberName: 'insight',
-      description: 'Get info about insight and find weather data',
+      description:
+        'Get info about insight and find weather data it has collected',
       examples: [
         `${config.prefix}insight`,
         `${config.prefix}insight <'info' | 'weather'>`,
       ],
-      clientPermissions: [
-        'SEND_MESSAGES',
-        'EMBED_LINKS',
-        'ATTACH_FILES',
-        'READ_MESSAGE_HISTORY',
-      ],
-      guildOnly: false,
-      ownerOnly: false,
-      throttling: {
-        usages: 2,
-        duration: 10,
-      },
+      clientPermissions: ['EMBED_LINKS'],
+      throttling: client.config.command_throttling.api,
       args: [
         {
           key: 'type',
@@ -40,37 +30,22 @@ module.exports = class Insight extends Command {
       ],
     })
   }
+
+  //Code To Run
   run(message, { type }) {
-    if (type === 'info') {
-      message.embed({
-        title: 'Insight',
-        url: 'https://mars.nasa.gov/mars-exploration/missions/insight/',
-        description:
-          'Launched on May 5, 2018\nLaunched from Vandenberg Air Force Base, California\nLanded on November 26, 2018\nLanded at Elysium Planitia, Mars\nMission Ongoing\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/insight/',
-        color: this.client.config.embed_color,
-        timestamp: new Date(),
-        image: {
-          url:
-            'https://mars.nasa.gov/system/resources/detail_files/22116_PIA22743-16x9.jpg',
-        },
-        footer: {
-          text: 'Credit: NASA/JPL-Caltech',
-          icon_url: '',
-        },
-      })
-      return
-    }
     if (type === 'weather') {
       axios
         .get(
-          `https://api.nasa.gov/insight_weather/?api_key=${api_key}&feedtype=json`,
+          `https://api.nasa.gov/insight_weather/?api_key=${config.api_key}&feedtype=json`,
         )
         .then((res) => {
           let sol_keys = res.data.sol_keys
           let array_length = res.data.sol_keys.length
+
           //sol 1 data checks
           let sol1 = sol_keys[array_length - 1]
           let sol1_data = res.data[Object.keys(res.data)[array_length - 1]]
+
           if (!sol1_data.AT) {
             var sol1_av_temp = 'NA'
             var sol1_mn_temp = 'NA'
@@ -98,9 +73,11 @@ module.exports = class Insight extends Command {
             var sol1_mn_pr = sol1_data.PRE.mn + ' Pa'
             var sol1_mx_pr = sol1_data.PRE.mx + ' Pa'
           }
+
           //sol 2 data checks
           let sol2 = sol_keys[array_length - 2]
           let sol2_data = res.data[Object.keys(res.data)[array_length - 2]]
+
           if (!sol2_data.AT) {
             var sol2_av_temp = 'NA'
             var sol2_mn_temp = 'NA'
@@ -128,6 +105,7 @@ module.exports = class Insight extends Command {
             var sol2_mn_pr = sol2_data.PRE.mn + ' Pa'
             var sol2_mx_pr = sol2_data.PRE.mx + ' Pa'
           }
+
           message.channel.send({
             embed: {
               title: 'Whether on mars for the last 2 days',
@@ -158,9 +136,26 @@ module.exports = class Insight extends Command {
         .catch(function (error) {
           console.log(error.stack)
           message.say(
-            `An error occurred while running the command: ${error}\nFor help solving this problem please join are support server: ${invite}`,
+            `An error occurred while running the command: ${error}\nFor help solving this problem please join are support server: ${config.invite}`,
           )
         })
+      return
     }
+    message.embed({
+      title: 'Insight',
+      url: 'https://mars.nasa.gov/mars-exploration/missions/insight/',
+      description:
+        'Launched on May 5, 2018\nLaunched from Vandenberg Air Force Base, California\nLanded on November 26, 2018\nLanded at Elysium Planitia, Mars\nMission Ongoing\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/insight/',
+      color: this.client.config.embed_color,
+      timestamp: new Date(),
+      image: {
+        url:
+          'https://mars.nasa.gov/system/resources/detail_files/22116_PIA22743-16x9.jpg',
+      },
+      footer: {
+        text: 'Credit: NASA/JPL-Caltech',
+        icon_url: '',
+      },
+    })
   }
 }

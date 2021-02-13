@@ -86,7 +86,7 @@ client.once('ready', () => {
 })
 
 //Sends a msg when added to server
-bot.on('guildCreate', (guild) => {
+client.on('guildCreate', (guild) => {
   guild_add.execute(client, guild)
 })
 

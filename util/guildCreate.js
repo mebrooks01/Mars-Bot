@@ -15,10 +15,10 @@ module.exports = {
         title: 'Thank You for adding Mars Bot',
         url: 'https://github.com/mebrooks01/Mars-Bot/blob/main/README.md',
         description: `Thank you for adding Mars Bot to your server. For more information use ${config.prefix}help or check out my github. https://github.com/mebrooks01/Mars-Bot/blob/main/README.md`,
-        color: this.client.config.embed_color,
+        color: client.config.embed_color,
         timestamp: new Date(),
         thumbnail: {
-          url: this.client.config.pfp,
+          url: client.config.pfp,
         },
         footer: {
           text: 'Photo Credit: NASA/JPL-Caltech',
