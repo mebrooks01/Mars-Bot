@@ -4,7 +4,6 @@ const axios = require('axios')
 const config = require('$root/config.json')
 
 module.exports = class Curiosity extends Command {
-  //Commando Info Export
   constructor(client) {
     super(client, {
       name: 'curiosity',
@@ -42,10 +41,8 @@ module.exports = class Curiosity extends Command {
     })
   }
 
-  //Code to run
   run(message, { type, sol, page_number }) {
     if (type === 'image') {
-      // Checks for sol and page number
       if (!sol)
         return message.reply(
           'Please choose a sol to look for\n`=curiosity image <sol> <page number>`',
@@ -55,7 +52,6 @@ module.exports = class Curiosity extends Command {
           'Please choose a page number to look for\n`=curiosity image <sol> <page number>`',
         )
 
-      //API Request
       axios
         .get(
           `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&api_key=${config.api_key}`,
@@ -69,7 +65,6 @@ module.exports = class Curiosity extends Command {
           let cam = res.data.photos[page_number - 1].camera
           let rover = res.data.photos[page_number - 1].rover
 
-          //Send Embed
           message.channel.send({
             embed: {
               title: 'Photo from ' + rover.name + "'s from " + cam.full_name,
@@ -95,7 +90,6 @@ module.exports = class Curiosity extends Command {
         })
       return
     }
-    //Send Normal mission info
     message.embed({
       title: 'Mars Science Laboratory Curiosity',
       url:

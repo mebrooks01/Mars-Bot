@@ -6,7 +6,6 @@ const config = require('$root/config.json')
 
 module.exports = class Opportunity extends Command {
   constructor(client) {
-    //Commando Info Export
     super(client, {
       name: 'opportunity',
       group: 'api calls',
@@ -44,7 +43,6 @@ module.exports = class Opportunity extends Command {
     })
   }
 
-  //Code To Run
   run(message, { type, sol, page_number }) {
     if (type === 'last') {
       message.embed({

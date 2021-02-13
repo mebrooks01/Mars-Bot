@@ -4,7 +4,6 @@ const axios = require('axios')
 const config = require('$root/config.json')
 
 module.exports = class Insight extends Command {
-  //Commando Info Export
   constructor(client) {
     super(client, {
       name: 'insight',
@@ -31,7 +30,6 @@ module.exports = class Insight extends Command {
     })
   }
 
-  //Code To Run
   run(message, { type }) {
     if (type === 'weather') {
       axios

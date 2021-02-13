@@ -5,7 +5,6 @@ const moment = require('moment')
 const config = require('$root/config.json')
 
 module.exports = class APOD extends Command {
-  //Commando Info Export
   constructor(client) {
     super(client, {
       name: 'apod',
@@ -19,17 +18,14 @@ module.exports = class APOD extends Command {
     })
   }
 
-  //Code To Run
   run(message) {
     let apod_date = moment().utcOffset(-12).format('YYYY-M-D')
 
     axios
       .get(
-        //NASA APOD API
         `https://api.nasa.gov/planetary/apod?date=${apod_date}&api_key=${config.api_key}`,
       )
       .then((res) => {
-        //Send Embed To Channel
         message.embed({
           title: res.data.title,
           url: res.data.url,
