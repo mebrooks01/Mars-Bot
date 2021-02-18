@@ -43,7 +43,7 @@ module.exports = class Perseverance extends Command {
     })
   }
 
-  run(message) {
+  run(message, { type, sol, page_number }) {
     if (type === 'last') {
       message.reply('Currently unavailable :pensive:')
       return
