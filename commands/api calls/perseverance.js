@@ -50,7 +50,7 @@ module.exports = class Perseverance extends Command {
     }
     message.embed({
       title: 'Mars 2020 Perseverance Rover',
-      url: 'hhttps://mars.nasa.gov/mars2020/',
+      url: 'https://mars.nasa.gov/mars2020/',
       description:
         '**API data available for this mission** Do `=opportunity image (sol) (page number)`\nLaunched on July 30, 2020\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on Feb. 18, 2021\nLanded at Jezero Crater, Mars\nMission Ongoing\nMore Info at:\nhttps://mars.nasa.gov/mars2020/',
       color: this.client.config.embed_color,

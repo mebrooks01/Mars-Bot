@@ -23,6 +23,10 @@ module.exports = class Test extends Command {
     })
   }
   run(message) {
-    message.say('tested')
+    try {
+      message.sa('tested')
+    } catch (err) {
+      message.sa('failed')
+    }
   }
 }
