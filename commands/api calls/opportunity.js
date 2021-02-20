@@ -113,7 +113,7 @@ module.exports = class Opportunity extends Command {
       url:
         'https://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/',
       description:
-        'API data not available  yet\nLaunched on July 8, 2003\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on January 25, 2004\nLanded at Meridiani Planum\nMission Complete, ended on February 13, 2019\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/',
+        '**API data available for this mission** Do `=opportunity image (sol) (page number)`\nLaunched on July 8, 2003\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on January 25, 2004\nLanded at Meridiani Planum\nMission Complete, ended on February 13, 2019\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/',
       color: this.client.config.embed_color,
       timestamp: new Date(),
       image: {
