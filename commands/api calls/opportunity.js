@@ -118,7 +118,7 @@ module.exports = class Opportunity extends Command {
       timestamp: new Date(),
       image: {
         url:
-          'https://mars.nasa.gov/resources/3904/artists-concept-of-rover-on-mars/',
+          'https://mars.nasa.gov/system/content_pages/main_images/365_MER-1280.jpg',
       },
       footer: {
         text: 'Credit: NASA/JPL-Caltech',

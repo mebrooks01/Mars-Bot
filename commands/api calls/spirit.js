@@ -43,26 +43,6 @@ module.exports = class NAME extends Command {
   }
 
   run(message, { type, sol, page_number }) {
-    if (type === 'info') {
-      message.embed({
-        title: 'Mars Exploration Rover Spirit',
-        url:
-          'https://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/',
-        description:
-          '**API data available for this mission** Do `=spirit image (sol) (page number)`\nLaunched on June 10, 2003\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on January 4, 2004\nLanded at Gusev Crater\nMission Complete, ended on March 22, 2010\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/',
-        color: this.client.config.embed_color,
-        timestamp: new Date(),
-        image: {
-          url:
-            'https://mars.nasa.gov/resources/3904/artists-concept-of-rover-on-mars/',
-        },
-        footer: {
-          text: 'Credit: NASA/JPL-Caltech',
-          icon_url: '',
-        },
-      })
-      return
-    }
     if (type === 'image') {
       if (!sol || !page_number) {
         message.reply(
@@ -107,6 +87,24 @@ module.exports = class NAME extends Command {
             )
           })
       }
+      return
     }
+    message.embed({
+      title: 'Mars Exploration Rover Spirit',
+      url:
+        'https://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/',
+      description:
+        '**API data available for this mission** Do `=spirit image (sol) (page number)`\nLaunched on June 10, 2003\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on January 4, 2004\nLanded at Gusev Crater\nMission Complete, ended on March 22, 2010\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/',
+      color: this.client.config.embed_color,
+      timestamp: new Date(),
+      image: {
+        url:
+          'https://mars.nasa.gov/system/content_pages/main_images/365_MER-1280.jpg',
+      },
+      footer: {
+        text: 'Credit: NASA/JPL-Caltech',
+        icon_url: '',
+      },
+    })
   }
 }
