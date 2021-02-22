@@ -1,13 +1,16 @@
 const axios = require('axios')
 const schedule = require('node-schedule')
 const moment = require('moment')
+const chalk = require('chalk')
 const config = require('$root/config.json')
 
 module.exports = {
-  execute() {
+  execute(client) {
+    console.log(chalk.green('Daily APOD Started'))
+
     //How Often to run APOD
     const rule = new schedule.RecurrenceRule()
-    ;(rule.hour = 12), (rule.minute = 00), (rule.tz = 'Etc/UTC')
+    rule.hour = 10
 
     //Apod Cron Function
     const job = schedule.scheduleJob(rule, function () {
@@ -18,7 +21,7 @@ module.exports = {
           `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${config.api_key}`,
         )
         .then((res) => {
-          this.client.channels.cache
+          client.channels.cache
             .get(client.config.channel_id.apod_for_main)
             .send({
               embed: {

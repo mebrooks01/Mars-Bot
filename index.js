@@ -78,10 +78,7 @@ client.once('ready', () => {
       console.log(chalk.yellow(error))
     })
 
-  //Starts Daily APOD if config is true
-  if (client.config.dpod == true) {
-    dpod.execute()
-  }
+  dpod.execute(client)
   load.execute(client)
 })
 
