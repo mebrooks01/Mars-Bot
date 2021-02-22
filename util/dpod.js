@@ -10,7 +10,9 @@ module.exports = {
 
     //How Often to run APOD
     const rule = new schedule.RecurrenceRule()
-    rule.hour = 10
+    rule.hour = 12
+    rule.minute = 00
+    rule.tz = 'Etc/UTC'
 
     //Apod Cron Function
     const job = schedule.scheduleJob(rule, function () {
