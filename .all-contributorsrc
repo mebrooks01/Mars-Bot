@@ -1,0 +1,12 @@
+{
+  "files": [
+    "readme.md"
+  ],
+  "contributors": [],
+  "projectName": "mars-bot",
+  "projectOwner": "Mebrooks01",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true,
+  "contributorsPerLine": 6
+}
