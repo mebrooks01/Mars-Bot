@@ -15,6 +15,7 @@ Mars Bot uses NASA's API and other sources to give you plenty of cool informatio
     <td align="center"><a href="https://github.com/mebrooks01"><img src="https://avatars.githubusercontent.com/u/39204478?v=4" width="128px;" alt=""/><br /><sub><b>Malachi Brooks</b></sub></a></td>
     <td align="center"><a href="https://github.com/Mr-Smarty"><img src="https://avatars.githubusercontent.com/u/69656599?v=4" width="128px;" alt=""/><br /><sub><b>Mr-Smarty</b></sub></a></td>
     <td align="center"><a href="https://github.com/XboxBedrock"><img src="https://avatars.githubusercontent.com/u/68715625?v=4" width="128px;" alt=""/><br /><sub><b>Xbox</b></sub></a></td>
+    <td align="center"><a href="https://github.com/catte"><img src="https://avatars.githubusercontent.com/u/3186886?v=4" width="128px;" alt=""/><br /><sub><b>cAtte</b></sub></a></td>
   </tr>
 </table>
 
