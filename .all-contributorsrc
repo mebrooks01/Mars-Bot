@@ -2,6 +2,7 @@
   "files": [
     "README.md"
   ],
+  "imageSize": 128,
   "contributors": [
     {
       "login": "mebrooks01",
@@ -18,5 +19,7 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true,
-  "contributorsPerLine": 6
+  "contributorsPerLine": 6,
+  "contributorsSortAlphabetically": false
+
 }
