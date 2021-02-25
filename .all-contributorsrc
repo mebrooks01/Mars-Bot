@@ -40,5 +40,5 @@
   "repoHost": "https://github.com",
   "skipCi": true,
   "contributorsPerLine": 6,
-  "contributorsSortAlphabetically": false,
+  "contributorsSortAlphabetically": false
 }
