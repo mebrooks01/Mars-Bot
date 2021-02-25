@@ -7,6 +7,9 @@ Mars Bot uses NASA's API and other sources to give you plenty of cool informatio
 
 ## Contributors
 
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## Commands
 
 There are currently `26` commands for the bot they are split into 3 sections `missions`, `api calls` and `utilities`.\
@@ -103,8 +106,8 @@ You will need to rename `config-example.json` to `config.json` and fill in all t
 
 ## Credits
 
-Code Written By: [Mebrooks01#3354](https://github.com/mebrooks01).\
-Anti shitty-ass code: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte),[XboxBedrock#6958](https://github.com/XboxBedrock) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 API calls use [NASA's API](https://api.nasa.gov/) to pull data. The part of the API I use is maintained by [Chris Cerami](https://github.com/chrisccerami/mars-photo-api).
 
