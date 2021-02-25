@@ -21,6 +21,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "XboxBedrock",
+      "name": "Xbox",
+      "avatar_url": "https://avatars.githubusercontent.com/u/68715625?v=4",
+      "profile": "https://github.com/XboxBedrock",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "projectName": "Mars-Bot",
