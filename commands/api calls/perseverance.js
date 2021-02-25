@@ -15,16 +15,16 @@ module.exports = class Perseverance extends Command {
         'Get info about perseverance and look up the images it has taken',
       examples: [
         `${config.prefix}perseverance`,
-        `${config.prefix}perseverance <'info' | 'image'> <sol> <page number>`,
+        `${config.prefix}perseverance <'info' | 'image'> <sol> <result number>`,
       ],
       clientPermissions: ['EMBED_LINKS'],
       throttling: client.config.command_throttling.api,
       args: [
         {
           key: 'type',
-          prompt: 'Please choose if you are looking for an image or info',
+          prompt: 'Please specify what ',
           type: 'string',
-          oneOf: ['info', `image`],
+          oneOf: ['info', `image`, `manifest`],
           default: 'info',
         },
         {
@@ -34,8 +34,8 @@ module.exports = class Perseverance extends Command {
           default: '',
         },
         {
-          key: 'page_number',
-          prompt: 'Please choose a page number to look for',
+          key: 'result_number',
+          prompt: 'Please choose a result number to look for',
           type: 'integer',
           default: '',
         },
@@ -43,27 +43,20 @@ module.exports = class Perseverance extends Command {
     })
   }
 
-  run(message, { type, sol, page_number }) {
-    if (type === 'last') {
-      message.reply('Currently unavailable :pensive:')
+  run(message, { type, sol, result_number }) {
+    if (type === 'info') {
+      axios
+        .get(
+          `https://api.nasa.gov/mars-photos/api/v1/manifests/perseverance?api_key=${config.api_key}`,
+        )
+        .then((res) => {})
+        .catch(function (error) {
+          console.log(error.stack)
+          message.reply(
+            `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`,
+          )
+        })
       return
     }
-    message.embed({
-      title: 'Mars 2020 Perseverance Rover',
-      url: 'https://mars.nasa.gov/mars2020/',
-      description:
-        '**API data not available  yet**\nLaunched on July 30, 2020\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on Feb. 18, 2021\nLanded at Jezero Crater, Mars\nMission Ongoing\nMore Info at:\nhttps://mars.nasa.gov/mars2020/',
-      color: this.client.config.embed_color,
-      timestamp: new Date(),
-      image: {
-        url:
-          'https://mars.nasa.gov/system/resources/detail_files/25118_PIA23962-16.jpg',
-      },
-      footer: {
-        text: 'Credit: NASA/JPL-Caltech',
-        icon_url: '',
-      },
-    })
-    return
   }
 }

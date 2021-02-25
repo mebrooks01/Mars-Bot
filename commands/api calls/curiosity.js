@@ -13,7 +13,7 @@ module.exports = class Curiosity extends Command {
         'Get info about curiosity and look up the images it has taken',
       examples: [
         `${config.prefix}curiosity`,
-        `${config.prefix}curiosity <'info' | 'image'> <sol> <page number>`,
+        `${config.prefix}curiosity <'info' | 'image'> <sol> <result number>`,
       ],
       clientPermissions: ['EMBED_LINKS'],
       throttling: client.config.command_throttling.api,
@@ -32,8 +32,8 @@ module.exports = class Curiosity extends Command {
           default: '',
         },
         {
-          key: 'page_number',
-          prompt: 'Please choose a page number to look for',
+          key: 'result_number',
+          prompt: 'Please choose a result number to look for',
           type: 'integer',
           default: '',
         },
@@ -41,15 +41,15 @@ module.exports = class Curiosity extends Command {
     })
   }
 
-  run(message, { type, sol, page_number }) {
+  run(message, { type, sol, result_number }) {
     if (type === 'image') {
       if (!sol)
         return message.reply(
-          'Please choose a sol to look for\n`=curiosity image <sol> <page number>`',
+          'Please choose a sol to look for\n`=curiosity image <sol> <result number>`',
         )
-      if (!page_number)
+      if (!result_number)
         return message.reply(
-          'Please choose a page number to look for\n`=curiosity image <sol> <page number>`',
+          'Please choose a result number to look for\n`=curiosity image <sol> <result number>`',
         )
 
       axios
@@ -57,13 +57,13 @@ module.exports = class Curiosity extends Command {
           `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&api_key=${config.api_key}`,
         )
         .then((res) => {
-          if (!res.data.photos[page_number - 1]) {
+          if (!res.data.photos[result_number - 1]) {
             return message.reply('No results found')
           }
-          let img = res.data.photos[page_number - 1].img_src
-          let data = res.data.photos[page_number - 1]
-          let cam = res.data.photos[page_number - 1].camera
-          let rover = res.data.photos[page_number - 1].rover
+          let img = res.data.photos[result_number - 1].img_src
+          let data = res.data.photos[result_number - 1]
+          let cam = res.data.photos[result_number - 1].camera
+          let rover = res.data.photos[result_number - 1].rover
 
           message.channel.send({
             embed: {
@@ -95,7 +95,7 @@ module.exports = class Curiosity extends Command {
       url:
         'https://mars.nasa.gov/mars-exploration/missions/mars-science-laboratory',
       description:
-        '**API data available for this mission** Do `=curiosity image <sol> <page number>`\nLaunched on November 26, 2011\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on August 6, 2012\nLanded at Gale Crater, Mars\nMission Ongoing\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-science-laboratory/',
+        '**API data available for this mission** Do `=curiosity image <sol> <result number>`\nLaunched on November 26, 2011\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on August 6, 2012\nLanded at Gale Crater, Mars\nMission Ongoing\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-science-laboratory/',
       color: this.client.config.embed_color,
       timestamp: new Date(),
       image: {

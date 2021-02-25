@@ -61,22 +61,22 @@ If you would like to host the bot yourself, you are more than welcome. If you ha
 Open a new terminal (CMD, Powershell, etc) in a folder.\
 Clone the repository and navigate to it.
 
-```
-$ git clone https://github.com/mebrooks01/Mars-Bot
-$ cd Mars-Bot
+```cmd
+git clone https://github.com/mebrooks01/Mars-Bot
+cd Mars-Bot
 ```
 
 Then install its dependencies.
 
-```
-$ npm install
+```cmd
+npm install
 ```
 
 ### Configuration
 
 You will need to rename `config-example.json` to `config.json` and fill in all the following information
 
-- token: The bot's token used to login to the Discord API.
+- token: The bots token used to login to the Discord API.
 - api_key: Your API key for the NASA API. You can get one from [here](https://api.nasa.gov/)
 - prefix: The prefix the bot uses.
 - invite: The invite to your Discord server.
@@ -104,7 +104,9 @@ You will need to rename `config-example.json` to `config.json` and fill in all t
     - usages: By default its set to 2
     - duration: By default its set to 1
 
-# Credits
+### Starting
+
+## Credits
 
 Code Written By: [Mebrooks01#3354](https://github.com/mebrooks01).\
 Anti shitty-ass code: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte),[XboxBedrock#6958](https://github.com/XboxBedrock) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)

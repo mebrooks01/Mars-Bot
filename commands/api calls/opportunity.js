@@ -15,7 +15,7 @@ module.exports = class Opportunity extends Command {
         'Get info about opportunity and look up the images it has taken',
       examples: [
         `${config.prefix}opportunity`,
-        `${config.prefix}opportunity <'info' | 'last' | 'image'> <sol> <page number>`,
+        `${config.prefix}opportunity <'info' | 'last' | 'image'> <sol> <result number>`,
       ],
       clientPermissions: ['EMBED_LINKS'],
       throttling: client.config.command_throttling.api,
@@ -34,8 +34,8 @@ module.exports = class Opportunity extends Command {
           default: '',
         },
         {
-          key: 'page_number',
-          prompt: 'Please choose a page number to look for',
+          key: 'result_number',
+          prompt: 'Please choose a result number to look for',
           type: 'integer',
           default: '',
         },
@@ -43,7 +43,7 @@ module.exports = class Opportunity extends Command {
     })
   }
 
-  run(message, { type, sol, page_number }) {
+  run(message, { type, sol, result_number }) {
     if (type === 'last') {
       message.embed({
         title: "Opportunity's last message",
@@ -63,9 +63,9 @@ module.exports = class Opportunity extends Command {
       return
     }
     if (type === 'image') {
-      if (!sol || !page_number) {
+      if (!sol || !result_number) {
         message.reply(
-          'Please choose a sol and or page number to look for\n`=opportunity image <sol> <page number>`',
+          'Please choose a sol and or result number to look for\n`=opportunity image <sol> <result number>`',
         )
       } else {
         axios
@@ -73,14 +73,14 @@ module.exports = class Opportunity extends Command {
             `https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos?sol=${sol}&api_key=${config.api_key}`,
           )
           .then((res) => {
-            if (!res.data.photos[page_number - 1]) {
+            if (!res.data.photos[result_number - 1]) {
               message.reply('No results found')
               return
             }
-            let img = res.data.photos[page_number - 1].img_src
-            let data = res.data.photos[page_number - 1]
-            let cam = res.data.photos[page_number - 1].camera
-            let rover = res.data.photos[page_number - 1].rover
+            let img = res.data.photos[result_number - 1].img_src
+            let data = res.data.photos[result_number - 1]
+            let cam = res.data.photos[result_number - 1].camera
+            let rover = res.data.photos[result_number - 1].rover
 
             message.channel.send({
               embed: {
@@ -113,7 +113,7 @@ module.exports = class Opportunity extends Command {
       url:
         'https://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/',
       description:
-        '**API data available for this mission** Do `=opportunity image (sol) (page number)`\nLaunched on July 8, 2003\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on January 25, 2004\nLanded at Meridiani Planum\nMission Complete, ended on February 13, 2019\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/',
+        '**API data available for this mission** Do `=opportunity image (sol) (result number)`\nLaunched on July 8, 2003\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on January 25, 2004\nLanded at Meridiani Planum\nMission Complete, ended on February 13, 2019\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/',
       color: this.client.config.embed_color,
       timestamp: new Date(),
       image: {
