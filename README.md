@@ -8,6 +8,19 @@ Mars Bot uses NASA's API and other sources to give you plenty of cool informatio
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/mebrooks01"><img src="https://avatars.githubusercontent.com/u/39204478?v=4" width="128px;" alt=""/><br /><sub><b>Malachi Brooks</b></sub></a></td>
+    <td align="center"><a href="https://github.com/Mr-Smarty"><img src="https://avatars.githubusercontent.com/u/69656599?v=4" width="128px;" alt=""/><br /><sub><b>Mr-Smarty</b></sub></a></td>
+    <td align="center"><a href="https://github.com/XboxBedrock"><img src="https://avatars.githubusercontent.com/u/68715625?v=4" width="128px;" alt=""/><br /><sub><b>Xbox</b></sub></a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## Commands
