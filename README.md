@@ -12,10 +12,11 @@ Mars Bot uses NASA's API and other sources to give you plenty of cool informatio
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/mebrooks01"><img src="https://avatars.githubusercontent.com/u/39204478?v=4?s=128" width="128px;" alt=""/><br /><sub><b>Malachi Brooks</b></sub></a><br /><a href="https://github.com/mebrooks01/Mars-Bot/commits?author=mebrooks01" title="Code">💻</a> <a href="#projectManagement-mebrooks01" title="Project Management">📆</a></td>
+    <td align="center"><a href="https://github.com/mebrooks01"><img src="https://avatars.githubusercontent.com/u/39204478?v=4?s=128" width="128px;" alt=""/><br /><sub><b>Malachi Brooks</b></sub></a><br /><a href="https://github.com/mebrooks01/Mars-Bot/commits?author=mebrooks01" title="Code">💻</a> <a href="#projectManagement-mebrooks01" title="Project Management">📆</a> <a href="https://github.com/mebrooks01/Mars-Bot/commits?author=mebrooks01" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Mr-Smarty"><img src="https://avatars.githubusercontent.com/u/69656599?v=4?s=128" width="128px;" alt=""/><br /><sub><b>Mr-Smarty</b></sub></a><br /><a href="https://github.com/mebrooks01/Mars-Bot/commits?author=Mr-Smarty" title="Code">💻</a> <a href="https://github.com/mebrooks01/Mars-Bot/commits?author=Mr-Smarty" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/XboxBedrock"><img src="https://avatars.githubusercontent.com/u/68715625?v=4?s=128" width="128px;" alt=""/><br /><sub><b>Xbox</b></sub></a><br /><a href="https://github.com/mebrooks01/Mars-Bot/commits?author=XboxBedrock" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/rudeyeti"><img src="https://avatars.githubusercontent.com/u/67293473?v=4?s=128" width="128px;" alt=""/><br /><sub><b>Rude Yeti</b></sub></a><br /><a href="https://github.com/mebrooks01/Mars-Bot/commits?author=rudeyeti" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/vaporrrr"><img src="https://avatars.githubusercontent.com/u/74574116?v=4?s=128" width="128px;" alt=""/><br /><sub><b>VapoR</b></sub></a><br /><a href="https://github.com/mebrooks01/Mars-Bot/commits?author=Vaporrrr" title="Code">💻</a></td>
   </tr>
 </table>
 
