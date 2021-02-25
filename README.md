@@ -8,7 +8,7 @@ Mars Bot uses NASA's API and other sources to give you plenty of cool informatio
 ## Contributions
 
 Written By: [Mebrooks01#3354](https://github.com/mebrooks01).\
-Help Fixing my shitty ass code By: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte),[XboxBedrock#6958](https://github.com/XboxBedrock) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
+Help Fixing my shitty ass code By: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte), [VapoR#0807](https://github.com/Vaporrrr), [XboxBedrock#6958](https://github.com/XboxBedrock) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
 
 ## Commands
 
