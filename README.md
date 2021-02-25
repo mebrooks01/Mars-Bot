@@ -17,6 +17,7 @@ Mars Bot uses NASA's API and other sources to give you plenty of cool informatio
     <td align="center"><a href="https://github.com/XboxBedrock"><img src="https://avatars.githubusercontent.com/u/68715625?v=4?s=128" width="128px;" alt=""/><br /><sub><b>Xbox</b></sub></a><br /><a href="https://github.com/mebrooks01/Mars-Bot/commits?author=XboxBedrock" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/rudeyeti"><img src="https://avatars.githubusercontent.com/u/67293473?v=4?s=128" width="128px;" alt=""/><br /><sub><b>Rude Yeti</b></sub></a><br /><a href="https://github.com/mebrooks01/Mars-Bot/commits?author=rudeyeti" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/vaporrrr"><img src="https://avatars.githubusercontent.com/u/74574116?v=4?s=128" width="128px;" alt=""/><br /><sub><b>VapoR</b></sub></a><br /><a href="https://github.com/mebrooks01/Mars-Bot/commits?author=Vaporrrr" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/cAttte"><img src="https://avatars.githubusercontent.com/u/26514199?v=4?s=128" width="128px;" alt=""/><br /><sub><b>cattte</b></sub></a><br /><a href="https://github.com/mebrooks01/Mars-Bot/commits?author=cattte" title="Code">💻</a></td>
   </tr>
 </table>
 
