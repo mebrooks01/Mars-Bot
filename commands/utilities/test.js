@@ -24,9 +24,9 @@ module.exports = class Test extends Command {
   }
   run(message) {
     try {
-      message.sa('tested')
+      message.say('tested')
     } catch (err) {
-      message.sa('failed')
+      message.say('failed')
     }
   }
 }
