@@ -35,6 +35,7 @@ I have information on all NASA missions that have been launched as of January 20
 
 `=apod` Every day NASA publishes an "Astronomy Picture of the Day." Use this command to see today's picture.\
 `=insight <'info' | 'weather'>` Get information about Insight and find weather data.\
+`=perseverance <'info' | 'image'> [sol] [page number]` Get information about the Perseverance rover and look up the images it has taken.\
 `=curiosity <'info' | 'image'> [sol] [page number]` Get information about the Curiosity rover and look up the images it has taken.\
 `=opportunity <'info' | 'image'> [sol] [page number]` Get information about the Opportunity rover and look up the images it has taken.\
 `=spirit <'info' | 'image'> [sol] [page number]` Get information about the Spirit rover and look up the images it has taken.\
@@ -79,6 +80,13 @@ You will need to rename `config-example.json` to `config.json` and fill in all t
 - api_key: Your API key for the NASA API. You can get one from [here](https://api.nasa.gov/)
 - prefix: The prefix the bot uses.
 - invite: The invite to your Discord server.
+- embed_color: what color you want the embeds to be
+- pfp: the link for the pfp you are using
+- mysql
+  - host: The database host address
+  - user: The username of the database
+  - pwd: The database password
+  - db: the database name
 - user_id
   - owner: The user ID of the bot application owner(can have multiple in an array).
 - server_id

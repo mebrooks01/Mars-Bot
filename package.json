@@ -23,7 +23,7 @@
     "prettier": "2.2.1"
   },
   "_moduleAliases": {
-    "$root": ".",
-    "$util": "util"
+    "$root": "./",
+    "$util": "./util/"
   }
 }
