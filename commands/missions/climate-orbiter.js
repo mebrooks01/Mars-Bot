@@ -1,39 +1,32 @@
 const { Command } = require('discord.js-commando')
-const moment = require('moment')
 const config = require('$root/config.json')
+const mission = require('$root/missions.json')
+
 module.exports = class ClimateOrbiter extends Command {
   constructor(client) {
     super(client, {
       name: 'climate-orbiter',
       group: 'missions',
-      aliases: ['climate-orbiter'],
+      aliases: 'climate orbiter',
       memberName: 'climateorbiter',
-      description: 'Find Information on the climate orbiter mission',
-      examples: [
-        `${config.prefix}climateorbiter`,
-        `${config.prefix}climate-orbiter`,
-      ],
-      clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      description: 'Find Information about the climate orbiter mission',
+      examples: `${config.prefix}climateorbiter`,
+      clientPermissions: 'EMBED_LINKS',
+      throttling: client.config.command_throttling.missions,
     })
   }
+
   run(message) {
+    let info = mission.missions.climate_orbiter
+
     message.embed({
-      title: 'Mars Climate Orbiter',
-      url:
-        'https://mars.nasa.gov/mars-exploration/missions/mars-climate-orbiter/',
-      description:
-        'Launched on December 11, 1998\nLaunched from Cape Canaveral Air Force Station, Florida\nMission Failed, lost on arrival\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-climate-orbiter/',
-      color: this.client.config.embed_color,
+      title: info.title,
+      url: info.url,
+      description: info.info,
+      color: config.embed_color,
       timestamp: new Date(),
-      image: {
-        url:
-          'https://mars.nasa.gov/system/content_pages/main_images/375_mco_mapping.jpg',
-      },
-      footer: {
-        text: 'Photo Credit: NASA/JPL-Caltech',
-        icon_url: '',
-      },
+      image: { url: info.img },
+      footer: { text: mission.credit },
     })
   }
 }

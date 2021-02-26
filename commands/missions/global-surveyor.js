@@ -1,36 +1,31 @@
 const { Command } = require('discord.js-commando')
-const moment = require('moment')
 const config = require('$root/config.json')
+
 module.exports = class globalsurveyor extends Command {
   constructor(client) {
     super(client, {
       name: 'global-surveyor',
       group: 'missions',
-      aliases: ['global surveyor', 'globalsurveyor'],
+      aliases: 'global surveyor',
       memberName: 'global-surveyor',
       description: 'Find Information on the global surveyor mission',
-      examples: [`${config.prefix}global-surveyor`],
-      clientPermissions: ['EMBED_LINKS'],
+      examples: `${config.prefix}global-surveyor`,
+      clientPermissions: 'EMBED_LINKS',
       throttling: client.config.command_throttling.api,
     })
   }
+
   run(message) {
+    let info = mission.missions.global_surveyor
+
     message.embed({
-      title: 'Mars Global Surveyor',
-      url:
-        'https://mars.nasa.gov/mars-exploration/missions/mars-global-surveyor/',
-      description:
-        'Launched on November 7, 1996\nLaunched from Cape Canaveral Air Force Station, Florida\nOrbit Insertion September 12, 1997\nMission Complete, ended on November 14, 2006\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-global-surveyor/',
-      color: this.client.config.embed_color,
+      title: info.title,
+      url: info.url,
+      description: info.info,
+      color: config.embed_color,
       timestamp: new Date(),
-      image: {
-        url:
-          'https://mars.nasa.gov/system/content_pages/main_images/376_marsglobalsurveyor.jpg',
-      },
-      footer: {
-        text: 'Photo Credit: NASA/JPL-Caltech',
-        icon_url: '',
-      },
+      image: { url: info.img },
+      footer: { text: mission.credit },
     })
   }
 }

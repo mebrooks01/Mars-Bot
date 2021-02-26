@@ -1,16 +1,163 @@
 {
+  "credit": "Credit: NASA/JPL-Caltech",
+
   "rover": {
     "perseverance": {
       "url": "https://mars.nasa.gov/mars2020/",
       "img": "https://mars.nasa.gov/system/resources/detail_files/25118_PIA23962-16.jpg",
+      "title": "Mars 2020 Perseverance Rover",
       "info": "Launched on July 30, 2020\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on Feb. 18, 2021\nLanded at Jezero Crater, Mars\nMission Ongoing"
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
     }
   },
-  "missions": {},
-  "other": {},
-  "template": {
+
+  "missions": {
+    "climate_orbiter": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/mars-climate-orbiter/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/375_mco_mapping.jpg",
+      "title": "Mars Climate Orbiter",
+      "info": "Launched on December 11, 1998\nLaunched from Cape Canaveral Air Force Station, Florida\nMission Failed, lost on arrival"
+    },
+    "exomars": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/esa-exomars-2016-tgo/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/367_esa-exomars-2016-tgo.jpg",
+      "title": "ExoMars 2016 Mission",
+      "info": "Launched on March 14, 2016\nLaunched from Baikonur Cosmodrome, Russia\n**Trance Gas Orbiter**\nOrbit Insertion on October 19, 2016\nMission Ongoing\n**Schiaparelli Landing Demo**\nReleased from orbiter on October 16, 2016\nMission Failed, lost on descent"
+    },
+    "global_surveyor": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/mars-global-surveyor/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/376_marsglobalsurveyor.jpg",
+      "title": "Mars Global Surveyor",
+      "info": "Launched on November 7, 1996\nLaunched from Cape Canaveral Air Force Station, Florida\nOrbit Insertion September 12, 1997\nMission Complete, ended on November 14, 2006"
+    },
+    "mariner": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/mariner-8-9/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/373_mariner9.jpg",
+      "title": "Mariner 3-9",
+      "info": "Launched Between November 28, 1964 and May 30, 1971\nLaunched from Cape Canaveral Air Force Station, Florida\nMissions complete between, December 21, 1967 and October 27, 1972"
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    }
+  },
+
+  "other": {
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    },
+    "": {
+      "url": "",
+      "img": "",
+      "title": "",
+      "info": ""
+    }
+  },
+
+  "": {
     "url": "",
     "img": "",
+    "title": "",
     "info": ""
   }
 }

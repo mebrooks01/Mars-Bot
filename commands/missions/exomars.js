@@ -1,36 +1,32 @@
 const { Command } = require('discord.js-commando')
-const moment = require('moment')
 const config = require('$root/config.json')
+const mission = require('$root/missions.json')
+
 module.exports = class ExoMars extends Command {
   constructor(client) {
     super(client, {
       name: 'exomars',
       group: 'missions',
-      aliases: ['exo mars', 'exo-mars'],
+      aliases: 'exo mars',
       memberName: 'exomars',
       description: 'Find Information on the exo mars mission',
-      examples: [`${config.prefix}exomars`],
-      clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      examples: `${config.prefix}exomars`,
+      clientPermissions: 'EMBED_LINKS',
+      throttling: client.config.command_throttling.missions,
     })
   }
+
   run(message) {
+    let info = mission.missions.exomars
+
     message.embed({
-      title: 'ExoMars 2016 Mission',
-      url:
-        'https://mars.nasa.gov/mars-exploration/missions/esa-exomars-2016-tgo/',
-      description:
-        'Launched on March 14, 2016\nLaunched from Baikonur Cosmodrome, Russia\n**Trance Gas Orbiter**\nOrbit Insertion on October 19, 2016\nMission Ongoing\n**Schiaparelli Landing Demo**\nReleased from orbiter on October 16, 2016\nMission Failed, lost on descent\nMore info at:\nhttps://mars.nasa.gov/mars-exploration/missions/esa-exomars-2016-tgo/',
-      color: this.client.config.embed_color,
+      title: info.title,
+      url: info.url,
+      description: info.info,
+      color: config.embed_color,
       timestamp: new Date(),
-      image: {
-        url:
-          'https://mars.nasa.gov/system/content_pages/main_images/367_esa-exomars-2016-tgo.jpg',
-      },
-      footer: {
-        text: 'Photo Credit: NASA/JPL-Caltech',
-        icon_url: '',
-      },
+      image: { url: info.img },
+      footer: { text: mission.credit },
     })
   }
 }

@@ -94,7 +94,7 @@ module.exports = class Perseverance extends Command {
       return
     }
     message.embed({
-      title: 'Mars 2020 Perseverance Rover',
+      title: mission.rover.perseverance.title,
       url: mission.rover.perseverance.url,
       description: `**API data not available  yet**\n${
         mission.rover.perseverance.info
