@@ -7,7 +7,7 @@ module.exports = class Insight extends Command {
   constructor(client) {
     super(client, {
       name: 'insight',
-      group: 'api calls',
+      group: 'search',
       aliases: ['weather'],
       memberName: 'insight',
       description:

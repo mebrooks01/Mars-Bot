@@ -8,7 +8,7 @@ module.exports = class APOD extends Command {
   constructor(client) {
     super(client, {
       name: 'apod',
-      group: 'api calls',
+      group: 'search',
       memberName: 'apod',
       description:
         'Every day NASA publishes an "Astronomy Picture of the Day" use this command to see todays',

@@ -9,7 +9,7 @@ module.exports = class Perseverance extends Command {
   constructor(client) {
     super(client, {
       name: 'perseverance',
-      group: 'api calls',
+      group: 'rovers',
       aliases: ['perseverance'],
       memberName: 'perseverance',
       description:
@@ -95,14 +95,14 @@ module.exports = class Perseverance extends Command {
     }
     message.embed({
       title: 'Mars 2020 Perseverance Rover',
-      url: mission.url,
+      url: mission.rover.perseverance.url,
       description: `**API data not available  yet**\n${
-        mission.perseverance.info
-      }\nMore Info at:\n${(mission.perseverance, url)}`,
-      color: config.embed_color,
+        mission.rover.perseverance.info
+      }\nMore Info at:\n${(mission.rover.perseverance, url)}`,
+      color: config.rover.embed_color,
       timestamp: new Date(),
       image: {
-        url: mission.perseverance.img,
+        url: mission.rover.perseverance.img,
       },
       footer: {
         text: 'Credit: NASA/JPL-Caltech',

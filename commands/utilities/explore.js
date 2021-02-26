@@ -6,7 +6,6 @@ module.exports = class Explore extends Command {
     super(client, {
       name: 'explore',
       group: 'utilities',
-      aliases: ['missions', 'mission'],
       memberName: 'explore',
       description: 'Look at all the missions to mars and where they are',
       examples: [`${config.prefix}explore`],

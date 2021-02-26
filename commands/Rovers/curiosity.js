@@ -7,7 +7,7 @@ module.exports = class Curiosity extends Command {
   constructor(client) {
     super(client, {
       name: 'curiosity',
-      group: 'api calls',
+      group: 'rovers',
       memberName: 'curiosity',
       description:
         'Get info about curiosity and look up the images it has taken',

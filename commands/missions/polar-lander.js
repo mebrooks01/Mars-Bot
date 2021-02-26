@@ -10,19 +10,9 @@ module.exports = class NAME extends Command {
       memberName: 'polar-lander',
       description:
         'Find Information on the Mars Polar Lander/Deep Space 2 mission',
-      examples: [`${config.prefix}`],
-      clientPermissions: [
-        'SEND_MESSAGES',
-        'EMBED_LINKS',
-        'ATTACH_FILES',
-        'READ_MESSAGE_HISTORY',
-      ],
-      guildOnly: false,
-      ownerOnly: false,
-      throttling: {
-        usages: 2,
-        duration: 1,
-      },
+      examples: [`${config.prefix}polar-lander`],
+      clientPermissions: ['EMBED_LINKS'],
+      throttling: client.config.command_throttling.api,
     })
   }
   run(message) {

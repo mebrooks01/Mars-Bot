@@ -9,19 +9,9 @@ module.exports = class NAME extends Command {
       aliases: ['pathfinder'],
       memberName: 'pathfinder',
       description: 'Find Information on the pathfinder mission',
-      examples: [`${config.prefix}`],
-      clientPermissions: [
-        'SEND_MESSAGES',
-        'EMBED_LINKS',
-        'ATTACH_FILES',
-        'READ_MESSAGE_HISTORY',
-      ],
-      guildOnly: false,
-      ownerOnly: false,
-      throttling: {
-        usages: 2,
-        duration: 1,
-      },
+      examples: [`${config.prefix}pathfinder`],
+      clientPermissions: ['EMBED_LINKS'],
+      throttling: client.config.command_throttling.api,
     })
   }
   run(message) {

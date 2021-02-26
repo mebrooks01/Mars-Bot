@@ -11,18 +11,8 @@ module.exports = class Maven extends Command {
       description:
         'Find Information on the Mars Atmospheric and Volatile EvolutioN (Maven) mission',
       examples: [`${config.prefix}maven`],
-      clientPermissions: [
-        'SEND_MESSAGES',
-        'EMBED_LINKS',
-        'ATTACH_FILES',
-        'READ_MESSAGE_HISTORY',
-      ],
-      guildOnly: false,
-      ownerOnly: false,
-      throttling: {
-        usages: 2,
-        duration: 1,
-      },
+      clientPermissions: ['EMBED_LINKS'],
+      throttling: client.config.command_throttling.api,
     })
   }
   run(message) {

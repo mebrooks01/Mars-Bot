@@ -8,19 +8,9 @@ module.exports = class Odyssey extends Command {
       aliases: ['odyssey'],
       memberName: 'odyssey',
       description: 'Find Information on the odyssey mission',
-      examples: [`${config.prefix}pathfinder`],
-      clientPermissions: [
-        'SEND_MESSAGES',
-        'EMBED_LINKS',
-        'ATTACH_FILES',
-        'READ_MESSAGE_HISTORY',
-      ],
-      guildOnly: false,
-      ownerOnly: false,
-      throttling: {
-        usages: 2,
-        duration: 1,
-      },
+      examples: [`${config.prefix}odyssey`],
+      clientPermissions: ['EMBED_LINKS'],
+      throttling: client.config.command_throttling.api,
     })
   }
   run(message) {

@@ -8,8 +8,7 @@ module.exports = class Search extends Command {
   constructor(client) {
     super(client, {
       name: 'search',
-      group: 'api calls',
-      aliases: ['image', 'images', 'lookup', 'photo', 'photos'],
+      group: 'search',
       memberName: 'search',
       description: 'Look for an image in the NASA image library.',
       examples: [`${config.prefix}search <search term>`],

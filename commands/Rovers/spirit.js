@@ -8,7 +8,7 @@ module.exports = class NAME extends Command {
   constructor(client) {
     super(client, {
       name: 'spirit',
-      group: 'api calls',
+      group: 'rovers',
       aliases: ['spirit'],
       memberName: 'spirit',
       description: 'Get info about spirit and look up the images it has taken',

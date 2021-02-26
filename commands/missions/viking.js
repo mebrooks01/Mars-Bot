@@ -9,19 +9,9 @@ module.exports = class NAME extends Command {
       aliases: ['viking 1', 'viking 2'],
       memberName: 'viking',
       description: 'Find Information on the Viking 1 & 2 missions',
-      examples: [`${config.prefix}`],
-      clientPermissions: [
-        'SEND_MESSAGES',
-        'EMBED_LINKS',
-        'ATTACH_FILES',
-        'READ_MESSAGE_HISTORY',
-      ],
-      guildOnly: false,
-      ownerOnly: false,
-      throttling: {
-        usages: 2,
-        duration: 1,
-      },
+      examples: [`${config.prefix}viking`],
+      clientPermissions: ['EMBED_LINKS'],
+      throttling: client.config.command_throttling.api,
     })
   }
   run(message) {

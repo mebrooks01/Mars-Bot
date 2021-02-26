@@ -8,7 +8,7 @@ module.exports = class Opportunity extends Command {
   constructor(client) {
     super(client, {
       name: 'opportunity',
-      group: 'api calls',
+      group: 'rovers',
       aliases: ['opportunity'],
       memberName: 'opportunity',
       description:

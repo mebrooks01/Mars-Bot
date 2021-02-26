@@ -34,13 +34,17 @@ client.registry
   .registerGroups([
     [
       'missions',
-      'I have info on all missions for NASA that have ever been launched to mars if you dont see it here check the API Calls category',
+      'This category has all of the older missions. IE all of the missions but the most recent rovers',
     ],
     [
-      'api calls',
-      'Mission Info on more recent missions and photos/data from these mission',
+      'rovers',
+      'Mission info and basic photo search for the most recent mars rovers',
     ],
-    ['utilities', 'Other useful commands'],
+    [
+      'search',
+      'Search for an image, mission data, weather data and the Astronomy Picture of the Day',
+    ],
+    ['utilities', 'Other helpful commands for basic info and support'],
   ])
   .registerDefaultGroups()
   //Turn on and off default commands
