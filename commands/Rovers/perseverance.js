@@ -96,9 +96,7 @@ module.exports = class Perseverance extends Command {
     message.embed({
       title: mission.rover.perseverance.title,
       url: mission.rover.perseverance.url,
-      description: `**API data not available  yet**\n${
-        mission.rover.perseverance.info
-      }\nMore Info at:\n${(mission.rover.perseverance, url)}`,
+      description: `**API data not available  yet**\n${mission.rover.perseverance.info}\nMore Info at:\n${mission.rover.perseverance.url}`,
       color: config.rover.embed_color,
       timestamp: new Date(),
       image: {

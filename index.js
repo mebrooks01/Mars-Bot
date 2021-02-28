@@ -68,7 +68,7 @@ mysql
 
 //Bot Login
 client.once('ready', () => {
-  client.user.setActivity(`${config.prefix}Help for help.`, {
+  client.user.setActivity(`people use "${config.prefix}Help"`, {
     type: 'WATCHING',
   })
 
