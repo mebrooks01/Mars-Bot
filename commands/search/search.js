@@ -13,7 +13,7 @@ module.exports = class Search extends Command {
       description: 'Look for an image in the NASA image library.',
       examples: [`${config.prefix}search <search term>`],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
       args: [
         {
           key: 'search_term',

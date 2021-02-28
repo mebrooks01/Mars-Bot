@@ -14,7 +14,7 @@ module.exports = class APOD extends Command {
         'Every day NASA publishes an "Astronomy Picture of the Day" use this command to see todays',
       examples: [`${config.prefix}apod`],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
     })
   }
 

@@ -11,7 +11,7 @@ module.exports = class Observer extends Command {
       description: 'Find Information on the Observer mission',
       examples: [`${config.prefix}observer`],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
     })
   }
   run(message) {

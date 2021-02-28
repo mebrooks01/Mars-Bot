@@ -19,7 +19,7 @@ module.exports = class Perseverance extends Command {
         `${config.prefix}perseverance <'info' | 'image'> <sol> <result number>`,
       ],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
       args: [
         {
           key: 'type',

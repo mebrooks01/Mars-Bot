@@ -15,7 +15,7 @@ module.exports = class Perseverance extends Command {
       description: '',
       examples: [`${config.prefix}`],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
     })
   }
 

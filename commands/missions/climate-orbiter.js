@@ -1,17 +1,17 @@
 const { Command } = require('discord.js-commando')
 const config = require('$root/config.json')
-const mission = require('$root/missions.json')
+const mission = require('$root/mission.json')
 
 module.exports = class ClimateOrbiter extends Command {
   constructor(client) {
     super(client, {
       name: 'climate-orbiter',
       group: 'missions',
-      aliases: 'climate orbiter',
-      memberName: 'climateorbiter',
+      aliases: ['climate orbiter'],
+      memberName: 'climate-orbiter',
       description: 'Find Information about the climate orbiter mission',
-      examples: `${config.prefix}climateorbiter`,
-      clientPermissions: 'EMBED_LINKS',
+      examples: [`${config.prefix}climateorbiter`],
+      clientPermissions: ['EMBED_LINKS'],
       throttling: client.config.command_throttling.missions,
     })
   }

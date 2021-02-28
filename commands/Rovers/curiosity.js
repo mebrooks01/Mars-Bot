@@ -16,7 +16,7 @@ module.exports = class Curiosity extends Command {
         `${config.prefix}curiosity <'info' | 'image'> <sol> <result number>`,
       ],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
       args: [
         {
           key: 'type',

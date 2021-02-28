@@ -17,7 +17,7 @@ module.exports = class Insight extends Command {
         `${config.prefix}insight <'info' | 'weather'>`,
       ],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
       args: [
         {
           key: 'type',

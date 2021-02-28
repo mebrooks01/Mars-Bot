@@ -1,17 +1,17 @@
 const { Command } = require('discord.js-commando')
 const config = require('$root/config.json')
-const mission = require('$root/missions.json')
+const mission = require('$root/mission.json')
 
 module.exports = class ExoMars extends Command {
   constructor(client) {
     super(client, {
       name: 'exomars',
       group: 'missions',
-      aliases: 'exo mars',
+      aliases: ['exo mars'],
       memberName: 'exomars',
       description: 'Find Information on the exo mars mission',
-      examples: `${config.prefix}exomars`,
-      clientPermissions: 'EMBED_LINKS',
+      examples: [`${config.prefix}exomars`],
+      clientPermissions: ['EMBED_LINKS'],
       throttling: client.config.command_throttling.missions,
     })
   }

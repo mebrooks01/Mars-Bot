@@ -11,7 +11,7 @@ module.exports = class NAME extends Command {
       description: 'Find Information on the Viking 1 & 2 missions',
       examples: [`${config.prefix}viking`],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
     })
   }
   run(message) {

@@ -11,7 +11,7 @@ module.exports = class MarsExpress extends Command {
       description: 'Find Information on the mars express mission',
       examples: [`${config.prefix}mars-express`],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
     })
   }
   run(message) {

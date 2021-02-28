@@ -12,7 +12,7 @@ module.exports = class NAME extends Command {
         'Find Information on the Mars Polar Lander/Deep Space 2 mission',
       examples: [`${config.prefix}polar-lander`],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
     })
   }
   run(message) {

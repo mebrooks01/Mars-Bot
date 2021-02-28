@@ -12,7 +12,7 @@ module.exports = class Maven extends Command {
         'Find Information on the Mars Atmospheric and Volatile EvolutioN (Maven) mission',
       examples: [`${config.prefix}maven`],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
     })
   }
   run(message) {

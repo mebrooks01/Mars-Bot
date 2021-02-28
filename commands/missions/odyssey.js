@@ -10,7 +10,7 @@ module.exports = class Odyssey extends Command {
       description: 'Find Information on the odyssey mission',
       examples: [`${config.prefix}odyssey`],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
     })
   }
   run(message) {

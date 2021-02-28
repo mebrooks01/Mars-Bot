@@ -6,12 +6,12 @@ module.exports = class globalsurveyor extends Command {
     super(client, {
       name: 'global-surveyor',
       group: 'missions',
-      aliases: 'global surveyor',
+      aliases: ['global surveyor'],
       memberName: 'global-surveyor',
       description: 'Find Information on the global surveyor mission',
-      examples: `${config.prefix}global-surveyor`,
-      clientPermissions: 'EMBED_LINKS',
-      throttling: client.config.command_throttling.api,
+      examples: [`${config.prefix}global-surveyor`],
+      clientPermissions: ['EMBED_LINKS'],
+      throttling: config.command_throttling.api,
     })
   }
 

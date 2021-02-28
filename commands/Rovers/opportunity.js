@@ -18,7 +18,7 @@ module.exports = class Opportunity extends Command {
         `${config.prefix}opportunity <'info' | 'last' | 'image'> <sol> <result number>`,
       ],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
       args: [
         {
           key: 'type',

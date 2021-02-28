@@ -11,7 +11,7 @@ module.exports = class NAME extends Command {
       description: 'Find Information on the pathfinder mission',
       examples: [`${config.prefix}pathfinder`],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.api,
+      throttling: config.command_throttling.api,
     })
   }
   run(message) {
