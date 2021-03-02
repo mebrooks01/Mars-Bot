@@ -11,7 +11,7 @@ module.exports = class globalsurveyor extends Command {
       description: 'Find Information on the global surveyor mission',
       examples: [`${config.prefix}global-surveyor`],
       clientPermissions: ['EMBED_LINKS'],
-      throttling: config.command_throttling.api,
+      throttling: client.config.command_throttling.missions,
     })
   }
 

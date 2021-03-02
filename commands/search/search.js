@@ -1,7 +1,5 @@
 const { Command } = require('discord.js-commando')
 const axios = require('axios')
-const moment = require('moment')
-
 const config = require('$root/config.json')
 
 module.exports = class Search extends Command {
@@ -28,10 +26,9 @@ module.exports = class Search extends Command {
     axios
       .get('https://images-api.nasa.gov/search?q=' + search_term)
       .then((res) => {
-        if (res.data.collection.metadata.total_hits == 0) {
-          message.reply('that search term found no results')
-          return
-        }
+        if (res.data.collection.metadata.total_hits == 0)
+          return message.reply('that search term found no results')
+
         let img = res.data.collection.items[1].links[0].href.replace(
           /\s/g,
           '%20',
@@ -45,11 +42,9 @@ module.exports = class Search extends Command {
             description: `**Taken on:** ${data.date_created
               .slice(0, 10)
               .split(/ +/)}\n${data.description}`,
-            color: this.client.config.embed_color,
+            color: config.embed_color,
             timestamp: new Date(),
-            image: {
-              url: img,
-            },
+            image: { url: img },
           },
         })
       })

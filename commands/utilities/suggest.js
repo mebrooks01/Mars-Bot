@@ -10,34 +10,21 @@ module.exports = class NAME extends Command {
       memberName: 'suggest',
       description: 'Give us a suggestion',
       examples: [`${config.prefix}suggest`],
-      clientPermissions: [
-        'SEND_MESSAGES',
-        'EMBED_LINKS',
-        'ATTACH_FILES',
-        'READ_MESSAGE_HISTORY',
-      ],
-      guildOnly: false,
-      ownerOnly: false,
-      throttling: {
-        usages: 2,
-        duration: 1,
-      },
+      clientPermissions: ['EMBED_LINKS'],
+      throttling: config.command_throttling.utilities,
     })
   }
   run(message) {
+    let info = mission.other.suggest
+
     message.embed({
-      title: 'Suggestions?',
-      url: 'https://github.com/mebrooks01/Mars-Bot/issues',
-      description: `If you have a suggest for Mars Bot please post it on the Git hub repository\nhttps://github.com/mebrooks01/Mars-Bot/issues\nOr join our server and talk to us about it\n${config.invite}`,
-      color: this.client.config.embed_color,
+      title: info.title,
+      url: info.url,
+      description: info.info + config.invite,
+      color: config.embed_color,
       timestamp: new Date(),
-      thumbnail: {
-        url: this.client.config.pfp,
-      },
-      footer: {
-        text: 'Photo Credit: NASA/JPL-Caltech',
-        icon_url: '',
-      },
+      thumbnail: { url: client.config.pfp },
+      footer: { text: mission.credit },
     })
   }
 }

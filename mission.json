@@ -1,5 +1,5 @@
 {
-  "credit": "Credit: NASA/JPL-Caltech",
+  "credit": "Photo Credit: NASA/JPL-Caltech",
 
   "rover": {
     "perseverance": {
@@ -8,23 +8,23 @@
       "title": "Mars 2020 Perseverance Rover",
       "info": "Launched on July 30, 2020\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on Feb. 18, 2021\nLanded at Jezero Crater, Mars\nMission Ongoing"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "curiosity": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/mars-science-laboratory",
+      "img": "https://mars.nasa.gov/system/resources/detail_files/3504_msl20110519_PIA14156-full2.jpg",
+      "title": "Mars Science Laboratory Curiosity",
+      "info": "Launched on November 26, 2011\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on August 6, 2012\nLanded at Gale Crater, Mars\nMission Ongoing"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "opportunity": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/365_MER-1280.jpg",
+      "title": "Mars Exploration Rover Opportunity",
+      "info": "Launched on July 8, 2003\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on January 25, 2004\nLanded at Meridiani Planum\nMission Complete, ended on February 13, 2019"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "spirit": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/365_MER-1280.jpg",
+      "title": "Mars Exploration Rover Spirit",
+      "info": "Launched on June 10, 2003\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on January 4, 2004\nLanded at Gusev Crater\nMission Complete, ended on March 22, 2010"
     }
   },
 
@@ -53,111 +53,93 @@
       "title": "Mariner 3-9",
       "info": "Launched Between November 28, 1964 and May 30, 1971\nLaunched from Cape Canaveral Air Force Station, Florida\nMissions complete between, December 21, 1967 and October 27, 1972"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "express": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/express/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/369_mars-express.jpg",
+      "title": "Mars Express",
+      "info": "Launched on June 2, 2003\nLaunched from Baikonur Cosmodrome, Russia\nOrbit insertion on December 25, 2003\nMission ongoing"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "maven": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/maven/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/378_maven.jpg",
+      "title": "Mars Atmospheric and Volatile EvolutioN (Maven)",
+      "info": "Launched on November 18, 2013\nLaunched from Cape Canaveral Air Force Station, Florida\nOrbit insertion on September 22, 2014\nMission ongoing"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "mro": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/mars-reconnaissance-orbiter/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/366_mro20100917_PIA05490_modest.jpg",
+      "title": "Mars Reconnaissance Orbiter (MRO)",
+      "info": "Launched on August 12, 2005\nLaunched from Cape Canaveral Air Force Station, Florida\nOrbit insertion on March 10, 2006\nMission ongoing"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "observer": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/mars-observer/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/377_mars_observer.jpg",
+      "title": "Mars Observer",
+      "info": "Launched on September 25, 1992\nlaunched from Cape Canaveral Air Force Station, Florida\nMission Failed, Communication lost prior to orbit insertion"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "odyssey": {
+      "url": "https://mars.nasa.gov/system/content_pages/main_images/380_odyssey-PIA04816.jpg",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/380_odyssey-PIA04816.jpg",
+      "title": "Mars Odyssey",
+      "info": "Launched on April 7, 2001\nLaunched from Cape Canaveral Air Force Station, Florida\nOrbit insertion on October 24, 2001\nMission ongoing"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "pathfinder": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/pathfinder/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/384_pathfinder.jpg",
+      "title": "Mars Pathfinder",
+      "info": "Launched on December 4, 1996.\nLaunched from Cape Canaveral Air Force Station, Florida.\nLanded on July 4, 1997.\nLanded at Ares Vallis, Mars\nMission Complete, ended on September 27, 1997."
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "phoenix": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/phoenix/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/383_phoenix-lander.jpg",
+      "title": "Mars Phoenix",
+      "info": "Launched  on August 4, 2007\nLaunched From Cape Canaveral Air Force Station, Florida\nLanded on May 25, 2008\nLanded at Vastitas Borealis, the arctic plains of Mars\nMission Complete, ended on November 2, 2008"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "polar": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/polar-lander/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/381_mpl_shadow.jpg",
+      "title": "Mars Polar Lander/Deep Space 2",
+      "info": "'Launched on January 3, 1999\nLaunched from Cape Canaveral Air Force Station, Florida\nMission Failed, lost on arrival(December 3, 1999)"
+    },
+    "viking": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/viking-1-2/",
+      "img": "https://mars.nasa.gov/system/content_pages/main_images/382_viking-lander-PIA09703.jpg",
+      "title": "Viking 1 & 2",
+      "info": "Launched on August 20, 1975 UTC and September 9, 1975 UTC\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on July 20, 1976 and September 3, 1976\nLanded at Chryse Planitia and Utopia Planitia\nMission Complete, ended on November 13, 1982 and April 11, 1980"
     }
   },
 
   "other": {
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "insight": {
+      "url": "https://mars.nasa.gov/mars-exploration/missions/insight/",
+      "img": "https://mars.nasa.gov/system/resources/detail_files/22116_PIA22743-16x9.jpg",
+      "title": "InSight",
+      "info": "Launched on May 5, 2018\nLaunched from Vandenberg Air Force Base, California\nLanded on November 26, 2018\nLanded at Elysium Planitia, Mars\nMission Ongoing"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "bug": {
+      "url": "https://github.com/mebrooks01/Mars-Bot/issues",
+      "title": "Bugs?",
+      "info": "If you found a bug in Mars Bot please report it on the Git hub repository\nhttps://github.com/mebrooks01/Mars-Bot/issues\nOr join our server and talk to us about it\n"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "invite": {
+      "url": "'https://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945",
+      "title": "Invite Me!!",
+      "info": "Invite me to your discord using the following link.\nhttps://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "mars": {
+      "url": "https://mars.nasa.gov/",
+      "img": "https://solarsystem.nasa.gov/internal_resources/3841/",
+      "title": "Mars",
+      "info": "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. In English, Mars carries the name of the Roman god of war and is often referred to as the 'Red Planet'. The latter refers to the effect of the iron oxide prevalent on Mars surface, which gives it a reddish appearance distinctive among the astronomical bodies visible to the naked eye. Mars is a terrestrial planet with a thin atmosphere, with surface features reminiscent of the impact craters of the Moon and the valleys, deserts and polar ice caps of Earth.\nSources:\nhttps://en.wikipedia.org/wiki/Mars\nhttps://mars.nasa.gov/"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "suggest": {
+      "url": "https://github.com/mebrooks01/Mars-Bot/issues",
+      "title": "Suggestions?",
+      "info": "If you have a suggest for Mars Bot please post it on the Git hub repository\nhttps://github.com/mebrooks01/Mars-Bot/issues\nOr join our server and talk to us about it\n"
     },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
-    },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
-    },
-    "": {
-      "url": "",
-      "img": "",
-      "title": "",
-      "info": ""
+    "support": {
+      "title": "Support?",
+      "info": "Join the community discord for advanced support with the bot and get a sneak peak into the development of this bot.\n"
     }
-  },
-
-  "": {
-    "url": "",
-    "img": "",
-    "title": "",
-    "info": ""
   }
 }

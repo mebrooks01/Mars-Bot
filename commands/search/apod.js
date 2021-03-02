@@ -1,7 +1,6 @@
 const { Command } = require('discord.js-commando')
 const axios = require('axios')
 const moment = require('moment')
-
 const config = require('$root/config.json')
 
 module.exports = class APOD extends Command {
@@ -30,15 +29,10 @@ module.exports = class APOD extends Command {
           title: res.data.title,
           url: res.data.url,
           description: res.data.explanation,
-          color: this.client.config.embed_color,
+          color: config.embed_color,
           timestamp: new Date(),
-          image: {
-            url: res.data.url,
-          },
-          footer: {
-            text: `Photo Credit: ${res.data.copyright}`,
-            icon_url: '',
-          },
+          image: { url: res.data.url },
+          footer: { text: `Photo Credit: ${res.data.copyright}` },
         })
       })
       .catch(function (error) {

@@ -6,20 +6,9 @@ module.exports = class Test extends Command {
       group: 'utilities',
       aliases: ['testing'],
       memberName: 'testing',
-      description: 'A Command used for testing the bot',
+      description: 'A Command used for testing whatever I need',
       examples: ['=test'],
-      clientPermissions: [
-        'SEND_MESSAGES',
-        'EMBED_LINKS',
-        'ATTACH_FILES',
-        'READ_MESSAGE_HISTORY',
-      ],
-      guildOnly: false,
       ownerOnly: true,
-      throttling: {
-        usages: 2,
-        duration: 1,
-      },
     })
   }
   run(message) {

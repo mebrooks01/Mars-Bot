@@ -1,7 +1,7 @@
 const { Command } = require('discord.js-commando')
 const axios = require('axios')
-
 const config = require('$root/config.json')
+const mission = require('$root/mission.json')
 
 module.exports = class Insight extends Command {
   constructor(client) {
@@ -31,6 +31,8 @@ module.exports = class Insight extends Command {
   }
 
   run(message, { type }) {
+    let info = mission.other.insight
+
     if (type === 'weather') {
       axios
         .get(
@@ -119,15 +121,9 @@ module.exports = class Insight extends Command {
                   value: `__**Temperature  Info**__\nAverage: ${sol2_av_temp}\nMax: ${sol2_mx_temp}\nMin: ${sol2_mn_temp}\n__**Wind Speed Info**__\nAverage: ${sol2_av_wind}\nMax: ${sol2_mx_wind}\nMin: ${sol2_mn_wind}\n__**Air Pressure Info**__\nAverage: ${sol2_av_pr}\nMax: ${sol2_mx_pr}\nMin: ${sol2_mn_pr}\n**Season:** ${sol2_data.Season}`,
                 },
               ],
-              color: this.client.config.embed_color,
+              color: config.embed_color,
               timestamp: new Date(),
-              image: {
-                url: '',
-              },
-              footer: {
-                text: 'Credit: NASA/JPL-Caltech',
-                icon_url: '',
-              },
+              footer: { text: mission.credit },
             },
           })
         })
@@ -139,21 +135,15 @@ module.exports = class Insight extends Command {
         })
       return
     }
+
     message.embed({
-      title: 'Insight',
-      url: 'https://mars.nasa.gov/mars-exploration/missions/insight/',
-      description:
-        'Launched on May 5, 2018\nLaunched from Vandenberg Air Force Base, California\nLanded on November 26, 2018\nLanded at Elysium Planitia, Mars\nMission Ongoing\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/insight/',
-      color: this.client.config.embed_color,
+      title: info.title,
+      url: info.url,
+      description: info.info,
+      color: config.embed_color,
       timestamp: new Date(),
-      image: {
-        url:
-          'https://mars.nasa.gov/system/resources/detail_files/22116_PIA22743-16x9.jpg',
-      },
-      footer: {
-        text: 'Credit: NASA/JPL-Caltech',
-        icon_url: '',
-      },
+      image: { url: info.img },
+      footer: { text: mission.credit },
     })
   }
 }

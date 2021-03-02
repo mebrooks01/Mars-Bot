@@ -1,7 +1,7 @@
 const { Command } = require('discord.js-commando')
 const axios = require('axios')
-
 const config = require('$root/config.json')
+const mission = require('$root/mission.json')
 
 module.exports = class Curiosity extends Command {
   constructor(client) {
@@ -42,6 +42,8 @@ module.exports = class Curiosity extends Command {
   }
 
   run(message, { type, sol, result_number }) {
+    let info = mission.rover.curiosity
+
     if (type === 'image') {
       if (!sol)
         return message.reply(
@@ -57,9 +59,9 @@ module.exports = class Curiosity extends Command {
           `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&api_key=${config.api_key}`,
         )
         .then((res) => {
-          if (!res.data.photos[result_number - 1]) {
+          if (!res.data.photos[result_number - 1])
             return message.reply('No results found')
-          }
+
           let img = res.data.photos[result_number - 1].img_src
           let data = res.data.photos[result_number - 1]
           let cam = res.data.photos[result_number - 1].camera
@@ -67,18 +69,13 @@ module.exports = class Curiosity extends Command {
 
           message.channel.send({
             embed: {
-              title: 'Photo from ' + rover.name + "'s from " + cam.full_name,
+              title: `Photo from ${rover.name}'s from ${cam.full_name}`,
               url: img,
               description: `**Rover Name:** ${rover.name}\n**Mission Status:** ${rover.status}\n**Sol:** ${data.sol}\n**Date:** ${data.earth_date}\n**Camera Name:** ${cam.full_name} (${cam.name})\n**Photo ID:** ${data.id}`,
               color: this.client.config.embed_color,
               timestamp: new Date(),
-              image: {
-                url: img,
-              },
-              footer: {
-                text: 'Photo Credit: NASA/JPL-Caltech',
-                icon_url: '',
-              },
+              image: { url: img },
+              footer: { text: mission.credit },
             },
           })
         })
@@ -90,22 +87,17 @@ module.exports = class Curiosity extends Command {
         })
       return
     }
+
     message.embed({
-      title: 'Mars Science Laboratory Curiosity',
-      url:
-        'https://mars.nasa.gov/mars-exploration/missions/mars-science-laboratory',
+      title: info.title,
+      url: info.url,
       description:
-        '**API data available for this mission** Do `=curiosity image <sol> <result number>`\nLaunched on November 26, 2011\nLaunched from Cape Canaveral Air Force Station, Florida\nLanded on August 6, 2012\nLanded at Gale Crater, Mars\nMission Ongoing\nMore Info at:\nhttps://mars.nasa.gov/mars-exploration/missions/mars-science-laboratory/',
-      color: this.client.config.embed_color,
+        '**API data available for this mission** Do `=curiosity image <sol> <result number>`\n' +
+        info.info,
+      color: config.embed_color,
       timestamp: new Date(),
-      image: {
-        url:
-          'https://mars.nasa.gov/system/resources/detail_files/3504_msl20110519_PIA14156-full2.jpg',
-      },
-      footer: {
-        text: 'Credit: NASA/JPL-Caltech',
-        icon_url: '',
-      },
+      image: { url: info.img },
+      footer: { text: mission.credit },
     })
   }
 }

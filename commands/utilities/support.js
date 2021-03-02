@@ -10,48 +10,21 @@ module.exports = class Support extends Command {
       memberName: 'support',
       description: 'Get Help',
       examples: [`${config.prefix}support`],
-      clientPermissions: [
-        'SEND_MESSAGES',
-        'EMBED_LINKS',
-        'ATTACH_FILES',
-        'READ_MESSAGE_HISTORY',
-      ],
-      guildOnly: false,
-      ownerOnly: false,
-      throttling: {
-        usages: 2,
-        duration: 1,
-      },
+      clientPermissions: ['EMBED_LINKS'],
+      throttling: config.command_throttling.utilities,
     })
   }
   run(message) {
+    let info = mission.other.support
+
     message.embed({
-      title: 'Support?',
-      description: `Join the community discord for advanced support with the bot and get a sneak peak into the development of this bot.\n${config.invite}`,
-      color: this.client.config.embed_color,
+      title: info.title,
+      url: config.invite,
+      description: info.info + config.invite,
+      color: config.embed_color,
       timestamp: new Date(),
-      thumbnail: {
-        url: this.client.config.pfp,
-      },
-      footer: {
-        text: 'Photo Credit: NASA/JPL-Caltech',
-        icon_url: '',
-      },
+      thumbnail: { url: client.config.pfp },
+      footer: { text: mission.credit },
     })
   }
-}
-
-module.exports = {
-  name: '',
-  description: 'need help join the discord',
-  execute(message, args) {
-    message.channel.send({
-      embed: {
-        title: 'Support',
-        description:
-          'Join the comunity discord for advanced support with the bot and get a sneak peak into the development of this bot.\nhttps://discord.gg/RAhFPEp',
-        color: '#5A2017',
-      },
-    })
-  },
 }

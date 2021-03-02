@@ -1,6 +1,7 @@
 const { Command } = require('discord.js-commando')
-const moment = require('moment')
 const config = require('$root/config.json')
+const mission = require('$root/mission.json')
+
 module.exports = class Invite extends Command {
   constructor(client) {
     super(client, {
@@ -10,36 +11,22 @@ module.exports = class Invite extends Command {
       memberName: 'invite',
       description: 'Invite me to your server',
       examples: [`${config.prefix}invite`],
-      clientPermissions: [
-        'SEND_MESSAGES',
-        'EMBED_LINKS',
-        'ATTACH_FILES',
-        'READ_MESSAGE_HISTORY',
-      ],
-      guildOnly: false,
-      ownerOnly: false,
-      throttling: {
-        usages: 2,
-        duration: 1,
-      },
+      clientPermissions: ['EMBED_LINKS'],
+      throttling: config.command_throttling.utilities,
     })
   }
+
   run(message) {
+    let info = mission.other.invite
+
     message.embed({
-      title: 'Invite Me',
-      url:
-        'https://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945',
-      description:
-        'Invite me to your discord using the following link.\nhttps://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945',
-      color: this.client.config.embed_color,
+      title: info.title,
+      url: info.url,
+      description: info.info,
+      color: config.embed_color,
       timestamp: new Date(),
-      thumbnail: {
-        url: this.client.config.pfp,
-      },
-      footer: {
-        text: 'Photo Credit: NASA/JPL-Caltech',
-        icon_url: '',
-      },
+      thumbnail: { url: client.config.pfp },
+      footer: { text: mission.credit },
     })
   }
 }
