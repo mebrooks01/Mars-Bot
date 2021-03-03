@@ -28,7 +28,7 @@ Mars Bot uses NASA's API and other sources to give you plenty of cool informatio
 
 ## Commands
 
-There are currently `26` commands for the bot they are split into 3 sections `missions`, `api calls` and `utilities`.\
+There are currently `28` commands for the bot they are split into 3 sections `missions`, `api calls` and `utilities`.\
 I have information on all NASA missions that have been launched as of January 2021.
 
 ### Missions
@@ -49,13 +49,18 @@ I have information on all NASA missions that have been launched as of January 20
 
 ### API Calls
 
-`=apod` Every day NASA publishes an "Astronomy Picture of the Day." Use this command to see today's picture.\
-`=insight <'info' | 'weather'>` Get information about Insight and find weather data.\
 `=perseverance <'info' | 'image'> [sol] [page number]` Get information about the Perseverance rover and look up the images it has taken.\
 `=curiosity <'info' | 'image'> [sol] [page number]` Get information about the Curiosity rover and look up the images it has taken.\
 `=opportunity <'info' | 'image'> [sol] [page number]` Get information about the Opportunity rover and look up the images it has taken.\
 `=spirit <'info' | 'image'> [sol] [page number]` Get information about the Spirit rover and look up the images it has taken.\
+
+### Searches
+
+`=insight <'info' | 'weather'>` Get information about Insight and find weather data.\
+`=apod` Every day NASA publishes an "Astronomy Picture of the Day." Use this command to see today's picture.\
 `=search <search term>` Look for an image in the NASA image library.
+`=image` Coming Soon
+`=manifest` Coming soon
 
 ### Other Commands
 

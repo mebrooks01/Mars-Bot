@@ -30,10 +30,8 @@ module.exports = {
                 title: res.data.title,
                 url: res.data.url,
                 description: res.data.explanation,
-                color: '#5A2017',
-                image: {
-                  url: res.data.url,
-                },
+                color: config.embed_color,
+                image: { url: res.data.url },
               },
             })
         })
