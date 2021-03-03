@@ -58,8 +58,8 @@ I have information on all NASA missions that have been launched as of January 20
 
 `=insight <'info' | 'weather'>` Get information about Insight and find weather data.\
 `=apod` Every day NASA publishes an "Astronomy Picture of the Day." Use this command to see today's picture.\
-`=search <search term>` Look for an image in the NASA image library.
-`=image` Coming Soon
+`=search <search term>` Look for an image in the NASA image library.\
+`=image` Coming Soon\
 `=manifest` Coming soon
 
 ### Other Commands
