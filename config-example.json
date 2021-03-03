@@ -14,11 +14,8 @@
   "user_id": {
     "owner": [""]
   },
-  "server_id": {
-    "main_server": ""
-  },
   "channel_id": {
-    "apod_for_main": ""
+    "dpod": [""]
   },
   "command_throttling": {
     "api": {

@@ -110,10 +110,8 @@ You will need to rename `config-example.json` to `config.json` and fill in all t
   - db: the database name
 - user_id
   - owner: The user ID of the bot application owner(can have multiple in an array).
-- server_id
-  - main_server: The guild ID of the main server the bot is on.
 - channel_id
-  - apod_for_main: The channel ID of the channel you want the APOD photo to be sent to each day.
+  - apod_for_main: The channel ID of the channel you want the APOD photo to be sent to each day. (Must be an array)
 - command_throttling
   - api
     - usages: By default its set to 2
