@@ -1,5 +1,5 @@
 const config = require('$root/config.json')
-const mission = require('$root/missions.json')
+const mission = require('$root/mission.json')
 
 module.exports = {
   execute(client, guild) {
@@ -18,7 +18,7 @@ module.exports = {
         description: `Thank you for adding Mars Bot to your server. For more information use ${config.prefix}help or check out my github. https://github.com/mebrooks01/Mars-Bot/blob/main/README.md`,
         color: client.config.embed_color,
         timestamp: new Date(),
-        thumbnail: { url: client.config.pfp },
+        thumbnail: { url: config.pfp },
         footer: { text: mission.credit },
       },
     })

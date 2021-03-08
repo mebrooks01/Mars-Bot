@@ -17,7 +17,5 @@ module.exports = class Manifest extends Command {
     })
   }
 
-  run(message, {}) {
-    message.reply('Coming Soon:tm:')
-  }
+  run(message, {}) {}
 }

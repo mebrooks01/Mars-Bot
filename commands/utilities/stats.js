@@ -29,9 +29,9 @@ module.exports = class Stats extends Command {
           this.client.ws.ping,
         )}ms\nUptime    :: ${prettyMilliseconds(this.client.uptime)}` +
         '```',
-      color: client.config.embed_color,
+      color: config.embed_color,
       timestamp: new Date(),
-      thumbnail: { url: client.config.pfp },
+      thumbnail: { url: config.pfp },
       footer: { text: mission.credit },
     })
   }

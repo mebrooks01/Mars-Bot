@@ -25,7 +25,7 @@ module.exports = class Invite extends Command {
       description: info.info,
       color: config.embed_color,
       timestamp: new Date(),
-      thumbnail: { url: client.config.pfp },
+      thumbnail: { url: config.pfp },
       footer: { text: mission.credit },
     })
   }

@@ -122,7 +122,7 @@
       "info": "If you found a bug in Mars Bot please report it on the Git hub repository\nhttps://github.com/mebrooks01/Mars-Bot/issues\nOr join our server and talk to us about it\n"
     },
     "invite": {
-      "url": "'https://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945",
+      "url": "https://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945",
       "title": "Invite Me!!",
       "info": "Invite me to your discord using the following link.\nhttps://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945"
     },
@@ -141,5 +141,58 @@
       "title": "Support?",
       "info": "Join the community discord for advanced support with the bot and get a sneak peak into the development of this bot.\n"
     }
+  },
+
+  "cams": {
+    "perseverance": [
+      "edl_rucam",
+      "edl_rdcam",
+      "edl_ddcam",
+      "edl_pucam1",
+      "edl_pucam2",
+      "navcam_left",
+      "navcam_right",
+      "mcz_right",
+      "mcz_left",
+      "front_hazcam_left_a",
+      "front_hazcam_right_a",
+      "rear_hazcam_left",
+      "rear_hazcam_right"
+    ],
+    "curiosity": [
+      "fhaz",
+      "rhaz",
+      "mast",
+      "chemcam",
+      "mahli",
+      "mardi",
+      "navcam"
+    ],
+    "opportunity": ["fhaz", "rhaz", "navcam", "pancam", "minites"],
+    "spirit": ["fhaz", "rhaz", "navcam", "pancam", "minites"],
+    "all": [
+      "edl_rucam",
+      "edl_rdcam",
+      "edl_ddcam",
+      "edl_pucam1",
+      "edl_pucam2",
+      "navcam_left",
+      "navcam_right",
+      "mcz_right",
+      "mcz_left",
+      "front_hazcam_left_a",
+      "front_hazcam_right_a",
+      "rear_hazcam_left",
+      "rear_hazcam_right",
+      "fhaz",
+      "rhaz",
+      "mast",
+      "chemcam",
+      "mahli",
+      "mardi",
+      "navcam",
+      "pancam",
+      "minites"
+    ]
   }
 }

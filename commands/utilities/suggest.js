@@ -1,6 +1,7 @@
 const { Command } = require('discord.js-commando')
-const moment = require('moment')
 const config = require('$root/config.json')
+const mission = require('$root/mission.json')
+
 module.exports = class NAME extends Command {
   constructor(client) {
     super(client, {
@@ -23,7 +24,7 @@ module.exports = class NAME extends Command {
       description: info.info + config.invite,
       color: config.embed_color,
       timestamp: new Date(),
-      thumbnail: { url: client.config.pfp },
+      thumbnail: { url: config.pfp },
       footer: { text: mission.credit },
     })
   }
