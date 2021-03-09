@@ -30,7 +30,7 @@ module.exports = class Image extends Command {
           validate: (date) => {
             if (
               moment(date, 'YYYY/M/D', true).isValid() ||
-              isNaN(date) == false
+              isNaN(date) === false
             )
               return true
           },
