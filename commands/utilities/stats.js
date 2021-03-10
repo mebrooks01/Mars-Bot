@@ -2,6 +2,7 @@ const { Command } = require('discord.js-commando')
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
 const prettyMilliseconds = require('pretty-ms')
+const count = require('$util/count')
 
 module.exports = class Stats extends Command {
   constructor(client) {

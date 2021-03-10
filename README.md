@@ -113,7 +113,7 @@ You will need to rename `config-example.json` to `config.json` and fill in all t
 - user_id
   - owner: The user ID of the bot application owner(can have multiple in an array).
 - channel_id
-  - dpod: The channel ID of the channel you want the APOD photo to be sent to each day. (Must be an array)
+  - dpod: The channel ID of the channel you want the APOD photo to be sent to each day.
 - command_throttling
   - api
     - usages: By default its set to 2

@@ -15,7 +15,7 @@
     "owner": [""]
   },
   "channel_id": {
-    "dpod": [""]
+    "dpod": ""
   },
   "command_throttling": {
     "api": {

@@ -1,6 +1,7 @@
 const { Command } = require('discord.js-commando')
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
+const count = require('$util/count')
 
 module.exports = class ExoMars extends Command {
   constructor(client) {

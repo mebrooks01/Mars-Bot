@@ -23,17 +23,15 @@ module.exports = {
           `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${config.api_key}`,
         )
         .then((res) => {
-          client.channels.cache
-            .get(client.config.channel_id.apod_for_main)
-            .send({
-              embed: {
-                title: res.data.title,
-                url: res.data.url,
-                description: res.data.explanation,
-                color: config.embed_color,
-                image: { url: res.data.url },
-              },
-            })
+          client.channels.cache.get(client.config.channel_id.dpod).send({
+            embed: {
+              title: res.data.title,
+              url: res.data.url,
+              description: res.data.explanation,
+              color: config.embed_color,
+              image: { url: res.data.url },
+            },
+          })
         })
         .catch(function (error) {
           console.log(error.stack)

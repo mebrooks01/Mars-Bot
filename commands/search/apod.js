@@ -2,6 +2,7 @@ const { Command } = require('discord.js-commando')
 const axios = require('axios')
 const moment = require('moment')
 const config = require('$root/config.json')
+const count = require('$util/count')
 
 module.exports = class APOD extends Command {
   constructor(client) {

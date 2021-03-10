@@ -1,6 +1,7 @@
 const { Command } = require('discord.js-commando')
 const axios = require('axios')
 const config = require('$root/config.json')
+const count = require('$util/count')
 
 module.exports = class Search extends Command {
   constructor(client) {

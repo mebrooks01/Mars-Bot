@@ -1,5 +1,6 @@
 const { Command } = require('discord.js-commando')
 const config = require('$root/config.json')
+const count = require('$util/count')
 
 module.exports = class globalsurveyor extends Command {
   constructor(client) {

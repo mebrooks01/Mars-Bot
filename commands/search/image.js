@@ -4,6 +4,7 @@ const moment = require('moment')
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
 let url = ''
+const count = require('$util/count')
 
 module.exports = class Image extends Command {
   constructor(client) {
