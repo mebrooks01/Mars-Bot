@@ -60,6 +60,8 @@ module.exports = class Image extends Command {
   }
 
   run(message, { rover, date, camera, result_number }) {
+    count.cmdCount++
+
     if (
       rover === 'curiosity' &&
       !mission.cams.curiosity.includes(camera) &&

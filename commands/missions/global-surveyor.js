@@ -17,6 +17,7 @@ module.exports = class globalsurveyor extends Command {
   }
 
   run(message) {
+    count.cmdCount++
     let info = mission.missions.global_surveyor
 
     message.embed({

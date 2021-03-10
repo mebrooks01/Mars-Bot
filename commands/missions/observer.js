@@ -17,6 +17,7 @@ module.exports = class Observer extends Command {
   }
 
   run(message) {
+    count.cmdCount++
     let info = mission.missions.observer
 
     message.embed({

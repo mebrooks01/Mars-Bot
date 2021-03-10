@@ -18,6 +18,7 @@ module.exports = class mariner extends Command {
   }
 
   run(message) {
+    count.cmdCount++
     let info = mission.missions.mariner
 
     message.embed({

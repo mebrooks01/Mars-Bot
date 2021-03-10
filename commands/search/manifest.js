@@ -18,5 +18,7 @@ module.exports = class Manifest extends Command {
     })
   }
 
-  run(message, {}) {}
+  run(message, {}) {
+    count.cmdCount++
+  }
 }

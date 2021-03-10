@@ -32,6 +32,8 @@ module.exports = class Insight extends Command {
   }
 
   run(message, { type }) {
+    count.cmdCount++
+
     let info = mission.other.insight
 
     if (type === 'weather') {

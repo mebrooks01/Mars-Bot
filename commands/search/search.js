@@ -24,6 +24,8 @@ module.exports = class Search extends Command {
   }
 
   run(message, { search_term }) {
+    count.cmdCount++
+
     axios
       .get('https://images-api.nasa.gov/search?q=' + search_term)
       .then((res) => {

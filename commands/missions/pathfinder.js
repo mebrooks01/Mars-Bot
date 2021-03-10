@@ -17,6 +17,7 @@ module.exports = class Pathfinder extends Command {
   }
 
   run(message) {
+    count.cmdCount++
     let info = mission.missions.pathfinder
 
     message.embed({

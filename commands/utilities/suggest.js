@@ -17,6 +17,7 @@ module.exports = class NAME extends Command {
     })
   }
   run(message) {
+    count.cmdCount++
     let info = mission.other.suggest
 
     message.embed({

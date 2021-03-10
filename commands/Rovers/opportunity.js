@@ -43,6 +43,8 @@ module.exports = class Opportunity extends Command {
   }
 
   run(message, { type, sol, result_number }) {
+    count.cmdCount++
+
     let info = mission.rover.opportunity
 
     if (type === 'last') {

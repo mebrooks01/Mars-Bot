@@ -19,6 +19,7 @@ module.exports = class APOD extends Command {
   }
 
   run(message) {
+    count.cmdCount++
     let apod_date = moment().utcOffset(-12).format('YYYY-M-D')
 
     axios

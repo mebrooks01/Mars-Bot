@@ -18,6 +18,7 @@ module.exports = class Bug extends Command {
   }
 
   run(message) {
+    count.cmdCount++
     let info = mission.other.bug
 
     message.embed({

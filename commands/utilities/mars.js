@@ -17,6 +17,7 @@ module.exports = class Mars extends Command {
   }
 
   run(message) {
+    count.cmdCount++
     let info = mission.other.mars
 
     message.embed({

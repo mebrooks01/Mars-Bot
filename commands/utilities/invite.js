@@ -18,6 +18,7 @@ module.exports = class Invite extends Command {
   }
 
   run(message) {
+    count.cmdCount++
     let info = mission.other.invite
 
     message.embed({

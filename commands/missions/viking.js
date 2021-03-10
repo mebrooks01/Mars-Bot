@@ -18,6 +18,7 @@ module.exports = class NAME extends Command {
   }
 
   run(message) {
+    count.cmdCount++
     let info = mission.missions.mro
 
     message.embed({

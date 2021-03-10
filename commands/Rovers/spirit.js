@@ -42,6 +42,8 @@ module.exports = class NAME extends Command {
   }
 
   run(message, { type, sol, result_number }) {
+    count.cmdCount++
+
     let info = mission.rover.spirit
 
     if (type === 'image') {

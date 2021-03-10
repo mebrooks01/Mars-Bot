@@ -43,6 +43,8 @@ module.exports = class Curiosity extends Command {
   }
 
   run(message, { type, sol, result_number }) {
+    count.cmdCount++
+
     let info = mission.rover.curiosity
 
     if (type === 'image') {

@@ -14,8 +14,6 @@ module.exports = class Test extends Command {
     })
   }
   run(message) {
-    message.say(count.cmdCount)
     count.cmdCount++
-    message.say(count.cmdCount)
   }
 }

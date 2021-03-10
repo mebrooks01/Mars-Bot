@@ -19,6 +19,7 @@ module.exports = class Stats extends Command {
   }
 
   run(message) {
+    count.cmdCount++
     message.embed({
       title: "Mars Bot's Statistics",
       url: '',
@@ -28,7 +29,9 @@ module.exports = class Stats extends Command {
           this.client.guilds.cache.size
         }\nWS Ping   :: ${Math.round(
           this.client.ws.ping,
-        )}ms\nUptime    :: ${prettyMilliseconds(this.client.uptime)}` +
+        )}ms\nUptime    :: ${prettyMilliseconds(
+          this.client.uptime,
+        )}\nCmds Run  :: ${count.cmdCount} (since last restart)` +
         '```',
       color: config.embed_color,
       timestamp: new Date(),

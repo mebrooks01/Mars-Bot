@@ -18,6 +18,7 @@ module.exports = class Maven extends Command {
   }
 
   run(message) {
+    count.cmdCount++
     let info = mission.missions.maven
 
     message.embed({
