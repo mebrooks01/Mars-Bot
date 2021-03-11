@@ -20,7 +20,7 @@ module.exports = {
     console.log(
       chalk`{yellow Prefix:} ${config.prefix}\n{yellow Invite:} ${config.invite}\n{yellow Embed Color:}` +
         chalk.hex(config.embed_color)(` ${config.embed_color}`) +
-        chalk`\n{yellow Daily APOD Channel:} ${config.channel_id.apod_for_main}`,
+        chalk`\n{yellow Daily APOD Channel:} ${config.channel_id.dpod}`,
     )
     console.log(chalk.bold.underline(`Command Slowdown`))
     console.log(
