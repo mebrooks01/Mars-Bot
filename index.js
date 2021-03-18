@@ -67,26 +67,26 @@ mysql
   })
 
 //Bot Login
-client.once('ready', () => {
-  client.user.setActivity(`people use "${config.prefix}Help"`, {
-    type: 'WATCHING',
-  })
+client.once('ready', async () => {
+  await client.user.setStatus('dnd')
 
-  //Test API Connection
-  axios
+  await dpod.execute(client)
+
+  await axios
     .get(`https://api.nasa.gov/planetary/apod?api_key=${config.api_key}`)
-    .then((res) => {
-      console.log(chalk.green(`NASA API Connected Successfully`))
+    .then(async (res) => {
+      load.execute(client, res)
     })
     .catch(function (error) {
       console.log(chalk.yellow(error))
     })
 
-  dpod.execute(client)
-  load.execute(client)
+  await client.user.setActivity(`people use "${config.prefix}Help"`, {
+    type: 'WATCHING',
+  })
+  await client.user.setStatus('online')
 })
 
-//Sends a msg when added to server
 client.on('guildCreate', (guild) => {
   guild_add.execute(client, guild)
 })

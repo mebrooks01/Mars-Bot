@@ -3,7 +3,6 @@ const axios = require('axios')
 const moment = require('moment')
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
-let url = ''
 const count = require('$util/count')
 
 module.exports = class Image extends Command {
@@ -14,7 +13,9 @@ module.exports = class Image extends Command {
       aliases: ['images', 'lookup', 'rover'],
       memberName: 'image',
       description: 'Coming soon',
-      examples: [`${config.prefix}`],
+      examples: [
+        `${config.prefix}image <'curiosity' | 'opportunity' | 'perseverance' | 'spirit'> <sol | earth date (yyyy/mm/dd)> <'all' | cam name> <result number>`,
+      ],
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
       args: [
@@ -61,53 +62,20 @@ module.exports = class Image extends Command {
 
   run(message, { rover, date, camera, result_number }) {
     count.cmdCount++
+    let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?`
+    let date_mod = date.replace('/', '-')
 
-    if (
-      rover === 'curiosity' &&
-      !mission.cams.curiosity.includes(camera) &&
-      camera !== 'all'
-    )
+    if (camera !== 'all' && !mission.cams[rover].includes(camera))
       return message.reply(
         `Please provide a valid camera name for the ${rover} rover.`,
       )
-    if (
-      rover === 'opportunity' &&
-      !mission.cams.opportunity.includes(camera) &&
-      camera !== 'all'
-    )
-      return message.reply(
-        `Please provide a valid camera name for the ${rover} rover.`,
-      )
-    if (
-      rover === 'perseverance' &&
-      !mission.cams.perseverance.includes(camera) &&
-      camera !== 'all'
-    )
-      return message.reply(
-        `Please provide a valid camera name for the ${rover} rover.`,
-      )
-    if (
-      rover === 'spirit' &&
-      !mission.cams.spirit.includes(camera) &&
-      camera !== 'all'
-    )
-      return message.reply(
-        `Please provide a valid camera name for the ${rover} rover.`,
-      )
+
+    if (camera !== 'all') url += `&camera=${camera}`
 
     if (moment(date, 'YYYY/M/D', true).isValid()) {
-      let date_mod = date.replace('/', '-')
-      if (camera === 'all') {
-        url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date_mod}&api_key=${config.api_key}`
-      } else {
-        url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date_mod}&camera=${camera}&api_key=${config.api_key}`
-      }
+      url += `earth_date=${date_mod}&api_key=${config.api_key}`
     } else {
-      if (camera === 'all') {
-        url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${date}&api_key=${config.api_key}`
-      } else {
-        url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${date}&camera=${camera}&api_key=${config.api_key}`
-      }
+      url += `sol=${date}&api_key=${config.api_key}`
     }
 
     axios
