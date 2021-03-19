@@ -12,9 +12,10 @@ module.exports = class Image extends Command {
       group: 'search',
       aliases: ['images', 'lookup', 'rover'],
       memberName: 'image',
-      description: 'Coming soon',
+      description:
+        'Search for images from rovers with more freedom and look per camera',
       examples: [
-        `${config.prefix}image <'curiosity' | 'opportunity' | 'perseverance' | 'spirit'> <sol | earth date (yyyy/mm/dd)> <'all' | cam name> <result number>`,
+        `${config.prefix}image <'curiosity' | 'opportunity' | 'perseverance' | 'spirit'> <sol | earth date (yyyy/mm/dd)> <'all' | cam name> [result number]`,
       ],
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
@@ -54,7 +55,7 @@ module.exports = class Image extends Command {
           key: 'result_number',
           prompt: 'Please choose a result number to look for',
           type: 'integer',
-          default: '',
+          default: '1',
         },
       ],
     })

@@ -17,6 +17,7 @@ require('better-module-alias')(__dirname)
 const config = require('$root/config.json')
 const load = require('$util/load')
 const dpod = require('$util/dpod')
+const latest = require('$util/latest')
 const guild_add = require('$util/guildCreate')
 
 //Create Discord Client
@@ -71,6 +72,7 @@ client.once('ready', async () => {
   await client.user.setStatus('dnd')
 
   await dpod.execute(client)
+  //await latest.execute(client)
 
   await axios
     .get(`https://api.nasa.gov/planetary/apod?api_key=${config.api_key}`)

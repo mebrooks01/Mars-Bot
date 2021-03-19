@@ -14,7 +14,7 @@ module.exports = class Opportunity extends Command {
         'Get info about opportunity and look up the images it has taken',
       examples: [
         `${config.prefix}opportunity`,
-        `${config.prefix}opportunity <'info' | 'last' | 'image'> <sol> <result number>`,
+        `${config.prefix}opportunity <'info' | 'last' | 'image'> <sol> [result number]`,
       ],
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
@@ -36,7 +36,7 @@ module.exports = class Opportunity extends Command {
           key: 'result_number',
           prompt: 'Please choose a result number to look for',
           type: 'integer',
-          default: '',
+          default: '1',
         },
       ],
     })

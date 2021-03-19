@@ -24,8 +24,8 @@ module.exports = {
         info(`\nDatabase Name: `) + config.mysql.db,
 
         header2(`\nNASA API Connection Info`),
-        info(`\nStatus`) + `${res.status} (${res.statusText})`,
-        info(`\nDate:`) + res.headers.date,
+        info(`\nStatus `) + `${res.status} (${res.statusText})`,
+        info(`\nDate: `) + res.headers.date,
         info(`\nRate Limit Max: `) + res.headers[`x-ratelimit-limit`],
         info(`\nRate Limit Remaining: `) + res.headers[`x-ratelimit-remaining`],
 

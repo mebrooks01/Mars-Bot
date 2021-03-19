@@ -15,7 +15,7 @@ module.exports = class Insight extends Command {
         'Get info about insight and find weather data it has collected',
       examples: [
         `${config.prefix}insight`,
-        `${config.prefix}insight <'info' | 'weather'>`,
+        `${config.prefix}insight ['info' | 'weather']`,
       ],
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,

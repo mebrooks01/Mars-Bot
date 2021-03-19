@@ -14,7 +14,7 @@ module.exports = class Curiosity extends Command {
         'Get info about curiosity and look up the images it has taken',
       examples: [
         `${config.prefix}curiosity`,
-        `${config.prefix}curiosity <'info' | 'image'> <sol> <result number>`,
+        `${config.prefix}curiosity <'info' | 'image'> <sol> [result number]`,
       ],
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
@@ -36,7 +36,7 @@ module.exports = class Curiosity extends Command {
           key: 'result_number',
           prompt: 'Please choose a result number to look for',
           type: 'integer',
-          default: '',
+          default: '1',
         },
       ],
     })

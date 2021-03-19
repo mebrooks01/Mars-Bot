@@ -13,7 +13,7 @@ module.exports = class NAME extends Command {
       description: 'Get info about spirit and look up the images it has taken',
       examples: [
         `${config.prefix}spirit`,
-        `${config.prefix}spirit <'info' | 'image'> <sol> <result number>`,
+        `${config.prefix}spirit <'info' | 'image'> <sol> [result number]`,
       ],
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
@@ -35,7 +35,7 @@ module.exports = class NAME extends Command {
           key: 'result_number',
           prompt: 'Please choose a result number to look for',
           type: 'integer',
-          default: '',
+          default: '1',
         },
       ],
     })

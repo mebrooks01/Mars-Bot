@@ -17,7 +17,8 @@
     "node-schedule": "^2.0.0",
     "path": "^0.12.7",
     "pretty-ms": "^7.0.1",
-    "sqlite": "^4.0.19"
+    "sqlite": "^4.0.19",
+    "zip-dir": "^2.0.0"
   },
   "devDependencies": {
     "prettier": "2.2.1"
