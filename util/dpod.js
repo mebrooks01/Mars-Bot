@@ -1,8 +1,8 @@
 const axios = require('axios')
 const schedule = require('node-schedule')
-const moment = require('moment')
 const chalk = require('chalk')
 const config = require('$root/config.json')
+let img = ''
 
 module.exports = {
   execute(client) {
@@ -16,20 +16,28 @@ module.exports = {
 
     //Apod Cron Function
     const job = schedule.scheduleJob(rule, function () {
-      let date = moment().utcOffset(-12).format('YYYY-M-D')
-
       axios
-        .get(
-          `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${config.api_key}`,
-        )
+        .get(`https://api.nasa.gov/planetary/apod?api_key=${config.api_key}`)
         .then((res) => {
+          config.channel_id.forEach(async (channel) => {
+            console.log(channel)
+          })
+
+          if (res.data.hdurl) {
+            img = res.data.hdurl
+          } else {
+            img = res.data.url
+          }
+
           client.channels.cache.get(client.config.channel_id.dpod).send({
             embed: {
               title: res.data.title,
-              url: res.data.url,
+              url: img,
               description: res.data.explanation,
               color: config.embed_color,
-              image: { url: res.data.url },
+              image: { url: img },
+              timestamp: res.data.date,
+              footer: { text: `Photo Credit: ${res.data.copyright}` },
             },
           })
         })

@@ -17,7 +17,6 @@ require('better-module-alias')(__dirname)
 const config = require('$root/config.json')
 const load = require('$util/load')
 const dpod = require('$util/dpod')
-const latest = require('$util/latest')
 const guild_add = require('$util/guildCreate')
 
 //Create Discord Client

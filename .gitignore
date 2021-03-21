@@ -2,6 +2,4 @@ node_modules/
 .vscode/
 config.json
 workspace.code-workspace
-util/img
-util/zip
-util/latest.js
+src/

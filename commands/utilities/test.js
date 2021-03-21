@@ -1,6 +1,5 @@
 const { Command } = require('discord.js-commando')
 const count = require('$util/count')
-const latest = require('$util/latest')
 
 module.exports = class Test extends Command {
   constructor(client) {
@@ -16,6 +15,5 @@ module.exports = class Test extends Command {
   }
   run(message) {
     count.cmdCount++
-    latest.execute('curiosity', message)
   }
 }
