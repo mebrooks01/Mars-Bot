@@ -8,7 +8,6 @@ module.exports = class Support extends Command {
     super(client, {
       name: 'support',
       group: 'utilities',
-      aliases: ['support'],
       memberName: 'support',
       description: 'Get Help',
       examples: [`${config.prefix}support`],

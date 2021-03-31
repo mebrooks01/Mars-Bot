@@ -32,19 +32,10 @@ client.config = config //Re Redefine Config
 client.registry
   .registerDefaultTypes()
   .registerGroups([
-    [
-      'missions',
-      'This category has all of the older missions. IE all of the missions but the most recent rovers',
-    ],
-    [
-      'rovers',
-      'Mission info and basic photo search for the most recent mars rovers',
-    ],
-    [
-      'search',
-      'Search for an image, mission data, weather data and the Astronomy Picture of the Day',
-    ],
-    ['utilities', 'Other helpful commands for basic info and support'],
+    ['missions', 'Mission Info'],
+    ['rovers', 'Rover Info'],
+    ['search', 'Image Search'],
+    ['utilities', 'Utilities'],
   ])
   .registerDefaultGroups()
   //Turn on and off default commands

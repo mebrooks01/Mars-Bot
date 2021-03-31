@@ -9,7 +9,6 @@ module.exports = class Stats extends Command {
     super(client, {
       name: 'stats',
       group: 'utilities',
-      aliases: ['stats'],
       memberName: 'stats',
       description: 'Find Information about the Red Planet',
       examples: [`${config.prefix}`],
