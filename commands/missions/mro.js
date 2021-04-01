@@ -11,7 +11,6 @@ module.exports = class MRO extends Command {
       memberName: 'mro',
       description:
         'Find Information on the Mars Reconnaissance Orbiter (MRO) mission',
-      examples: [`${config.prefix}mro`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: client.config.command_throttling.missions,
     })

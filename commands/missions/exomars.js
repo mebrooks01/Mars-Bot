@@ -11,7 +11,6 @@ module.exports = class ExoMars extends Command {
       aliases: ['exo mars'],
       memberName: 'exomars',
       description: 'Find Information on the exo mars mission',
-      examples: [`${config.prefix}exomars`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: client.config.command_throttling.missions,
     })

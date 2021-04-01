@@ -11,7 +11,6 @@ module.exports = class Invite extends Command {
       aliases: ['join', 'add', 'invites'],
       memberName: 'invite',
       description: 'Invite me to your server',
-      examples: [`${config.prefix}invite`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.utilities,
     })

@@ -11,10 +11,7 @@ module.exports = class NAME extends Command {
       group: 'rovers',
       memberName: 'spirit',
       description: 'Get info about spirit and look up the images it has taken',
-      examples: [
-        `${config.prefix}spirit`,
-        `${config.prefix}spirit <'info' | 'image'> <sol> [result number]`,
-      ],
+      format: `<'info' | 'image'> <sol> [result number]`,
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
       args: [

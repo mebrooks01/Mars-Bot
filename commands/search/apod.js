@@ -2,6 +2,7 @@ const { Command } = require('discord.js-commando')
 const axios = require('axios')
 const config = require('$root/config.json')
 const count = require('$util/count')
+let img = ''
 
 module.exports = class APOD extends Command {
   constructor(client) {
@@ -11,7 +12,6 @@ module.exports = class APOD extends Command {
       memberName: 'apod',
       description:
         'Every day NASA publishes an "Astronomy Picture of the Day" use this command to see todays',
-      examples: [`${config.prefix}apod`, `${config.prefix}apod ['']`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
     })

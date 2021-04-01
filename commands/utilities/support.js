@@ -10,7 +10,6 @@ module.exports = class Support extends Command {
       group: 'utilities',
       memberName: 'support',
       description: 'Get Help',
-      examples: [`${config.prefix}support`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.utilities,
     })

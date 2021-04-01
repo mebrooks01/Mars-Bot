@@ -12,10 +12,7 @@ module.exports = class Curiosity extends Command {
       memberName: 'curiosity',
       description:
         'Get info about curiosity and look up the images it has taken',
-      examples: [
-        `${config.prefix}curiosity`,
-        `${config.prefix}curiosity <'info' | 'image'> <sol> [result number]`,
-      ],
+      format: `<'info' | 'image'> <sol> [result number]`,
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
       args: [

@@ -11,7 +11,6 @@ module.exports = class NAME extends Command {
       aliases: ['suggestions', 'suggestion', 'ideas', 'idea'],
       memberName: 'suggest',
       description: 'Give us a suggestion',
-      examples: [`${config.prefix}suggest`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.utilities,
     })

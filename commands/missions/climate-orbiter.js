@@ -10,7 +10,6 @@ module.exports = class ClimateOrbiter extends Command {
       aliases: ['climate orbiter'],
       memberName: 'climate-orbiter',
       description: 'Find Information about the climate orbiter mission',
-      examples: [`${config.prefix}climateorbiter`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: client.config.command_throttling.missions,
     })

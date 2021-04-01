@@ -11,7 +11,6 @@ module.exports = class NAME extends Command {
       aliases: ['viking 1', 'viking 2'],
       memberName: 'viking',
       description: 'Find Information on the Viking 1 & 2 missions',
-      examples: [`${config.prefix}viking`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: client.config.command_throttling.missions,
     })

@@ -10,7 +10,6 @@ module.exports = class Mars extends Command {
       group: 'utilities',
       memberName: 'mars',
       description: 'Find Information about the Red Planet',
-      examples: [`${config.prefix}`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.utilities,
     })

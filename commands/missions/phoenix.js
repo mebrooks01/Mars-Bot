@@ -10,7 +10,6 @@ module.exports = class NAME extends Command {
       group: 'missions',
       memberName: 'phoenix',
       description: 'Find Information on the phoenix mission',
-      examples: [`${config.prefix}phoenix`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: client.config.command_throttling.missions,
     })

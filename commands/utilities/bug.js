@@ -11,7 +11,6 @@ module.exports = class Bug extends Command {
       aliases: ['report', 'bugs'],
       memberName: 'bug',
       description: 'Report any and all bugs here',
-      examples: [`${config.prefix}bug`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.utilities,
     })

@@ -10,7 +10,6 @@ module.exports = class Pathfinder extends Command {
       group: 'missions',
       memberName: 'pathfinder',
       description: 'Find Information on the pathfinder mission',
-      examples: [`${config.prefix}pathfinder`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: client.config.command_throttling.missions,
     })

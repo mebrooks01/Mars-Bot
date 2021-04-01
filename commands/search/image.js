@@ -14,9 +14,7 @@ module.exports = class Image extends Command {
       memberName: 'image',
       description:
         'Search for images from rovers with more freedom and look per camera',
-      examples: [
-        `${config.prefix}image <'curiosity' | 'opportunity' | 'perseverance' | 'spirit'> <sol | earth date (yyyy/mm/dd)> <'all' | cam name> [result number]`,
-      ],
+      format: `${config.prefix}image <'curiosity' | 'opportunity' | 'perseverance' | 'spirit'> <sol | earth date (yyyy/mm/dd)> <'all' | cam name> [result number]`,
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
       args: [

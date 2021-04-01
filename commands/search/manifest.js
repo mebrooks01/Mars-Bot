@@ -12,9 +12,7 @@ module.exports = class Manifest extends Command {
       aliases: ['mission', 'missions'],
       memberName: 'manifest',
       description: 'Get detailed Info on rovers and there stats',
-      examples: [
-        `${config.prefix}manifest <'curiosity' | 'opportunity' | 'perseverance' | 'spirit'> [sol]`,
-      ],
+      format: `<'curiosity' | 'opportunity' | 'perseverance' | 'spirit'> [sol]`,
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
       args: [

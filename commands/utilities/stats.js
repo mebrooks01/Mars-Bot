@@ -11,7 +11,6 @@ module.exports = class Stats extends Command {
       group: 'utilities',
       memberName: 'stats',
       description: 'Find Information about the Red Planet',
-      examples: [`${config.prefix}`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.utilities,
     })

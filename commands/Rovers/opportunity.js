@@ -12,10 +12,7 @@ module.exports = class Opportunity extends Command {
       memberName: 'opportunity',
       description:
         'Get info about opportunity and look up the images it has taken',
-      examples: [
-        `${config.prefix}opportunity`,
-        `${config.prefix}opportunity <'info' | 'last' | 'image'> <sol> [result number]`,
-      ],
+      format: `<'info' | 'image'> <sol> [result number]`,
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
       args: [

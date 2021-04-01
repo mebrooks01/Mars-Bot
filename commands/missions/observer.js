@@ -10,7 +10,6 @@ module.exports = class Observer extends Command {
       group: 'missions',
       memberName: 'observer',
       description: 'Find Information on the Observer mission',
-      examples: [`${config.prefix}observer`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: client.config.command_throttling.missions,
     })

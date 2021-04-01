@@ -10,7 +10,6 @@ module.exports = class globalsurveyor extends Command {
       aliases: ['global surveyor'],
       memberName: 'global-surveyor',
       description: 'Find Information on the global surveyor mission',
-      examples: [`${config.prefix}global-surveyor`],
       clientPermissions: ['EMBED_LINKS'],
       throttling: client.config.command_throttling.missions,
     })

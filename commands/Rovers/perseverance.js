@@ -12,10 +12,7 @@ module.exports = class Perseverance extends Command {
       memberName: 'perseverance',
       description:
         'Get info about perseverance and look up the images it has taken',
-      examples: [
-        `${config.prefix}perseverance`,
-        `${config.prefix}perseverance <'info' | 'image'> <sol> [result number]`,
-      ],
+      format: `<'info' | 'image'> <sol> [result number]`,
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
       args: [
