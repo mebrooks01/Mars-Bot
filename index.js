@@ -41,6 +41,7 @@ client.registry
   //Turn on and off default commands
   .registerDefaultCommands({
     unknownCommand: false,
+    help: false,
   })
   .registerCommandsIn(path.join(__dirname, 'commands'))
 
