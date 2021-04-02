@@ -3,13 +3,14 @@ const config = require('$root/config.json')
 const mission = require('$root/mission.json')
 const count = require('$util/count')
 
-module.exports = class Mars extends Command {
+module.exports = class Invite extends Command {
   constructor(client) {
     super(client, {
-      name: 'mars',
-      group: 'utilities',
-      memberName: 'mars',
-      description: 'Find Information about the Red Planet',
+      name: 'invite',
+      group: 'util',
+      aliases: ['join', 'add', 'invites'],
+      memberName: 'invite',
+      description: 'Invite me to your server',
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.utilities,
     })
@@ -17,7 +18,7 @@ module.exports = class Mars extends Command {
 
   run(message) {
     count.cmdCount++
-    let info = mission.other.mars
+    let info = mission.other.invite
 
     message.embed({
       title: info.title,
@@ -25,7 +26,7 @@ module.exports = class Mars extends Command {
       description: info.info,
       color: config.embed_color,
       timestamp: new Date(),
-      image: { url: info.img },
+      thumbnail: { url: config.pfp },
       footer: { text: mission.credit },
     })
   }

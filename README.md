@@ -28,50 +28,60 @@ Mars Bot uses NASA's API and other sources to give you plenty of cool informatio
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-## Commands
+## Command Info
 
 There are currently `28` commands for the bot they are split into 3 sections `missions`, `api calls` and `utilities`.\
 I have information on all NASA missions that have been launched as of January 2021.
 
-### Missions
+### Mission Info
 
-`=climate-orbiter` Find information on the Mars Climate Orbiter mission.\
-`=exomars` Find information on the ExoMars 2016 Mission.\
-`=global-surveyor` Find information on the Mars Global Surveyor mission.\
-`=mariner` Find information on the Mariner 3-9 missions.\
-`=mars-express` Find information on the Mars Express mission.\
-`=maven` Find information on the **M**ars **A**tmospheric & **V**olatile **E**volutio**N** (**MAVEN**) mission.\
-`=mro` Find information on the **M**ars **R**econnaissance **O**rbiter (**MRO**) mission.\
-`=observer` Find information on the Mars Observer mission.\
-`=odyssey` Find information on the Mars Odyssey mission.\
-`=pathfinder` Find information on the Mars Pathfinder mission.\
-`=phoenix` Find information on the Mars Phoenix mission.\
-`=polar-lander` Find information on the Mars Polar Lander/Deep Space 2 missions.\
-`=viking` Find information on the Viking 1 & Viking 2 missions.
+•`climate-orbiter` Find information on the Mars Climate Orbiter mission.\
+•`exomars` Find information on the ExoMars 2016 Mission.\
+•`global-surveyor` Find information on the Mars Global Surveyor mission.\
+•`mariner` Find information on the Mariner 3-9 missions.\
+•`mars-express` Find information on the Mars Express mission.\
+•`maven` Find information on the **M**ars **A**tmospheric & **V**olatile **E**volutio**N** (**MAVEN**) mission.\
+•`mro` Find information on the **M**ars **R**econnaissance **O**rbiter (**MRO**) mission.\
+•`observer` Find information on the Mars Observer mission.\
+•`odyssey` Find information on the Mars Odyssey mission.\
+•`pathfinder` Find information on the Mars Pathfinder mission.\
+•`phoenix` Find information on the Mars Phoenix mission.\
+•`polar-lander` Find information on the Mars Polar Lander/Deep Space 2 missions.\
+•`viking` Find information on the Viking 1 & Viking 2 missions.\
+•`mars` Information about Mars.(In here because its best fit)
 
-### API Calls
+### Rover Info
 
-`=perseverance <'info' | 'image'> [sol] [page number]` Get information about the Perseverance rover and look up the images it has taken.\
-`=curiosity <'info' | 'image'> [sol] [page number]` Get information about the Curiosity rover and look up the images it has taken.\
-`=opportunity <'info' | 'image'> [sol] [page number]` Get information about the Opportunity rover and look up the images it has taken.\
-`=spirit <'info' | 'image'> [sol] [page number]` Get information about the Spirit rover and look up the images it has taken.\
+•`=curiosity <'info' | 'image'> [sol] [page number]` Get information about the Curiosity rover and look up the images it has taken.\
+•`=opportunity <'info' | 'image'> [sol] [page number]` Get information about the Opportunity rover and look up the images it has taken.\
+•`=perseverance <'info' | 'image'> [sol] [page number]` Get information about the Perseverance rover and look up the images it has taken.\
+•`=spirit <'info' | 'image'> [sol] [page number]` Get information about the Spirit rover and look up the images it has taken.
 
-### Searches
+### Image Search
 
-`=insight <'info' | 'weather'>` Get information about Insight and find weather data.\
-`=apod` Every day NASA publishes an "Astronomy Picture of the Day." Use this command to see today's picture.\
-`=search <search term>` Look for an image in the NASA image library.\
-`=image` Coming Soon\
-`=manifest` Coming soon
+•`=apod` Every day NASA publishes an "Astronomy Picture of the Day." Use this command to see today's picture.\
+•`=image` Search for images from rovers with more freedom and look per camera.\
+•`=insight <'info' | 'weather'>` Get information about Insight and find weather data.\
+•`=manifest` Get detailed Info on rovers and there stats\
+•`=search <search term>` Look for an image in the NASA image library.
 
-### Other Commands
+### Commands
 
-`=bug` Report a bug.\
-`=explore` Look at where all the Mars missions are.\
-`=invite` Add the bot to your server.\
-`=mars` Information about Mars.\
-`=suggest` Suggest a new feature or change to be added to the bot.\
-`=support` Get support for the bot.
+•`group` Lists all command groups.\
+•`enable` Enables a command or command group.\
+•`disable` Disables a command or command group.
+
+### Utility
+
+•`prefix` Shows or sets the command prefix.\
+•`ping` Checks the bot's ping to the Discord server.\
+•`bug` Report a bug.\
+•`help` Displays a list of available commands, or detailed information for a specified command.\
+•`explore` Look at where all the Mars missions are.\
+•`invite` Add the bot to your server.\
+•`mars` Information about Mars.\
+•`suggest` Suggest a new feature or change to be added to the bot.\
+•`support` Get support for the bot.
 
 For more information on a command use `=help <command>`
 

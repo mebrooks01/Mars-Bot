@@ -7,7 +7,7 @@ module.exports = class Test extends Command {
   constructor(client) {
     super(client, {
       name: 'test',
-      group: 'utilities',
+      group: 'util',
       aliases: ['testing'],
       memberName: 'test',
       description: 'A Command used for testing whatever I need',

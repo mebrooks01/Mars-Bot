@@ -3,26 +3,24 @@ const config = require('$root/config.json')
 const mission = require('$root/mission.json')
 const count = require('$util/count')
 
-module.exports = class Bug extends Command {
+module.exports = class Support extends Command {
   constructor(client) {
     super(client, {
-      name: 'bug',
-      group: 'utilities',
-      aliases: ['report', 'bugs'],
-      memberName: 'bug',
-      description: 'Report any and all bugs here',
+      name: 'support',
+      group: 'util',
+      memberName: 'support',
+      description: 'Get Help',
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.utilities,
     })
   }
-
   run(message) {
     count.cmdCount++
-    let info = mission.other.bug
+    let info = mission.other.support
 
     message.embed({
       title: info.title,
-      url: info.url,
+      url: config.invite,
       description: info.info + config.invite,
       color: config.embed_color,
       timestamp: new Date(),

@@ -35,7 +35,6 @@ client.registry
     ['missions', 'Mission Info'],
     ['rovers', 'Rover Info'],
     ['search', 'Image Search'],
-    ['utilities', 'Utilities'],
   ])
   .registerDefaultGroups()
   //Turn on and off default commands

@@ -3,14 +3,14 @@ const config = require('$root/config.json')
 const mission = require('$root/mission.json')
 const count = require('$util/count')
 
-module.exports = class Invite extends Command {
+module.exports = class Bug extends Command {
   constructor(client) {
     super(client, {
-      name: 'invite',
-      group: 'utilities',
-      aliases: ['join', 'add', 'invites'],
-      memberName: 'invite',
-      description: 'Invite me to your server',
+      name: 'bug',
+      group: 'util',
+      aliases: ['report', 'bugs'],
+      memberName: 'bug',
+      description: 'Report any and all bugs here',
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.utilities,
     })
@@ -18,12 +18,12 @@ module.exports = class Invite extends Command {
 
   run(message) {
     count.cmdCount++
-    let info = mission.other.invite
+    let info = mission.other.bug
 
     message.embed({
       title: info.title,
       url: info.url,
-      description: info.info,
+      description: info.info + config.invite,
       color: config.embed_color,
       timestamp: new Date(),
       thumbnail: { url: config.pfp },

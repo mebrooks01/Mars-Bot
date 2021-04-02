@@ -8,7 +8,7 @@ module.exports = class Stats extends Command {
   constructor(client) {
     super(client, {
       name: 'stats',
-      group: 'utilities',
+      group: 'util',
       memberName: 'stats',
       description: 'Find Information about the Red Planet',
       clientPermissions: ['EMBED_LINKS'],
