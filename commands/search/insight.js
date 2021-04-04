@@ -11,8 +11,7 @@ module.exports = class Insight extends Command {
       group: 'search',
       aliases: ['weather'],
       memberName: 'insight',
-      description:
-        'Get info about insight and find weather data it has collected',
+      description: 'Get info about insight and find weather data it has collected',
       format: `['info' | 'weather']`,
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
@@ -22,9 +21,9 @@ module.exports = class Insight extends Command {
           prompt: 'Please choose if you are looking for an image or info',
           type: 'string',
           oneOf: ['info', `weather`],
-          default: 'info',
-        },
-      ],
+          default: 'info'
+        }
+      ]
     })
   }
 
@@ -35,10 +34,8 @@ module.exports = class Insight extends Command {
 
     if (type === 'weather') {
       axios
-        .get(
-          `https://api.nasa.gov/insight_weather/?api_key=${config.api_key}&feedtype=json`,
-        )
-        .then((res) => {
+        .get(`https://api.nasa.gov/insight_weather/?api_key=${config.api_key}&feedtype=json`)
+        .then(res => {
           let sol_keys = res.data.sol_keys
           let array_length = res.data.sol_keys.length
 
@@ -114,23 +111,23 @@ module.exports = class Insight extends Command {
               fields: [
                 {
                   name: `Weather From Sol: ${sol1}`,
-                  value: `__**Temperature  Info**__\nAverage: ${sol1_av_temp}\nMax: ${sol1_mx_temp}\nMin: ${sol1_mn_temp}\n__**Wind Speed Info**__\nAverage: ${sol1_av_wind}\nMax: ${sol1_mx_wind}\nMin: ${sol1_mn_wind}\n__**Air Pressure Info**__\nAverage: ${sol1_av_pr}\nMax: ${sol1_mx_pr}\nMin: ${sol1_mn_pr}\n**Season:** ${sol1_data.Season}`,
+                  value: `__**Temperature  Info**__\nAverage: ${sol1_av_temp}\nMax: ${sol1_mx_temp}\nMin: ${sol1_mn_temp}\n__**Wind Speed Info**__\nAverage: ${sol1_av_wind}\nMax: ${sol1_mx_wind}\nMin: ${sol1_mn_wind}\n__**Air Pressure Info**__\nAverage: ${sol1_av_pr}\nMax: ${sol1_mx_pr}\nMin: ${sol1_mn_pr}\n**Season:** ${sol1_data.Season}`
                 },
                 {
                   name: `Weather From Sol: ${sol2}`,
-                  value: `__**Temperature  Info**__\nAverage: ${sol2_av_temp}\nMax: ${sol2_mx_temp}\nMin: ${sol2_mn_temp}\n__**Wind Speed Info**__\nAverage: ${sol2_av_wind}\nMax: ${sol2_mx_wind}\nMin: ${sol2_mn_wind}\n__**Air Pressure Info**__\nAverage: ${sol2_av_pr}\nMax: ${sol2_mx_pr}\nMin: ${sol2_mn_pr}\n**Season:** ${sol2_data.Season}`,
-                },
+                  value: `__**Temperature  Info**__\nAverage: ${sol2_av_temp}\nMax: ${sol2_mx_temp}\nMin: ${sol2_mn_temp}\n__**Wind Speed Info**__\nAverage: ${sol2_av_wind}\nMax: ${sol2_mx_wind}\nMin: ${sol2_mn_wind}\n__**Air Pressure Info**__\nAverage: ${sol2_av_pr}\nMax: ${sol2_mx_pr}\nMin: ${sol2_mn_pr}\n**Season:** ${sol2_data.Season}`
+                }
               ],
               color: config.embed_color,
               timestamp: new Date(),
-              footer: { text: mission.credit },
-            },
+              footer: { text: mission.credit }
+            }
           })
         })
         .catch(function (error) {
           console.log(error.stack)
           message.reply(
-            `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`,
+            `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`
           )
         })
       return
@@ -143,7 +140,7 @@ module.exports = class Insight extends Command {
       color: config.embed_color,
       timestamp: new Date(),
       image: { url: info.img },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }

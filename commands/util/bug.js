@@ -12,7 +12,7 @@ module.exports = class Bug extends Command {
       memberName: 'bug',
       description: 'Report any and all bugs here',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: config.command_throttling.utilities,
+      throttling: config.command_throttling.utilities
     })
   }
 
@@ -27,7 +27,7 @@ module.exports = class Bug extends Command {
       color: config.embed_color,
       timestamp: new Date(),
       thumbnail: { url: config.pfp },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }

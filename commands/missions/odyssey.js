@@ -11,7 +11,7 @@ module.exports = class Odyssey extends Command {
       memberName: 'odyssey',
       description: 'Find Information on the odyssey mission',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions,
+      throttling: client.config.command_throttling.missions
     })
   }
 
@@ -26,7 +26,7 @@ module.exports = class Odyssey extends Command {
       color: config.embed_color,
       timestamp: new Date(),
       image: { url: info.img },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }

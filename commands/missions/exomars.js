@@ -12,7 +12,7 @@ module.exports = class ExoMars extends Command {
       memberName: 'exomars',
       description: 'Find Information on the exo mars mission',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions,
+      throttling: client.config.command_throttling.missions
     })
   }
 
@@ -27,7 +27,7 @@ module.exports = class ExoMars extends Command {
       color: config.embed_color,
       timestamp: new Date(),
       image: { url: info.img },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }

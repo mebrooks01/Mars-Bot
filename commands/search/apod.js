@@ -10,10 +10,9 @@ module.exports = class APOD extends Command {
       name: 'apod',
       group: 'search',
       memberName: 'apod',
-      description:
-        'Every day NASA publishes an "Astronomy Picture of the Day" use this command to see todays',
+      description: 'Every day NASA publishes an "Astronomy Picture of the Day" use this command to see todays',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: config.command_throttling.api,
+      throttling: config.command_throttling.api
     })
   }
 
@@ -22,7 +21,7 @@ module.exports = class APOD extends Command {
 
     axios
       .get(`https://api.nasa.gov/planetary/apod?api_key=${config.api_key}`)
-      .then((res) => {
+      .then(res => {
         if (res.data.hdurl) {
           img = res.data.hdurl
         } else {
@@ -36,12 +35,12 @@ module.exports = class APOD extends Command {
           color: config.embed_color,
           image: { url: img },
           timestamp: res.data.date,
-          footer: { text: `Photo Credit: ${res.data.copyright}` },
+          footer: { text: `Photo Credit: ${res.data.copyright}` }
         })
       })
       .catch(function (error) {
         message.reply(
-          `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`,
+          `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`
         )
       })
   }

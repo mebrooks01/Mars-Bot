@@ -43,11 +43,11 @@ module.exports = {
         info(`\nUtilities: `) +
           `Run ${config.command_throttling.utilities.usages} times over ${config.command_throttling.utilities.duration} seconds`,
 
-        header1(`\n----------------------------------------------------`),
+        header1(`\n----------------------------------------------------`)
       )
     }
     console.log(chalk.green(`${client.user.tag} logged in at ${new Date()}`))
-  },
+  }
 }
 /**
  * console.log(`

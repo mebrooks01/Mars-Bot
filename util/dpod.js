@@ -10,7 +10,7 @@ let i
 module.exports = {
   async execute(client) {
     function sleep(ms) {
-      return new Promise((resolve) => setTimeout(resolve, ms))
+      return new Promise(resolve => setTimeout(resolve, ms))
     }
 
     console.log(chalk.green('Daily APOD Started'))
@@ -23,7 +23,7 @@ module.exports = {
     const job = schedule.scheduleJob(rule, async function () {
       await axios
         .get(`https://api.nasa.gov/planetary/apod?api_key=${config.api_key}`)
-        .then(async (res) => {
+        .then(async res => {
           if (res.data.hdurl) {
             img = res.data.hdurl
           } else {
@@ -37,7 +37,7 @@ module.exports = {
             color: config.embed_color,
             image: { url: img },
             timestamp: res.data.date,
-            footer: { text: `Photo Credit: ${res.data.copyright}` },
+            footer: { text: `Photo Credit: ${res.data.copyright}` }
           }
 
           for (i = 0; i < dpod.length; i++) {
@@ -50,5 +50,5 @@ module.exports = {
           console.log(error.stack)
         })
     })
-  },
+  }
 }

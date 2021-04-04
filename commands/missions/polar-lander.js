@@ -10,10 +10,9 @@ module.exports = class NAME extends Command {
       group: 'missions',
       aliases: ['polar lander', 'deep space', 'deep-space'],
       memberName: 'polar-lander',
-      description:
-        'Find Information on the Mars Polar Lander/Deep Space 2 mission',
+      description: 'Find Information on the Mars Polar Lander/Deep Space 2 mission',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions,
+      throttling: client.config.command_throttling.missions
     })
   }
 
@@ -28,7 +27,7 @@ module.exports = class NAME extends Command {
       color: config.embed_color,
       timestamp: new Date(),
       image: { url: info.img },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }

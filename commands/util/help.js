@@ -10,8 +10,7 @@ module.exports = class Help extends Command {
       group: 'util',
       aliases: ['commands', 'cmds'],
       memberName: 'help',
-      description:
-        'Displays a list of available commands, or detailed information for a specified command.',
+      description: 'Displays a list of available commands, or detailed information for a specified command.',
       format: `[command]`,
       clientPermissions: ['EMBED_LINKS'],
       args: [
@@ -19,9 +18,9 @@ module.exports = class Help extends Command {
           key: 'command',
           prompt: 'Which command would you like to view the help for?',
           type: 'string',
-          default: '',
-        },
-      ],
+          default: ''
+        }
+      ]
     })
   }
 
@@ -32,23 +31,17 @@ module.exports = class Help extends Command {
       let cmdValid = false
       command = command
 
-      await this.client.registry.commands.forEach(async (cmd) => {
+      await this.client.registry.commands.forEach(async cmd => {
         if (cmd.name == command || cmd.aliases.includes(command)) {
           cmdValid = true
 
           let perm = `User Permissions: ${
-            cmd.userPermissions
-              ? cmd.clientPermissions.map((s) => `\`${s}\``).join(', ')
-              : 'None'
+            cmd.userPermissions ? cmd.clientPermissions.map(s => `\`${s}\``).join(', ') : 'None'
           }\nBot Permissions: ${
-            cmd.clientPermissions
-              ? cmd.clientPermissions.map((s) => `\`${s}\``).join(', ')
-              : 'None'
-          }\nAdditional Requirements: ${
-            cmd.ownerOnly ? '`Owner(s) Only`,' : ''
-          } ${cmd.guildOnly ? '`Servers only`,' : ''} ${
-            cmd.nsfw ? '`NSFW`,' : ''
-          }`
+            cmd.clientPermissions ? cmd.clientPermissions.map(s => `\`${s}\``).join(', ') : 'None'
+          }\nAdditional Requirements: ${cmd.ownerOnly ? '`Owner(s) Only`,' : ''} ${
+            cmd.guildOnly ? '`Servers only`,' : ''
+          } ${cmd.nsfw ? '`NSFW`,' : ''}`
 
           await message.embed({
             title: `Mars Bot "${command}" command info`,
@@ -57,37 +50,31 @@ module.exports = class Help extends Command {
             fields: [
               {
                 name: `Usage`,
-                value: `${message.anyUsage(
-                  `${cmd.name}${cmd.format ? ` ${cmd.format}` : ''}`,
-                )}`,
+                value: `${message.anyUsage(`${cmd.name}${cmd.format ? ` ${cmd.format}` : ''}`)}`
               },
-              { name: `Requirements`, value: perm },
+              { name: `Requirements`, value: perm }
             ],
             color: config.embed_color,
             timestamp: new Date(),
-            thumbnail: { url: config.pfp },
+            thumbnail: { url: config.pfp }
           })
         }
       })
 
       if (cmdValid !== true) {
         message.reply(
-          `No command found under the name \`${command}\`\nPlease use the help command to view a list of commands`,
+          `No command found under the name \`${command}\`\nPlease use the help command to view a list of commands`
         )
       }
       return
     }
 
-    await this.client.registry.groups.forEach(async (group) => {
+    await this.client.registry.groups.forEach(async group => {
       let cmdList = ''
 
-      await group.commands.forEach(async (command) => {
+      await group.commands.forEach(async command => {
         if (command.hidden === true) return
-        if (
-          command.ownerOnly === true &&
-          config.user_id.owner.includes(message.author.id) === false
-        )
-          return
+        if (command.ownerOnly === true && config.user_id.owner.includes(message.author.id) === false) return
         cmdList += '•`' + command.name + '`'
         if (command.guildOnly === true) cmdList += `⚠️`
         if (command.nsfw === true) cmdList += `🔞`
@@ -105,7 +92,7 @@ module.exports = class Help extends Command {
       fields,
       color: config.embed_color,
       timestamp: new Date(),
-      thumbnail: { url: config.pfp },
+      thumbnail: { url: config.pfp }
     })
   }
 }

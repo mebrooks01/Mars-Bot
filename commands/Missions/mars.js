@@ -11,7 +11,7 @@ module.exports = class Mars extends Command {
       memberName: 'mars',
       description: 'Find Information about the Red Planet',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: config.command_throttling.utilities,
+      throttling: config.command_throttling.utilities
     })
   }
 
@@ -26,7 +26,7 @@ module.exports = class Mars extends Command {
       color: config.embed_color,
       timestamp: new Date(),
       image: { url: info.img },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }

@@ -24,7 +24,7 @@ const client = new Commando.CommandoClient({
   commandPrefix: config.prefix,
   owner: config.user_id.owner,
   invite: config.invite,
-  unknownCommandResponse: false,
+  unknownCommandResponse: false
 })
 client.config = config //Re Redefine Config
 
@@ -34,13 +34,13 @@ client.registry
   .registerGroups([
     ['missions', 'Mission Info'],
     ['rovers', 'Rover Info'],
-    ['search', 'Image Search'],
+    ['search', 'Image Search']
   ])
   .registerDefaultGroups()
   //Turn on and off default commands
   .registerDefaultCommands({
     unknownCommand: false,
-    help: false,
+    help: false
   })
   .registerCommandsIn(path.join(__dirname, 'commands'))
 
@@ -50,9 +50,9 @@ mysql
     host: config.mysql.host,
     user: config.mysql.user,
     password: config.mysql.pwd,
-    database: config.mysql.db,
+    database: config.mysql.db
   })
-  .then((db) => {
+  .then(db => {
     client.setProvider(new mysqlProvider(db))
     console.log(chalk.green(`Database Connected Successfully`))
   })
@@ -66,7 +66,7 @@ client.once('ready', async () => {
 
   await axios
     .get(`https://api.nasa.gov/planetary/apod?api_key=${config.api_key}`)
-    .then(async (res) => {
+    .then(async res => {
       load.execute(client, res)
     })
     .catch(function (error) {
@@ -74,23 +74,15 @@ client.once('ready', async () => {
     })
 
   await client.user.setActivity(`people use "${config.prefix}Help"`, {
-    type: 'WATCHING',
+    type: 'WATCHING'
   })
   await client.user.setStatus('online')
 })
 
-client.on('guildCreate', (guild) => {
+client.on('guildCreate', guild => {
   guild_add.execute(client, guild)
 })
 
 client
   .login(config.token)
-  .catch((err) =>
-    console.log(
-      chalk.red(
-        'ERROR CONNECTING TO DISCORD:\n' +
-          err +
-          '\n Fix connection and restart.',
-      ),
-    ),
-  )
+  .catch(err => console.log(chalk.red('ERROR CONNECTING TO DISCORD:\n' + err + '\n Fix connection and restart.')))
