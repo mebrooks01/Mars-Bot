@@ -14,9 +14,6 @@
   "user_id": {
     "owner": [""]
   },
-  "channel_id": {
-    "dpod": [""]
-  },
   "command_throttling": {
     "api": {
       "usages": 2,

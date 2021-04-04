@@ -20,7 +20,6 @@ module.exports = class Stats extends Command {
     count.cmdCount++
     message.embed({
       title: "Mars Bot's Statistics",
-      url: '',
       description:
         '**Client Info**\n```asciidoc\n' +
         `Servers   :: ${

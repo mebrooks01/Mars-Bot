@@ -1,6 +1,6 @@
 # Mars Bot Documentation
 
-![discord](https://img.shields.io/discord/760662877563650048?label=Discord) ![contributors](https://img.shields.io/github/all-contributors/mebrooks01/Mars-Bot?label=contributors) ![lines](https://img.shields.io/tokei/lines/github/mebrooks01/Mars-Bot)
+[![Status](https://top.gg/api/widget/status/760605516384305224.svg)](https://top.gg/bot/760605516384305224) ![Discord](https://img.shields.io/discord/760662877563650048?label=Discord) ![contributors](https://img.shields.io/github/all-contributors/mebrooks01/Mars-Bot?label=contributors) ![lines](https://img.shields.io/tokei/lines/github/mebrooks01/Mars-Bot)
 
 Mars Bot is an open-source discord bot developed by [Mebrooks01#3354](https://github.com/mebrooks01)\
 You can add it to your server with [this link](https://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945). If you have any questions you can join [our discord server](https://discord.gg/yKnBYJE).
@@ -30,7 +30,7 @@ Mars Bot uses NASA's API and other sources to give you plenty of cool informatio
 
 ## Command Info
 
-There are currently `28` commands for the bot they are split into 3 sections `missions`, `api calls` and `utilities`.\
+There are currently `35` commands for the bot they are split into 5 sections `Mission Info`, `Rover Info`, `Commands` and `Utility`.\
 I have information on all NASA missions that have been launched as of January 2021.
 
 ### Mission Info
@@ -52,18 +52,18 @@ I have information on all NASA missions that have been launched as of January 20
 
 ### Rover Info
 
-•`=curiosity <'info' | 'image'> [sol] [page number]` Get information about the Curiosity rover and look up the images it has taken.\
-•`=opportunity <'info' | 'image'> [sol] [page number]` Get information about the Opportunity rover and look up the images it has taken.\
-•`=perseverance <'info' | 'image'> [sol] [page number]` Get information about the Perseverance rover and look up the images it has taken.\
-•`=spirit <'info' | 'image'> [sol] [page number]` Get information about the Spirit rover and look up the images it has taken.
+•`curiosity` Get information about the Curiosity rover and look up the images it has taken.\
+•`opportunity` Get information about the Opportunity rover and look up the images it has taken.\
+•`perseverance` Get information about the Perseverance rover and look up the images it has taken.\
+•`spirit` Get information about the Spirit rover and look up the images it has taken.
 
 ### Image Search
 
-•`=apod` Every day NASA publishes an "Astronomy Picture of the Day." Use this command to see today's picture.\
-•`=image` Search for images from rovers with more freedom and look per camera.\
-•`=insight <'info' | 'weather'>` Get information about Insight and find weather data.\
-•`=manifest` Get detailed Info on rovers and there stats\
-•`=search <search term>` Look for an image in the NASA image library.
+•`apod` Every day NASA publishes an "Astronomy Picture of the Day." Use this command to see today's picture.\
+•`image` Search for images from rovers with more freedom and look per camera.\
+•`insight` Get information about Insight and find weather data.\
+•`manifest` Get detailed Info on rovers and there stats\
+•`search` Look for an image in the NASA image library.
 
 ### Commands
 
@@ -83,7 +83,7 @@ I have information on all NASA missions that have been launched as of January 20
 •`suggest` Suggest a new feature or change to be added to the bot.\
 •`support` Get support for the bot.
 
-For more information on a command use `=help <command>`
+For more information on a command use `help <command>`
 
 ## Self Hosting
 
@@ -108,6 +108,9 @@ npm install
 ### Configuration
 
 You will need to rename `config-example.json` to `config.json` and fill in all the following information
+You also need to rename `dpod-example.json` to `dpod.json`
+
+#### Config
 
 - token: The bots token used to login to the Discord API.
 - api_key: Your API key for the NASA API. You can get one from [here](https://api.nasa.gov/)
@@ -122,8 +125,6 @@ You will need to rename `config-example.json` to `config.json` and fill in all t
   - db: the database name
 - user_id
   - owner: The user ID of the bot application owner(can have multiple in an array).
-- channel_id
-  - dpod: The channel ID of the channel you want the APOD photo to be sent to each day.
 - command_throttling
   - api
     - usages: By default its set to 2
@@ -134,6 +135,14 @@ You will need to rename `config-example.json` to `config.json` and fill in all t
   - utilities
     - usages: By default its set to 2
     - duration: By default its set to 1
+
+#### DPOD
+
+This file contains an array of Objects with guild and channel ID's to send the Daily Astronomy Pic of The Day to.
+
+```json
+[{ "guild": "<Guild ID>", "Channel": "<Channel ID>" }]
+```
 
 ## Credits
 
