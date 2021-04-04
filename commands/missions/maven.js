@@ -9,10 +9,9 @@ module.exports = class Maven extends Command {
       name: 'maven',
       group: 'missions',
       memberName: 'maven',
-      description:
-        'Find Information on the Mars Atmospheric and Volatile EvolutioN (Maven) mission',
+      description: 'Find Information on the Mars Atmospheric and Volatile EvolutioN (Maven) mission',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions,
+      throttling: client.config.command_throttling.missions
     })
   }
 
@@ -27,7 +26,7 @@ module.exports = class Maven extends Command {
       color: config.embed_color,
       timestamp: new Date(),
       image: { url: info.img },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }

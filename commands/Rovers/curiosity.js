@@ -10,8 +10,7 @@ module.exports = class Curiosity extends Command {
       name: 'curiosity',
       group: 'rovers',
       memberName: 'curiosity',
-      description:
-        'Get info about curiosity and look up the images it has taken',
+      description: 'Get info about curiosity and look up the images it has taken',
       format: `<'info' | 'image'> <sol> [result number]`,
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
@@ -21,21 +20,21 @@ module.exports = class Curiosity extends Command {
           prompt: 'Please choose if you are looking for an image or info',
           type: 'string',
           oneOf: ['info', `image`],
-          default: 'info',
+          default: 'info'
         },
         {
           key: 'sol',
           prompt: 'Please choose a sol to look for',
           type: 'integer',
-          default: '',
+          default: ''
         },
         {
           key: 'result_number',
           prompt: 'Please choose a result number to look for',
           type: 'integer',
-          default: '1',
-        },
-      ],
+          default: '1'
+        }
+      ]
     })
   }
 
@@ -45,22 +44,14 @@ module.exports = class Curiosity extends Command {
     let info = mission.rover.curiosity
 
     if (type === 'image') {
-      if (!sol)
-        return message.reply(
-          'Please choose a sol to look for\n`=curiosity image <sol> <result number>`',
-        )
+      if (!sol) return message.reply('Please choose a sol to look for\n`=curiosity image <sol> <result number>`')
       if (!result_number)
-        return message.reply(
-          'Please choose a result number to look for\n`=curiosity image <sol> <result number>`',
-        )
+        return message.reply('Please choose a result number to look for\n`=curiosity image <sol> <result number>`')
 
       axios
-        .get(
-          `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&api_key=${config.api_key}`,
-        )
-        .then((res) => {
-          if (!res.data.photos[result_number - 1])
-            return message.reply('No results found')
+        .get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&api_key=${config.api_key}`)
+        .then(res => {
+          if (!res.data.photos[result_number - 1]) return message.reply('No results found')
 
           let img = res.data.photos[result_number - 1].img_src
           let data = res.data.photos[result_number - 1]
@@ -75,14 +66,14 @@ module.exports = class Curiosity extends Command {
               color: this.client.config.embed_color,
               timestamp: new Date(),
               image: { url: img },
-              footer: { text: mission.credit },
-            },
+              footer: { text: mission.credit }
+            }
           })
         })
         .catch(function (error) {
           console.log(error.stack)
           message.reply(
-            `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`,
+            `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`
           )
         })
       return
@@ -91,13 +82,11 @@ module.exports = class Curiosity extends Command {
     message.embed({
       title: info.title,
       url: info.url,
-      description:
-        '**API data available for this mission** Do `=curiosity image <sol> <result number>`\n' +
-        info.info,
+      description: '**API data available for this mission** Do `=curiosity image <sol> <result number>`\n' + info.info,
       color: config.embed_color,
       timestamp: new Date(),
       image: { url: info.img },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }

@@ -9,10 +9,9 @@ module.exports = class MRO extends Command {
       name: 'mro',
       group: 'missions',
       memberName: 'mro',
-      description:
-        'Find Information on the Mars Reconnaissance Orbiter (MRO) mission',
+      description: 'Find Information on the Mars Reconnaissance Orbiter (MRO) mission',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions,
+      throttling: client.config.command_throttling.missions
     })
   }
 
@@ -27,7 +26,7 @@ module.exports = class MRO extends Command {
       color: config.embed_color,
       timestamp: new Date(),
       image: { url: info.img },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }

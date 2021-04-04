@@ -12,7 +12,7 @@ module.exports = class Stats extends Command {
       memberName: 'stats',
       description: 'Find Information about the Red Planet',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: config.command_throttling.utilities,
+      throttling: config.command_throttling.utilities
     })
   }
 
@@ -22,18 +22,16 @@ module.exports = class Stats extends Command {
       title: "Mars Bot's Statistics",
       description:
         '**Client Info**\n```asciidoc\n' +
-        `Servers   :: ${
-          this.client.guilds.cache.size
-        }\nWS Ping   :: ${Math.round(
-          this.client.ws.ping,
-        )}ms\nUptime    :: ${prettyMilliseconds(
-          this.client.uptime,
-        )}\nCmds Run  :: ${count.cmdCount} (since last restart)` +
+        `Servers   :: ${this.client.guilds.cache.size}\nWS Ping   :: ${Math.round(
+          this.client.ws.ping
+        )}ms\nUptime    :: ${prettyMilliseconds(this.client.uptime)}\nCmds Run  :: ${
+          count.cmdCount
+        } (since last restart)` +
         '```',
       color: config.embed_color,
       timestamp: new Date(),
       thumbnail: { url: config.pfp },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }

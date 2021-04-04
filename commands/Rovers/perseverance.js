@@ -10,8 +10,7 @@ module.exports = class Perseverance extends Command {
       name: 'perseverance',
       group: 'rovers',
       memberName: 'perseverance',
-      description:
-        'Get info about perseverance and look up the images it has taken',
+      description: 'Get info about perseverance and look up the images it has taken',
       format: `<'info' | 'image'> <sol> [result number]`,
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
@@ -21,21 +20,21 @@ module.exports = class Perseverance extends Command {
           prompt: 'Please specify what ',
           type: 'string',
           oneOf: ['info', `image`, `manifest`],
-          default: 'info',
+          default: 'info'
         },
         {
           key: 'sol',
           prompt: 'Please choose a sol to look for',
           type: 'integer',
-          default: '',
+          default: ''
         },
         {
           key: 'result_number',
           prompt: 'Please choose a result number to look for',
           type: 'integer',
-          default: '1',
-        },
-      ],
+          default: '1'
+        }
+      ]
     })
   }
 
@@ -45,22 +44,14 @@ module.exports = class Perseverance extends Command {
     let info = mission.rover.perseverance
 
     if (type === 'image') {
-      if (!sol)
-        return message.reply(
-          'Please choose a sol to look for\n`=perseverance image <sol> <result number>`',
-        )
+      if (!sol) return message.reply('Please choose a sol to look for\n`=perseverance image <sol> <result number>`')
       if (!result_number)
-        return message.reply(
-          'Please choose a result number to look for\n`=perseverance image <sol> <result number>`',
-        )
+        return message.reply('Please choose a result number to look for\n`=perseverance image <sol> <result number>`')
 
       axios
-        .get(
-          `https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?sol=${sol}&api_key=${config.api_key}`,
-        )
-        .then((res) => {
-          if (!res.data.photos[result_number - 1])
-            return message.reply('No results found')
+        .get(`https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?sol=${sol}&api_key=${config.api_key}`)
+        .then(res => {
+          if (!res.data.photos[result_number - 1]) return message.reply('No results found')
 
           let img = res.data.photos[result_number - 1].img_src
           let data = res.data.photos[result_number - 1]
@@ -75,14 +66,14 @@ module.exports = class Perseverance extends Command {
               color: this.client.config.embed_color,
               timestamp: new Date(),
               image: { url: img },
-              footer: { text: mission.credit },
-            },
+              footer: { text: mission.credit }
+            }
           })
         })
         .catch(function (error) {
           console.log(error.stack)
           message.reply(
-            `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`,
+            `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`
           )
         })
       return
@@ -92,12 +83,11 @@ module.exports = class Perseverance extends Command {
       title: info.title,
       url: info.url,
       description:
-        '**API data available for this mission** Do `=perseverance image <sol> <result number>`\n' +
-        info.info,
+        '**API data available for this mission** Do `=perseverance image <sol> <result number>`\n' + info.info,
       color: config.embed_color,
       timestamp: new Date(),
       image: { url: info.img },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }

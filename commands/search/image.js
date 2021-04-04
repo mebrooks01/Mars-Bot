@@ -12,8 +12,7 @@ module.exports = class Image extends Command {
       group: 'search',
       aliases: ['images', 'lookup', 'rover'],
       memberName: 'image',
-      description:
-        'Search for images from rovers with more freedom and look per camera',
+      description: 'Search for images from rovers with more freedom and look per camera',
       format: `<'curiosity' | 'opportunity' | 'perseverance' | 'spirit'> <sol | earth date (yyyy/mm/dd)> <'all' | cam name> [result number]`,
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
@@ -22,40 +21,32 @@ module.exports = class Image extends Command {
           key: 'rover',
           prompt: 'Please select the rover you would like to search for',
           type: 'string',
-          oneOf: ['curiosity', 'opportunity', 'perseverance', 'spirit'],
+          oneOf: ['curiosity', 'opportunity', 'perseverance', 'spirit']
         },
         {
           key: 'date',
           prompt: 'Earth day or sol (for earth day use `yyyy/mm/dd` format )',
           type: 'string',
-          validate: (date) => {
-            if (
-              moment(date, 'YYYY/M/D', true).isValid() ||
-              isNaN(date) === false
-            )
-              return true
-          },
+          validate: date => {
+            if (moment(date, 'YYYY/M/D', true).isValid() || isNaN(date) === false) return true
+          }
         },
         {
           key: 'camera',
           prompt:
             'Please select the camera to look for. Or `all` for all cams\nTo get a list of all cam names please use the manifest command',
           type: 'string',
-          validate: (camera) => {
-            if (
-              mission.cams.all.includes(camera.toLowerCase()) ||
-              camera === 'all'
-            )
-              return true
-          },
+          validate: camera => {
+            if (mission.cams.all.includes(camera.toLowerCase()) || camera === 'all') return true
+          }
         },
         {
           key: 'result_number',
           prompt: 'Please choose a result number to look for',
           type: 'integer',
-          default: '1',
-        },
-      ],
+          default: '1'
+        }
+      ]
     })
   }
 
@@ -65,9 +56,7 @@ module.exports = class Image extends Command {
     let date_mod = date.replace('/', '-')
 
     if (camera !== 'all' && !mission.cams[rover].includes(camera))
-      return message.reply(
-        `Please provide a valid camera name for the ${rover} rover.`,
-      )
+      return message.reply(`Please provide a valid camera name for the ${rover} rover.`)
 
     if (camera !== 'all') url += `&camera=${camera}`
 
@@ -79,9 +68,8 @@ module.exports = class Image extends Command {
 
     axios
       .get(url)
-      .then((res) => {
-        if (!res.data.photos[result_number - 1])
-          return message.reply('No results found')
+      .then(res => {
+        if (!res.data.photos[result_number - 1]) return message.reply('No results found')
 
         let img = res.data.photos[result_number - 1].img_src
         let data = res.data.photos[result_number - 1]
@@ -96,14 +84,14 @@ module.exports = class Image extends Command {
             color: this.client.config.embed_color,
             timestamp: new Date(),
             image: { url: img },
-            footer: { text: mission.credit },
-          },
+            footer: { text: mission.credit }
+          }
         })
       })
       .catch(function (error) {
         console.log(error.stack)
         message.reply(
-          `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`,
+          `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`
         )
       })
   }

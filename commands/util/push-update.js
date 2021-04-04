@@ -18,20 +18,20 @@ module.exports = class Test extends Command {
         {
           key: 'ver',
           prompt: 'Please Provide The New Version',
-          type: 'string',
+          type: 'string'
         },
         {
           key: 'info',
           prompt: 'Please Provide the update info',
-          type: 'string',
-        },
-      ],
+          type: 'string'
+        }
+      ]
     })
   }
 
   async run(message, { ver, info }) {
     function sleep(ms) {
-      return new Promise((resolve) => setTimeout(resolve, ms))
+      return new Promise(resolve => setTimeout(resolve, ms))
     }
 
     count.cmdCount++
@@ -43,11 +43,11 @@ module.exports = class Test extends Command {
       fields: [{ name: `Version`, value: `\`${ver}\`` }],
       color: config.embed_color,
       timestamp: new Date(),
-      thumbnail: { url: config.pfp },
+      thumbnail: { url: config.pfp }
     }
 
     message.reply(
-      `Notifying ${this.client.guilds.cache.size} Servers of a new update\nVersion: \`${ver}\`\nThis may take some time (${time})`,
+      `Notifying ${this.client.guilds.cache.size} Servers of a new update\nVersion: \`${ver}\`\nThis may take some time (${time})`
     )
     message.embed(embedInfo)
 
@@ -58,12 +58,10 @@ module.exports = class Test extends Command {
             return a.rawPosition - b.rawPosition
           })
           .find(
-            (channel) =>
+            channel =>
               channel.type === 'text' &&
               channel.permissionsFor(guilds[i].me).has('SEND_MESSAGES') &&
-              channel
-                .permissionsFor(guilds[i].roles.everyone)
-                .has('SEND_MESSAGES'),
+              channel.permissionsFor(guilds[i].roles.everyone).has('SEND_MESSAGES')
           )
 
         await channel.send({ embed: embedInfo })
@@ -74,10 +72,6 @@ module.exports = class Test extends Command {
       await sleep(delay)
     }
 
-    message.reply(
-      `Done!\nUpdated \`${this.client.guilds.cache.size - errCount}/${
-        this.client.guilds.cache.size
-      }\``,
-    )
+    message.reply(`Done!\nUpdated \`${this.client.guilds.cache.size - errCount}/${this.client.guilds.cache.size}\``)
   }
 }

@@ -12,7 +12,7 @@ module.exports = class MarsExpress extends Command {
       memberName: 'mars-express',
       description: 'Find Information on the Mars Express mission',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions,
+      throttling: client.config.command_throttling.missions
     })
   }
 
@@ -27,7 +27,7 @@ module.exports = class MarsExpress extends Command {
       color: config.embed_color,
       timestamp: new Date(),
       image: { url: info.img },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }

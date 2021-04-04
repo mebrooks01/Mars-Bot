@@ -159,15 +159,7 @@
       "rear_hazcam_left",
       "rear_hazcam_right"
     ],
-    "curiosity": [
-      "fhaz",
-      "rhaz",
-      "mast",
-      "chemcam",
-      "mahli",
-      "mardi",
-      "navcam"
-    ],
+    "curiosity": ["fhaz", "rhaz", "mast", "chemcam", "mahli", "mardi", "navcam"],
     "opportunity": ["fhaz", "rhaz", "navcam", "pancam", "minites"],
     "spirit": ["fhaz", "rhaz", "navcam", "pancam", "minites"],
     "all": [

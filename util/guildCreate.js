@@ -5,9 +5,7 @@ module.exports = {
   execute(client, guild) {
     //Finds Top Channel of the server
     const channel = guild.channels.cache.find(
-      (channel) =>
-        channel.type === 'text' &&
-        channel.permissionsFor(guild.me).has('SEND_MESSAGES'),
+      channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES')
     )
 
     //Sends Welcome info
@@ -19,8 +17,8 @@ module.exports = {
         color: client.config.embed_color,
         timestamp: new Date(),
         thumbnail: { url: config.pfp },
-        footer: { text: mission.credit },
-      },
+        footer: { text: mission.credit }
+      }
     })
-  },
+  }
 }

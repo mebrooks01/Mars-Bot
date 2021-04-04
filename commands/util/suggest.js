@@ -12,7 +12,7 @@ module.exports = class NAME extends Command {
       memberName: 'suggest',
       description: 'Give us a suggestion',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: config.command_throttling.utilities,
+      throttling: config.command_throttling.utilities
     })
   }
   run(message) {
@@ -26,7 +26,7 @@ module.exports = class NAME extends Command {
       color: config.embed_color,
       timestamp: new Date(),
       thumbnail: { url: config.pfp },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }

@@ -11,7 +11,7 @@ module.exports = class Support extends Command {
       memberName: 'support',
       description: 'Get Help',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: config.command_throttling.utilities,
+      throttling: config.command_throttling.utilities
     })
   }
   run(message) {
@@ -25,7 +25,7 @@ module.exports = class Support extends Command {
       color: config.embed_color,
       timestamp: new Date(),
       thumbnail: { url: config.pfp },
-      footer: { text: mission.credit },
+      footer: { text: mission.credit }
     })
   }
 }
