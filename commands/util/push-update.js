@@ -2,7 +2,6 @@ const { Command } = require('discord.js-commando')
 const prettyMilliseconds = require('pretty-ms')
 const config = require('$root/config.json')
 const count = require('$util/count')
-const pack = require('$root/package.json')
 errCount = 0
 delay = 1000
 let i
@@ -31,6 +30,10 @@ module.exports = class Test extends Command {
   }
 
   async run(message, { ver, info }) {
+    function sleep(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms))
+    }
+
     count.cmdCount++
     let guilds = this.client.guilds.cache.array()
     let time = prettyMilliseconds(this.client.guilds.cache.size * delay)
@@ -68,7 +71,7 @@ module.exports = class Test extends Command {
         errCount++
       }
 
-      await count.sleep(delay)
+      await sleep(delay)
     }
 
     message.reply(

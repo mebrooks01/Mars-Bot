@@ -3,13 +3,16 @@ const schedule = require('node-schedule')
 const chalk = require('chalk')
 const config = require('$root/config.json')
 const dpod = require('$root/dpod.json')
-const count = require('$util/count')
 let img = ''
 let delay = 1000
 let i
 
 module.exports = {
   async execute(client) {
+    function sleep(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms))
+    }
+
     console.log(chalk.green('Daily APOD Started'))
 
     const rule = new schedule.RecurrenceRule()
@@ -40,7 +43,7 @@ module.exports = {
           for (i = 0; i < dpod.length; i++) {
             client.channels.cache.get(dpod[i].channel).send({ embed })
 
-            await count.sleep(delay)
+            await sleep(delay)
           }
         })
         .catch(function (error) {
