@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {},
   "author": "Mebrooks01#3354",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
     "better-module-alias": "^1.1.0",
