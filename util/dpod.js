@@ -13,9 +13,9 @@ module.exports = {
     console.log(chalk.green('Daily APOD Started'))
 
     const rule = new schedule.RecurrenceRule()
-    rule.hour = 17
-    //rule.minute = 00
-    //rule.tz = 'Etc/UTC'
+    rule.hour = 12
+    rule.minute = 00
+    rule.tz = 'Etc/UTC'
 
     const job = schedule.scheduleJob(rule, async function () {
       await axios
