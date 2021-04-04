@@ -41,6 +41,7 @@ client.registry
   .registerDefaultCommands({
     unknownCommand: false,
     help: false,
+    eval: false,
   })
   .registerCommandsIn(path.join(__dirname, 'commands'))
 
