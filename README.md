@@ -3,7 +3,7 @@
 [![Status](https://top.gg/api/widget/status/760605516384305224.svg)](https://top.gg/bot/760605516384305224) ![Discord](https://img.shields.io/discord/760662877563650048?label=Discord) ![contributors](https://img.shields.io/github/all-contributors/mebrooks01/Mars-Bot?label=contributors) ![lines](https://img.shields.io/tokei/lines/github/mebrooks01/Mars-Bot)
 
 Mars Bot is an open-source discord bot developed by [Mebrooks01#3354](https://github.com/mebrooks01)\
-You can add it to your server with [this link](https://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945). If you have any questions you can join [our discord server](https://discord.gg/yKnBYJE).
+You can add it to your server with [this link](https://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=3288726593). If you have any questions you can join [our discord server](https://discord.gg/yKnBYJE).
 
 Mars Bot uses NASA's API and other sources to give you plenty of cool information about missions and even look at the weather on Mars (when NASA/JPL-Caltech decides to give the data to the API).
 

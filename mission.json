@@ -124,7 +124,7 @@
     "invite": {
       "url": "https://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945",
       "title": "Invite Me!!",
-      "info": "Invite me to your discord using the following link.\nhttps://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=1141242945"
+      "info": "Invite me to your discord using the following link.\nhttps://discord.com/oauth2/authorize?client_id=760605516384305224&scope=bot&permissions=3288726593"
     },
     "mars": {
       "url": "https://mars.nasa.gov/",
