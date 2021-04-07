@@ -11,13 +11,13 @@ const mysql = require('mysql2/promise')
 const axios = require('axios')
 
 //Load files
-const fs = require('fs')
 const path = require('path')
 require('better-module-alias')(__dirname)
 const config = require('$root/config.json')
 const load = require('$util/load')
 const dpod = require('$util/dpod')
 const guild_add = require('$util/guildCreate')
+const guild_remove = require('$util/guildRemove')
 
 //Create Discord Client
 const client = new Commando.CommandoClient({
@@ -40,8 +40,7 @@ client.registry
   //Turn on and off default commands
   .registerDefaultCommands({
     unknownCommand: false,
-    help: false,
-    eval: false,
+    help: false
   })
   .registerCommandsIn(path.join(__dirname, 'commands'))
 
@@ -74,7 +73,9 @@ client.once('ready', async () => {
       console.log(chalk.yellow(error))
     })
 
-  await client.user.setActivity(`people use "${config.prefix}Help"`, {
+  await client.channels.cache.get(config.log_channel).send(`${client.user.tag} logged in at ${new Date()}`)
+
+  await client.user.setActivity(`${config.prefix}Help For help`, {
     type: 'WATCHING'
   })
   await client.user.setStatus('online')
@@ -82,6 +83,10 @@ client.once('ready', async () => {
 
 client.on('guildCreate', guild => {
   guild_add.execute(client, guild)
+})
+
+client.on('guildDelete', guild => {
+  guild_remove.execute(client, guild)
 })
 
 client

@@ -4,7 +4,6 @@ const mission = require('$root/mission.json')
 const count = require('$util/count')
 const dpod = require('$root/dpod.json')
 const fs = require('fs')
-let description = ''
 
 module.exports = class Invite extends Command {
   constructor(client) {
@@ -65,8 +64,7 @@ module.exports = class Invite extends Command {
           if (err) throw err
         })
 
-        msg(`Set Your DPOD Channel to <#${channel.id}>\nTo reset it use: ${anyUsage(`dpod reset`)}`)
-        return
+        return msg(`Set Your DPOD Channel to <#${channel.id}>\nTo reset it use: ${message.anyUsage('dpod reset')}`)
       }
 
       msg(

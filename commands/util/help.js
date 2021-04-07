@@ -29,7 +29,6 @@ module.exports = class Help extends Command {
 
     if (command !== '') {
       let cmdValid = false
-      command = command
 
       await this.client.registry.commands.forEach(async cmd => {
         if (cmd.name == command || cmd.aliases.includes(command)) {

@@ -12,7 +12,7 @@ module.exports = class Insight extends Command {
       aliases: ['weather'],
       memberName: 'insight',
       description: 'Get info about insight and find weather data it has collected',
-      format: `['info' | 'weather']`,
+      format: `['info' |${' '}'weather']`,
       clientPermissions: ['EMBED_LINKS'],
       throttling: config.command_throttling.api,
       args: [
@@ -20,7 +20,7 @@ module.exports = class Insight extends Command {
           key: 'type',
           prompt: 'Please choose if you are looking for an image or info',
           type: 'string',
-          oneOf: ['info', `weather`],
+          oneOf: ['info', 'weather'],
           default: 'info'
         }
       ]
@@ -38,6 +38,7 @@ module.exports = class Insight extends Command {
         .then(res => {
           let sol_keys = res.data.sol_keys
           let array_length = res.data.sol_keys.length
+          /*eslint-disable */
 
           //sol 1 data checks
           let sol1 = sol_keys[array_length - 1]
@@ -102,12 +103,12 @@ module.exports = class Insight extends Command {
             var sol2_mn_pr = sol2_data.PRE.mn + ' Pa'
             var sol2_mx_pr = sol2_data.PRE.mx + ' Pa'
           }
-
+          /*eslint-enable */
           message.channel.send({
             embed: {
               title: 'Whether on mars for the last 2 days',
               url: 'https://mars.nasa.gov/insight/weather/',
-              description: ``,
+              description: '',
               fields: [
                 {
                   name: `Weather From Sol: ${sol1}`,

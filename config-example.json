@@ -5,6 +5,7 @@
   "invite": "https://discord.gg/yKnBYJE",
   "embed_color": "#5A2017",
   "pfp": "https://mars.nasa.gov/system/resources/detail_files/25058_PIA23900-web.jpg",
+  "log_channel": "",
   "mysql": {
     "host": "",
     "user": "",

@@ -118,6 +118,7 @@ You also need to rename `dpod-example.json` to `dpod.json`
 - invite: The invite to your Discord server.
 - embed_color: what color you want the embeds to be
 - pfp: the link for the pfp you are using
+- log_channel: The channel ID of the bot logs
 - mysql
   - host: The database host address
   - user: The username of the database

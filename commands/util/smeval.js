@@ -1,14 +1,25 @@
 const { Command } = require('discord.js-commando')
+/*eslint-disable */
+const axios = require('axios')
+const moment = require('moment')
+const chalk = require('chalk')
+const fs = require('fs')
+const mysqlProvider = require('commando-provider-mysql')
+const mysql = require('mysql2/promise')
+const path = require('path')
+
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
 const count = require('$util/count')
+const dpod = require('$root/dpod.json')
+/*eslint-enable */
 
 module.exports = class EvalCommand extends Command {
   constructor(client) {
     super(client, {
-      name: 'eval',
+      name: 'smeval',
       group: 'util',
-      memberName: 'eval',
+      memberName: 'smeval',
       description: 'Executes JavaScript code.',
       details: 'Only the bot owner(s) may use this command.',
       ownerOnly: true,
@@ -22,10 +33,12 @@ module.exports = class EvalCommand extends Command {
     })
   }
 
-  async run(msg, args) {
+  async run(message, args) {
     count.cmdCount++
-    let message = msg
+    /*eslint-disable */
+    let msg = message
     let client = this.client
+    /*eslint-enable */
 
     if (args.script.startsWith('```') && args.script.endsWith('```')) {
       args.script = args.script.replace(/(^.*?\s)|(\n.*$)/g, '')
@@ -49,10 +62,10 @@ module.exports = class EvalCommand extends Command {
         })
         .catch(err => {
           message.react('❌').catch(() => {})
-          message.channel.send(`Error executing code:\n\`\`\`${err.stack}\`\`\``).catch(() => {})
+          message.say(`Error executing code:\n\`\`\`${err.stack}\`\`\``).catch(() => {})
         })
     } catch (err) {
-      await message.channel.send(`Error executing code:\n\`\`\`${err.stack}\`\`\``).catch(() => {})
+      await message.say(`Error executing code:\n\`\`\`${err.stack}\`\`\``).catch(() => {})
       await message.react('❌').catch(() => {})
     }
   }

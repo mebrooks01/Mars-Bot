@@ -2,8 +2,8 @@ const { Command } = require('discord.js-commando')
 const prettyMilliseconds = require('pretty-ms')
 const config = require('$root/config.json')
 const count = require('$util/count')
-errCount = 0
-delay = 1000
+let errCount = 0
+let delay = 1000
 let i
 
 module.exports = class Test extends Command {

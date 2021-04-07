@@ -17,10 +17,12 @@ module.exports = {
 
     const rule = new schedule.RecurrenceRule()
     rule.hour = 12
-    rule.minute = 00
+    rule.minute = 0
     rule.tz = 'Etc/UTC'
 
+    /*eslint-disable */
     const job = schedule.scheduleJob(rule, async function () {
+      /*eslint-enable */
       await axios
         .get(`https://api.nasa.gov/planetary/apod?api_key=${config.api_key}`)
         .then(async res => {

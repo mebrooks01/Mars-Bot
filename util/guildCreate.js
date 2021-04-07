@@ -20,5 +20,15 @@ module.exports = {
         footer: { text: mission.credit }
       }
     })
+    client.channels.cache.get(config.log_channel).send({
+      embed: {
+        title: 'Mars Bot was added to a new guild.',
+        description: `Guild Name: ${guild.name}\nID: ${guild.id}\nMembers: ${guild.memberCount}\nNew Server Count: ${client.guilds.cache.size}`,
+        color: config.embed_color,
+        timestamp: new Date(),
+        thumbnail: { url: config.pfp },
+        footer: { text: mission.credit }
+      }
+    })
   }
 }

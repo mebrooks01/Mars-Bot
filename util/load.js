@@ -4,7 +4,6 @@ const header1 = chalk.bold.blue.strikethrough
 const header2 = chalk.bold.underline
 const info = chalk.yellow
 const embed = chalk.hex(config.embed_color)
-const reset = chalk.reset
 
 module.exports = {
   execute(client, res) {
@@ -49,6 +48,7 @@ module.exports = {
     console.log(chalk.green(`${client.user.tag} logged in at ${new Date()}`))
   }
 }
+
 /**
  * console.log(`
       ${header1(`----------------------------------------------------`)} 
