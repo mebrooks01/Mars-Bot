@@ -84,7 +84,7 @@ module.exports = class Help extends Command {
     })
 
     await message.embed({
-      title: `Mars Bot Help (Prefix: \`${message.guild.prefix}\``,
+      title: `Mars Bot Help (Prefix: \`${message.guild.commandPrefix}\`)`,
       url: 'https://github.com/mebrooks01/Mars-Bot/blob/main/README.md',
       description:
         "**Key**:\n⚠️ Guild Only\nArgument names enclosed in `[square brackets]` are optional. Ones enclosed in `<angle brackets>` are required. Ones enclosed in `['single quotes']` mean that you should type their name to toggle an option (instead of providing a value of your own). Ones separated by `<vertical | bars>` mean you can choose between one of them (this also applies to quoted arguments).\nPS Thx catte for the arguments explanation",
@@ -93,5 +93,6 @@ module.exports = class Help extends Command {
       timestamp: new Date(),
       thumbnail: { url: config.pfp }
     })
+    fields = []
   }
 }

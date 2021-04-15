@@ -1,6 +1,6 @@
 {
   "name": "mars-bot",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Using NASA's API it send mars related stuff via commands.",
   "main": "index.js",
   "scripts": {},
