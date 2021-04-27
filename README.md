@@ -147,7 +147,7 @@ This file contains an array of Objects with guild and channel ID's to send the D
 
 ## Credits
 
-Code Written By: [Mebrooks01#3354](https://github.com/mebrooks01).\
+Code Written By: [Mebrooks01#3354](https://github.com/mebrooks01). lol\
 Anti shitty-ass code: [MrSmarty#1732](https://github.com/Mr-Smarty), [cAtte\_#4289](https://github.com/cAttte), [XboxBedrock#6958](https://github.com/XboxBedrock) and [Rude Yeti, Incorporated#8600](https://github.com/rudeyeti)
 
 API calls use [NASA's API](https://api.nasa.gov/) to pull data. The part of the API I use is maintained by [Chris Cerami](https://github.com/chrisccerami/mars-photo-api).
