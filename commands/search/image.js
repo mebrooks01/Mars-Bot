@@ -37,7 +37,12 @@ module.exports = class Image extends Command {
             'Please select the camera to look for. Or `all` for all cams\nTo get a list of all cam names please use the manifest command',
           type: 'string',
           validate: camera => {
-            if (mission.cams.all.includes(camera.toLowerCase()) || camera === 'all') return true
+            if (
+              mission.cams.all.includes(camera.toLowerCase()) ||
+              camera.toLowerCase() === 'all' ||
+              camera == undefined
+            )
+              return true
           }
         },
         {
@@ -51,6 +56,8 @@ module.exports = class Image extends Command {
   }
 
   run(message, { rover, date, camera, result_number }) {
+    if (camera == undefined) camera = 'all'
+
     count.cmdCount++
     let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?`
     let date_mod = date.replace('/', '-')

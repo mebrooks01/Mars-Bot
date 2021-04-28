@@ -1,6 +1,6 @@
 {
   "name": "mars-bot",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "description": "Using NASA's API it send mars related stuff via commands.",
   "main": "index.js",
   "scripts": {},
@@ -13,11 +13,14 @@
     "commando-provider-mysql": "^1.0.1",
     "discord.js": "^12.5.1",
     "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
+    "git-last-commit": "^1.0.0",
     "moment": "^2.29.1",
     "node-schedule": "^2.0.0",
+    "oneline": "^1.0.3",
     "path": "^0.12.7",
     "pretty-ms": "^7.0.1",
     "sqlite": "^4.0.19",
+    "systeminformation": "^5.6.12",
     "zip-dir": "^2.0.0"
   },
   "devDependencies": {
