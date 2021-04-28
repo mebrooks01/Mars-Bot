@@ -7,7 +7,7 @@ const embed = chalk.hex(config.embed_color)
 
 module.exports = {
   execute(client, res) {
-    if (config.debug == true) {
+    if (config.debug) {
       return console.log(
         header1(`----------------------------------------------------`),
 

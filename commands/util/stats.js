@@ -42,6 +42,7 @@ module.exports = class Stats extends Command {
     ]
 
     if (config.user_id.owner.includes(message.author.id)) {
+      message.reply('Working on it...')
       let cpu = await si.cpu()
       let os = await si.osInfo()
       let ram = await si.mem()
@@ -54,7 +55,7 @@ module.exports = class Stats extends Command {
           `\nCPU        :: ${cpu.brand}` +
           `\nGHz        :: ${cpu.speed}` +
           `\nCores      :: ${cpu.cores}` +
-          `\nRAM Usage  :: ${ram.used / 1048576}/${ram.total / 1048576}mb` +
+          `\nRAM Usage  :: ${Math.round((ram.used / 1048576) * 100) / 100}/${Math.round(ram.total / 1048576)} Mb` +
           `\nVPS Uptime :: ${prettyMilliseconds(si.time().uptime * 1000)}` +
           `\n\`\`\``
       })

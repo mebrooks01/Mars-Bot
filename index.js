@@ -73,7 +73,9 @@ client.once('ready', async () => {
       console.log(chalk.yellow(error))
     })
 
-  await client.channels.cache.get(config.log_channel).send(`${client.user.tag} logged in at ${new Date()}`)
+  if (!config.debug) {
+    await client.channels.cache.get(config.log_channel).send(`${client.user.tag} logged in at ${new Date()}`)
+  }
 
   await client.user.setActivity(`${config.prefix}Help For help`, {
     type: 'WATCHING'
