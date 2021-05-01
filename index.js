@@ -19,6 +19,22 @@ const dpod = require('$util/dpod')
 const guild_add = require('$util/guildCreate')
 const guild_remove = require('$util/guildRemove')
 
+//Log promise rejections
+process.on('unhandledRejection', async err => {
+  try {
+    client.channels.cache.get(config.log_channel).send({
+      embed: {
+        title: 'Unhandled Promise Rejection',
+        description: `**${err.message || err}**\n\`\`\`${err.stack || err}\`\`\``,
+        color: config.embed_color,
+        timestamp: new Date()
+      }
+    })
+  } catch (e) {
+    console.log(chalk.red('ERROR LOGGING PROMISE REJECTION\n' + e.stack + 'PROMISE REJECTION\n' + (err.stack || err)))
+  }
+})
+
 //Create Discord Client
 const client = new Commando.CommandoClient({
   commandPrefix: config.prefix,
