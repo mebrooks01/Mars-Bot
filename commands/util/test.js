@@ -15,6 +15,6 @@ module.exports = class Test extends Command {
 
   async run(message) {
     count.cmdCount++
-    message.reply('lol')
+    Promise.reject(new Error('a simulated promise rejection to test uncaught rejection logging'))
   }
 }
