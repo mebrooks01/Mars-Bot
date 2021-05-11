@@ -63,7 +63,7 @@ module.exports = class Perseverance extends Command {
               title: `Photo from ${rover.name}'s from ${cam.full_name}`,
               url: img,
               description: `**Rover Name:** ${rover.name}\n**Mission Status:** ${rover.status}\n**Sol:** ${data.sol}\n**Date:** ${data.earth_date}\n**Camera Name:** ${cam.full_name} (${cam.name})\n**Photo ID:** ${data.id}`,
-              color: this.client.config.embed_color,
+              color: this.config.embed_color,
               timestamp: new Date(),
               image: { url: img },
               footer: { text: mission.credit }

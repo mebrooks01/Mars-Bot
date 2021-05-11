@@ -1,6 +1,6 @@
 {
   "name": "mars-bot",
-  "version": "2.1.7",
+  "version": "2.2.0",
   "description": "Using NASA's API it send mars related stuff via commands.",
   "main": "index.js",
   "scripts": {},
@@ -21,6 +21,7 @@
     "pretty-ms": "^7.0.1",
     "sqlite": "^4.0.19",
     "systeminformation": "^5.6.12",
+    "topgg-autoposter": "^1.1.10",
     "zip-dir": "^2.0.0"
   },
   "devDependencies": {

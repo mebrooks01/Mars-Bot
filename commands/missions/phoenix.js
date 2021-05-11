@@ -11,7 +11,7 @@ module.exports = class NAME extends Command {
       memberName: 'phoenix',
       description: 'Find Information on the phoenix mission',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions
+      throttling: config.command_throttling.missions
     })
   }
 

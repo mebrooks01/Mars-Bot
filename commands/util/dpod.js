@@ -34,7 +34,7 @@ module.exports = class Invite extends Command {
     })
   }
 
-  run(message, { channel, action }) {
+  async run(message, { channel, action }) {
     count.cmdCount++
     let guildChannel = dpod.find(channel => channel.guild === message.guild.id)
     let dpodInfo = dpod
@@ -76,8 +76,8 @@ module.exports = class Invite extends Command {
 
     if (action == 'reset') {
       if (guildChannel) {
-        let dpodInfoFiltered = dpodInfo.filter(function (array) {
-          return array.guild != message.guild.id
+        let dpodInfoFiltered = await dpodInfo.filter(array => {
+          array.guild != message.guild.id
         })
 
         let json = JSON.stringify(dpodInfoFiltered)
@@ -93,13 +93,12 @@ module.exports = class Invite extends Command {
     }
 
     if (action == 'info') {
-      if (guildChannel) {
+      if (dpod.find(channel => channel.guild === message.guild.id)) {
         msg(
           `The Current DPOD Channel is <#${guildChannel.channel}>\nTo reset it use:\n${message.anyUsage(
             'dpod reset'
           )}\nDPOD runs every day at [12PM UTC± 0](https://www.google.com/search?q=12pm+utc+time+zone+converter)`
         )
-
         return
       }
 

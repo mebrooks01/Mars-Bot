@@ -11,7 +11,7 @@ module.exports = class Maven extends Command {
       memberName: 'maven',
       description: 'Find Information on the Mars Atmospheric and Volatile EvolutioN (Maven) mission',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions
+      throttling: config.command_throttling.missions
     })
   }
 

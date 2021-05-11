@@ -12,7 +12,7 @@ module.exports = class NAME extends Command {
       memberName: 'viking',
       description: 'Find Information on the Viking 1 & 2 missions',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions
+      throttling: config.command_throttling.missions
     })
   }
 

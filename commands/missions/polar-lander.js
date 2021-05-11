@@ -12,7 +12,7 @@ module.exports = class NAME extends Command {
       memberName: 'polar-lander',
       description: 'Find Information on the Mars Polar Lander/Deep Space 2 mission',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions
+      throttling: config.command_throttling.missions
     })
   }
 

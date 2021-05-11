@@ -12,7 +12,7 @@ module.exports = class mariner extends Command {
       memberName: 'mariner',
       description: 'Find Information on the Mariner 3-9 missions',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions
+      throttling: config.command_throttling.missions
     })
   }
 

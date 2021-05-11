@@ -12,7 +12,7 @@ module.exports = class ExoMars extends Command {
       memberName: 'exomars',
       description: 'Find Information on the exo mars mission',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions
+      throttling: config.command_throttling.missions
     })
   }
 

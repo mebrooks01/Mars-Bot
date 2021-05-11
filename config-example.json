@@ -1,6 +1,7 @@
 {
   "token": "",
   "api_key": "",
+  "dblToken": "",
   "prefix": "=",
   "invite": "https://discord.gg/yKnBYJE",
   "embed_color": "#5A2017",

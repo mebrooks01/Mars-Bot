@@ -12,6 +12,7 @@ const config = require('$root/config.json')
 const mission = require('$root/mission.json')
 const count = require('$util/count')
 const dpod = require('$root/dpod.json')
+const log = require('$util/log')
 /*eslint-enable */
 
 module.exports = class EvalCommand extends Command {
@@ -54,7 +55,7 @@ module.exports = class EvalCommand extends Command {
             .send({
               embed: {
                 title: 'Response:',
-                color: this.client.config.embed_color,
+                color: this.config.embed_color,
                 description: String(res) || '\u200b'
               }
             })

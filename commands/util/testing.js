@@ -4,10 +4,10 @@ const count = require('$util/count')
 module.exports = class Test extends Command {
   constructor(client) {
     super(client, {
-      name: 'test',
+      name: 'testing',
       group: 'util',
-      aliases: ['testing'],
-      memberName: 'test',
+      aliases: ['test'],
+      memberName: 'testing',
       description: 'A Command used for testing whatever I need',
       ownerOnly: true
     })

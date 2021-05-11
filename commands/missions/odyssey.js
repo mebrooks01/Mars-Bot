@@ -11,7 +11,7 @@ module.exports = class Odyssey extends Command {
       memberName: 'odyssey',
       description: 'Find Information on the odyssey mission',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions
+      throttling: config.command_throttling.missions
     })
   }
 

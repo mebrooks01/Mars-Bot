@@ -48,7 +48,7 @@ module.exports = class Opportunity extends Command {
         title: "Opportunity's last message",
         url: '',
         description: "My battery's are low and its getting dark",
-        color: this.client.config.embed_color,
+        color: this.config.embed_color,
         timestamp: new Date(),
         image: {
           url: 'https://mars.nasa.gov/mer/gallery/all/1/p/5111/1P581919922EFFD2FCP2682L8M1-BR.JPG'
@@ -80,7 +80,7 @@ module.exports = class Opportunity extends Command {
               title: `Photo from ${rover.name}'s from ${cam.full_name}`,
               url: img,
               description: `**Rover Name:** ${rover.name}\n**Mission Status:** ${rover.status}\n**Sol:** ${data.sol}\n**Date:** ${data.earth_date}\n**Camera Name:** ${cam.full_name} (${cam.name})\n**Photo ID:** ${data.id}`,
-              color: this.client.config.embed_color,
+              color: this.config.embed_color,
               timestamp: new Date(),
               image: { url: img },
               footer: { text: mission.credit }

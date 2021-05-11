@@ -9,6 +9,7 @@ const mysql = require('mysql2/promise')
 
 //API Packages
 const axios = require('axios')
+const AutoPoster = require('topgg-autoposter')
 
 //Load files
 const path = require('path')
@@ -16,6 +17,7 @@ require('better-module-alias')(__dirname)
 const config = require('$root/config.json')
 const load = require('$util/load')
 const dpod = require('$util/dpod')
+const log = require('$util/log')
 const guild_add = require('$util/guildCreate')
 const guild_remove = require('$util/guildRemove')
 
@@ -42,7 +44,6 @@ const client = new Commando.CommandoClient({
   invite: config.invite,
   unknownCommandResponse: false
 })
-client.config = config //Re Redefine Config
 
 //Loads all the commands
 client.registry
@@ -90,7 +91,7 @@ client.once('ready', async () => {
     })
 
   if (!config.debug) {
-    await client.channels.cache.get(config.log_channel).send(`${client.user.tag} logged in at ${new Date()}`)
+    log.send(`${client.user.tag} logged in at ${new Date()}`, config, client)
   }
 
   await client.user.setActivity(`${config.prefix}Help For help`, {
@@ -106,6 +107,14 @@ client.on('guildCreate', guild => {
 client.on('guildDelete', guild => {
   guild_remove.execute(client, guild)
 })
+
+if (!config.debug) {
+  const ap = AutoPoster(config.dblToken, client)
+
+  ap.on('posted', () => {
+    log.send('Server Stats updated on top.gg', config, client)
+  })
+}
 
 client
   .login(config.token)

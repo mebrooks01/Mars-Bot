@@ -11,7 +11,7 @@ module.exports = class ClimateOrbiter extends Command {
       memberName: 'climate-orbiter',
       description: 'Find Information about the climate orbiter mission',
       clientPermissions: ['EMBED_LINKS'],
-      throttling: client.config.command_throttling.missions
+      throttling: config.command_throttling.missions
     })
   }
 
