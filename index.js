@@ -110,10 +110,6 @@ client.on('guildDelete', guild => {
 
 if (!config.debug) {
   const ap = AutoPoster(config.dblToken, client)
-
-  ap.on('posted', () => {
-    log.send('Server Stats updated on top.gg', config, client)
-  })
 }
 
 client
