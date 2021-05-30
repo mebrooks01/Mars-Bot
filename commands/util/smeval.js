@@ -55,7 +55,7 @@ module.exports = class EvalCommand extends Command {
             .send({
               embed: {
                 title: 'Response:',
-                color: this.config.embed_color,
+                color: config.embed_color,
                 description: String(res) || '\u200b'
               }
             })
