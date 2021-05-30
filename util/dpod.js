@@ -9,10 +9,6 @@ let i
 
 module.exports = {
   async execute(client) {
-    function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms))
-    }
-
     console.log(chalk.green('Daily APOD Started'))
 
     const rule = new schedule.RecurrenceRule()
@@ -44,8 +40,6 @@ module.exports = {
 
           for (i = 0; i < dpod.length; i++) {
             client.channels.cache.get(dpod[i].channel).send({ embed })
-
-            await sleep(delay)
           }
         })
         .catch(function (error) {
