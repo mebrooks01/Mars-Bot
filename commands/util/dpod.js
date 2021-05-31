@@ -2,8 +2,6 @@ const { Command } = require('discord.js-commando')
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
 const count = require('$util/count')
-const dpod = require('$root/dpod.json')
-const fs = require('fs')
 
 module.exports = class Invite extends Command {
   constructor(client) {
@@ -36,8 +34,8 @@ module.exports = class Invite extends Command {
 
   async run(message, { channel, action }) {
     count.cmdCount++
-    let guildChannel = dpod.find(channel => channel.guild === message.guild.id)
-    let dpodInfo = dpod
+
+    let guildChannel = this.client.provider.get(message.guild, 'dpod')
 
     function msg(description) {
       message.embed({
@@ -57,33 +55,21 @@ module.exports = class Invite extends Command {
       }
 
       if (!guildChannel) {
-        dpodInfo.push({ guild: message.guild.id, channel: channel.id })
-
-        let json = JSON.stringify(dpodInfo)
-        fs.writeFile('dpod.json', json, function (err) {
-          if (err) throw err
-        })
+        this.client.provider.set(message.guild, 'dpod', channel.id)
 
         return msg(`Set Your DPOD Channel to <#${channel.id}>\nTo reset it use: ${message.anyUsage('dpod reset')}`)
       }
 
       msg(
-        `Your already have a DPOD\nThe Current DPOD Channel is <#${
-          guildChannel.channel
-        }>\nTo reset it use:\n${message.anyUsage('dpod reset')}`
+        `Your already have a DPOD\nThe Current DPOD Channel is <#${guildChannel}>\nTo reset it use:\n${message.anyUsage(
+          'dpod reset'
+        )}`
       )
     }
 
     if (action == 'reset') {
       if (guildChannel) {
-        let dpodInfoFiltered = await dpodInfo.filter(array => {
-          array.guild != message.guild.id
-        })
-
-        let json = JSON.stringify(dpodInfoFiltered)
-        fs.writeFile('dpod.json', json, function (err) {
-          if (err) throw err
-        })
+        this.client.provider.remove(message.guild, 'dpod')
 
         msg(`The DPOD Channel has been reset\nTo set a new one use: ${message.anyUsage('dpod set <channel>')}`)
         return
@@ -93,9 +79,9 @@ module.exports = class Invite extends Command {
     }
 
     if (action == 'info') {
-      if (dpod.find(channel => channel.guild === message.guild.id)) {
+      if (this.client.provider.get(message.guild, 'dpod', false)) {
         msg(
-          `The Current DPOD Channel is <#${guildChannel.channel}>\nTo reset it use:\n${message.anyUsage(
+          `The Current DPOD Channel is <#${guildChannel}>\nTo reset it use:\n${message.anyUsage(
             'dpod reset'
           )}\nDPOD runs every day at [12PM UTC± 0](https://www.google.com/search?q=12pm+utc+time+zone+converter)`
         )
