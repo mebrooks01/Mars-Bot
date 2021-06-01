@@ -1,6 +1,5 @@
 node_modules/
 .vscode/
 config.json
-dpod.json
 workspace.code-workspace
 .dump/
