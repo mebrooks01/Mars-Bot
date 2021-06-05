@@ -108,7 +108,6 @@ npm install
 ### Configuration
 
 You will need to rename `config-example.json` to `config.json` and fill in all the following information
-You also need to rename `dpod-example.json` to `dpod.json`
 
 #### Config
 

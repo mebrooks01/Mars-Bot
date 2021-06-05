@@ -11,7 +11,6 @@ const path = require('path')
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
 const count = require('$util/count')
-const dpod = require('$root/dpod.json')
 const log = require('$util/log')
 /*eslint-enable */
 

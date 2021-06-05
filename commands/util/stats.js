@@ -71,9 +71,11 @@ module.exports = class Stats extends Command {
             `\n\`\`\``
         })
         embed(fields)
+        memberCount = 0
         return
       })
     } else {
+      memberCount = 0
       embed(fields)
     }
 
