@@ -18,6 +18,7 @@ const config = require('$root/config.json')
 const load = require('$util/load')
 const dpod = require('$util/dpod')
 const log = require('$util/log')
+const count = require('$util/count')
 const guild_add = require('$util/guildCreate')
 const guild_remove = require('$util/guildRemove')
 
@@ -78,8 +79,8 @@ mysql
 client.once('ready', async () => {
   await client.user.setStatus('dnd')
 
-  await dpod.execute(client)
-  //await latest.execute(client)
+  dpod.execute(client)
+  count.start()
 
   await axios
     .get(`https://api.nasa.gov/planetary/apod?api_key=${config.api_key}`)

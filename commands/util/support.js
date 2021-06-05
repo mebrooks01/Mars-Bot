@@ -15,7 +15,7 @@ module.exports = class Support extends Command {
     })
   }
   run(message) {
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
     let info = mission.other.support
 
     message.embed({

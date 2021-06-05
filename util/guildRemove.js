@@ -1,5 +1,6 @@
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
+const count = require('$util/count')
 
 module.exports = {
   execute(client, guild) {
@@ -13,5 +14,6 @@ module.exports = {
         footer: { text: mission.credit }
       }
     })
+    count.guildChange(guild, client)
   }
 }

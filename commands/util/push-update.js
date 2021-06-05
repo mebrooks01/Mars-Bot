@@ -30,7 +30,7 @@ module.exports = class Test extends Command {
   }
 
   async run(message, { ver, info }) {
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
     let guilds = this.client.guilds.cache.array()
     let time = prettyMilliseconds(this.client.guilds.cache.size * delay)
     let embedInfo = {

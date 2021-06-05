@@ -17,7 +17,7 @@ module.exports = class APOD extends Command {
   }
 
   run(message) {
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
 
     axios
       .get(`https://api.nasa.gov/planetary/apod?api_key=${config.api_key}`)

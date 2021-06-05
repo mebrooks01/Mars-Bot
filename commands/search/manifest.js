@@ -33,7 +33,7 @@ module.exports = class Manifest extends Command {
   }
 
   run(message, { rover, sol }) {
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
 
     axios
       .get(`https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${config.api_key}`)

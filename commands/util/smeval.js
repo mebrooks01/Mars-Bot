@@ -35,7 +35,7 @@ module.exports = class EvalCommand extends Command {
   }
 
   async run(message, args) {
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
     /*eslint-disable */
     let msg = message
     let client = this.client

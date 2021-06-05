@@ -25,7 +25,7 @@ module.exports = class Help extends Command {
   }
 
   async run(message, { command }) {
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
 
     if (command !== '') {
       let cmdValid = false

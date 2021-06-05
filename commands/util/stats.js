@@ -21,7 +21,7 @@ module.exports = class Stats extends Command {
   }
 
   async run(message) {
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
 
     this.client.guilds.cache.forEach(guild => {
       memberCount += guild.memberCount

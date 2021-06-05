@@ -35,7 +35,7 @@ module.exports = class Invite extends Command {
   }
 
   async run(message, { channel, action }) {
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
     let guildChannel = dpod.find(channel => channel.guild === message.guild.id)
     let dpodInfo = dpod
 

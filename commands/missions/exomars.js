@@ -17,7 +17,7 @@ module.exports = class ExoMars extends Command {
   }
 
   run(message) {
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
     let info = mission.missions.exomars
 
     message.embed({

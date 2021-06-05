@@ -28,7 +28,7 @@ module.exports = class Insight extends Command {
   }
 
   run(message, { type }) {
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
 
     let info = mission.other.insight
 

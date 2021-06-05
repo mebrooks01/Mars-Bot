@@ -58,7 +58,7 @@ module.exports = class Image extends Command {
   run(message, { rover, date, camera, result_number }) {
     if (camera == undefined) camera = 'all'
 
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
     let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?`
     let date_mod = date.replace('/', '-')
 

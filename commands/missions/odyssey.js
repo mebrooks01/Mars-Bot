@@ -16,7 +16,7 @@ module.exports = class Odyssey extends Command {
   }
 
   run(message) {
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
     let info = mission.missions.odyssey
 
     message.embed({

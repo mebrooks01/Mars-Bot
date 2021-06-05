@@ -39,7 +39,7 @@ module.exports = class Opportunity extends Command {
   }
 
   run(message, { type, sol, result_number }) {
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
 
     let info = mission.rover.opportunity
 
