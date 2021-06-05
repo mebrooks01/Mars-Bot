@@ -1,7 +1,7 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-let cmdCount = 0
+var cmdCount = 0
 
 function cmdRun(name, group, message) {
   cmdCount++
