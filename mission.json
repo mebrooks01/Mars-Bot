@@ -140,6 +140,10 @@
     "support": {
       "title": "Support?",
       "info": "Join the community discord for advanced support with the bot and get a sneak peak into the development of this bot.\n"
+    },
+    "privacy": {
+      "title": "User Data & Privacy Policy",
+      "info": "This is an overview of the data we collect if you have any questions please join are support server to ask questions or have your data removed.\n**What Data we collect**\n__Personal Data:__\n●Your Discord ID\n●Command you have run\n●Guild ID command where run in\n__Guild Data:__ (Collected On Join)\n●Guild Name\n●Member Count\n●Guild ID\n**Why we collect Data:**\nWe collect data for usage statistics and bug catching. If you would like us to remove your data please join our support server and talk to a Dev. "
     }
   },
 

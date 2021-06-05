@@ -33,7 +33,7 @@ module.exports = class Invite extends Command {
   }
 
   async run(message, { channel, action }) {
-    count.cmdCount++
+    count.cmdRun(this.name, this.group, message)
 
     let guildChannel = this.client.provider.get(message.guild, 'dpod')
 
