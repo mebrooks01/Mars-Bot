@@ -6,7 +6,7 @@ var cmdCount = 0
 function cmdRun(name, group, message) {
   cmdCount++
 
-  fs.appendFile('cmd.csv', `\n${name},${group.name},${message.author.id},${message.guild.id},${+new Date()}`, err => {
+  fs.appendFile('cmd.csv', `\n${name},${group.name},${message.author.id},${message.guild?.id},${+new Date()}`, err => {
     if (err) {
       console.log(err)
     }
