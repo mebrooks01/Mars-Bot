@@ -1,7 +1,6 @@
 const { Command } = require('discord.js-commando')
 const prettyMilliseconds = require('pretty-ms')
 const config = require('$root/config.json')
-const count = require('$util/count')
 let errCount = 0
 let delay = 1000
 let i
@@ -30,7 +29,7 @@ module.exports = class Test extends Command {
   }
 
   async run(message, { ver, info }) {
-    count.cmdRun(this.name, this.group, message)
+    this.client.cmdCount.run(this.name, this.group, message)
     let guilds = this.client.guilds.cache.array()
     let time = prettyMilliseconds(this.client.guilds.cache.size * delay)
     let embedInfo = {

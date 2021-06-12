@@ -10,7 +10,6 @@ const path = require('path')
 
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
-const count = require('$util/count')
 const log = require('$util/log')
 /*eslint-enable */
 
@@ -34,7 +33,7 @@ module.exports = class EvalCommand extends Command {
   }
 
   async run(message, args) {
-    count.cmdRun(this.name, this.group, message)
+    this.client.cmdCount.run(this.name, this.group, message)
     /*eslint-disable */
     let msg = message
     let client = this.client

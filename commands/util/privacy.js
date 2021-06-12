@@ -1,7 +1,6 @@
 const { Command } = require('discord.js-commando')
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
-const count = require('$util/count')
 
 module.exports = class Privacy extends Command {
   constructor(client) {
@@ -17,7 +16,7 @@ module.exports = class Privacy extends Command {
   }
 
   run(message) {
-    count.cmdRun(this.name, this.group, message)
+    this.client.cmdCount.run(this.name, this.group, message)
 
     let info = mission.other.privacy
 

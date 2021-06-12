@@ -3,7 +3,6 @@ const axios = require('axios')
 const moment = require('moment')
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
-const count = require('$util/count')
 
 module.exports = class Image extends Command {
   constructor(client) {
@@ -58,7 +57,7 @@ module.exports = class Image extends Command {
   run(message, { rover, date, camera, result_number }) {
     if (camera == undefined) camera = 'all'
 
-    count.cmdRun(this.name, this.group, message)
+    this.client.cmdCount.run(this.name, this.group, message)
     let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?`
     let date_mod = date.replace('/', '-')
 

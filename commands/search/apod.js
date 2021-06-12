@@ -1,7 +1,6 @@
 const { Command } = require('discord.js-commando')
 const axios = require('axios')
 const config = require('$root/config.json')
-const count = require('$util/count')
 let img = ''
 
 module.exports = class APOD extends Command {
@@ -17,7 +16,7 @@ module.exports = class APOD extends Command {
   }
 
   run(message) {
-    count.cmdRun(this.name, this.group, message)
+    this.client.cmdCount.run(this.name, this.group, message)
 
     axios
       .get(`https://api.nasa.gov/planetary/apod?api_key=${config.api_key}`)

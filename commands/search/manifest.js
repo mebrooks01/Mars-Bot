@@ -2,7 +2,6 @@ const { Command } = require('discord.js-commando')
 const axios = require('axios')
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
-const count = require('$util/count')
 
 module.exports = class Manifest extends Command {
   constructor(client) {
@@ -33,7 +32,7 @@ module.exports = class Manifest extends Command {
   }
 
   run(message, { rover, sol }) {
-    count.cmdRun(this.name, this.group, message)
+    this.client.cmdCount.run(this.name, this.group, message)
 
     axios
       .get(`https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${config.api_key}`)
