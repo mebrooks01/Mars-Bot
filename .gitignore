@@ -5,3 +5,4 @@ workspace.code-workspace
 .dump/
 cmd.csv
 guild.csv
+tempCommandError.yaml

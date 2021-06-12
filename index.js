@@ -2,6 +2,8 @@ const chalk = require('chalk')
 console.log(chalk.yellow('Please Stand By\nBot Starting...'))
 
 const Commando = require('discord.js-commando')
+const Discord = require('discord.js')
+const fs = require('fs')
 
 //MySQL Packages
 const mysqlProvider = require('commando-provider-mysql')
@@ -21,6 +23,7 @@ const log = require('$util/log')
 const count = require('$util/count')
 const guild_add = require('$util/guildCreate')
 const guild_remove = require('$util/guildRemove')
+const cmdErrYaml = require('$util/commandErrorYaml')
 
 //Log promise rejections
 process.on('unhandledRejection', async err => {
@@ -107,6 +110,52 @@ client.on('guildCreate', guild => {
 
 client.on('guildDelete', guild => {
   guild_remove.execute(client, guild)
+})
+
+// log command errors
+client.on('commandError', async (command, err, message) => {
+  console.log(message)
+  try {
+    let log = true
+    await fs.writeFile(
+      './tempCommandError.yaml',
+      cmdErrYaml(command, message).replace(/(undefined)|(null)|(\[((undefined)|(null))?\])/g, '-'),
+      err => {
+        if (err) (log = false), console.log(chalk.red('ERROR CREATING LOG FILE:\n' + err))
+      }
+    )
+    await client.channels.cache.get(config.log_channel).send({
+      embed: {
+        title: 'Unhandled Command Error',
+        description: `**Command:** ${command.name}\n**${err.message || err}**\n\`\`\`${err.stack || err}\`\`\``,
+        color: config.embed_color,
+        timestamp: new Date()
+      }
+    })
+    if (log)
+      client.channels.cache
+        .get(config.log_channel)
+        .send({ files: [new Discord.MessageAttachment('./tempCommandError.yaml')] })
+    else client.channels.cache.get(config.log_channel).send('There was an error creating the command info yaml')
+  } catch (e) {
+    console.log(chalk.red('ERROR LOGGING COMMAND ERROR\n' + e.stack + 'COMMAND ERROR\n' + (err.stack || err)))
+  }
+})
+
+// log client errors
+client.on('error', async err => {
+  try {
+    client.channels.cache.get(config.log_channel).send({
+      embed: {
+        title: 'Unhandled Client Error',
+        description: `**${err.message || err}**\n\`\`\`${err.stack || err}\`\`\``,
+        color: config.embed_color,
+        timestamp: new Date()
+      }
+    })
+  } catch (e) {
+    console.log(chalk.red('ERROR LOGGING CLIENT ERROR\n' + e.stack + 'CLIENT ERROR\n' + (err.stack || err)))
+  }
 })
 
 if (!config.debug) {
