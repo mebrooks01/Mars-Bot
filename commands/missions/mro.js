@@ -1,7 +1,6 @@
 const { Command } = require('discord.js-commando')
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
-const count = require('$util/count')
 
 module.exports = class MRO extends Command {
   constructor(client) {
@@ -16,7 +15,7 @@ module.exports = class MRO extends Command {
   }
 
   run(message) {
-    count.cmdRun(this.name, this.group, message)
+    this.client.cmdCount.run(this.name, this.group, message)
     let info = mission.missions.mro
 
     message.embed({

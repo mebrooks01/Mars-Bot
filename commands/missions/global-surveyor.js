@@ -1,6 +1,5 @@
 const { Command } = require('discord.js-commando')
 const config = require('$root/config.json')
-const count = require('$util/count')
 
 module.exports = class globalsurveyor extends Command {
   constructor(client) {
@@ -16,7 +15,7 @@ module.exports = class globalsurveyor extends Command {
   }
 
   run(message) {
-    count.cmdRun(this.name, this.group, message)
+    this.client.cmdCount.run(this.name, this.group, message)
     let info = mission.missions.global_surveyor
 
     message.embed({

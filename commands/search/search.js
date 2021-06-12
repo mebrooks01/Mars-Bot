@@ -1,7 +1,6 @@
 const { Command } = require('discord.js-commando')
 const axios = require('axios')
 const config = require('$root/config.json')
-const count = require('$util/count')
 
 module.exports = class Search extends Command {
   constructor(client) {
@@ -24,7 +23,7 @@ module.exports = class Search extends Command {
   }
 
   run(message, { search_term }) {
-    count.cmdRun(this.name, this.group, message)
+    this.client.cmdCount.run(this.name, this.group, message)
 
     axios
       .get('https://images-api.nasa.gov/search?q=' + search_term)

@@ -2,7 +2,6 @@ const { Command } = require('discord.js-commando')
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
 const prettyMilliseconds = require('pretty-ms')
-const count = require('$util/count')
 const pjson = require('$root/package.json')
 const git = require('git-last-commit')
 const si = require('systeminformation')
@@ -21,7 +20,7 @@ module.exports = class Stats extends Command {
   }
 
   async run(message) {
-    count.cmdRun(this.name, this.group, message)
+    this.client.cmdCount.run(this.name, this.group, message)
 
     this.client.guilds.cache.forEach(guild => {
       memberCount += guild.memberCount
@@ -36,7 +35,7 @@ module.exports = class Stats extends Command {
           `\nUsers      :: ${memberCount}` +
           `\nWS Ping    :: ${Math.round(this.client.ws.ping)}ms` +
           `\nUptime     :: ${prettyMilliseconds(this.client.uptime)}` +
-          `\nCmds Run   :: ${count.cmdCount} (since last restart)` +
+          `\nCmds Run   :: ${this.client.cmdCount.count} (since last restart)` +
           `\n\`\`\``
       }
     ]

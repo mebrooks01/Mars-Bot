@@ -102,6 +102,8 @@ client.once('ready', async () => {
     type: 'WATCHING'
   })
   await client.user.setStatus('online')
+
+  client.cmdCount = new count.CmdCount()
 })
 
 client.on('guildCreate', guild => {
@@ -114,7 +116,6 @@ client.on('guildDelete', guild => {
 
 // log command errors
 client.on('commandError', async (command, err, message) => {
-  console.log(message)
   try {
     let log = true
     await fs.writeFile(

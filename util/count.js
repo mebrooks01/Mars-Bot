@@ -1,16 +1,23 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-var cmdCount = 0
+class CmdCount {
+  constructor() {
+    this.count = 0
+  }
 
-function cmdRun(name, group, message) {
-  cmdCount++
-
-  fs.appendFile('cmd.csv', `\n${name},${group.name},${message.author.id},${message.guild?.id},${+new Date()}`, err => {
-    if (err) {
-      console.log(err)
-    }
-  })
+  run(name, group, message) {
+    fs.appendFile(
+      'cmd.csv',
+      `\n${name},${group.name},${message.author.id},${message.guild?.id},${+new Date()}`,
+      err => {
+        if (err) {
+          console.log(err)
+        }
+      }
+    )
+    this.count++
+  }
 }
 
 function guildChange(guild, client) {
@@ -55,4 +62,4 @@ function start() {
   }
 }
 
-module.exports = { cmdCount, cmdRun, guildChange, sleep, start }
+module.exports = { guildChange, sleep, start, CmdCount }

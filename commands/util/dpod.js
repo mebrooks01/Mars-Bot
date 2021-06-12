@@ -1,7 +1,6 @@
 const { Command } = require('discord.js-commando')
 const config = require('$root/config.json')
 const mission = require('$root/mission.json')
-const count = require('$util/count')
 
 module.exports = class Invite extends Command {
   constructor(client) {
@@ -33,7 +32,7 @@ module.exports = class Invite extends Command {
   }
 
   async run(message, { channel, action }) {
-    count.cmdRun(this.name, this.group, message)
+    this.client.cmdCount.run(this.name, this.group, message)
 
     let guildChannel = this.client.provider.get(message.guild, 'dpod')
 

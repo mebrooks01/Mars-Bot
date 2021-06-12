@@ -1,6 +1,5 @@
 const { Command } = require('discord.js-commando')
 const config = require('$root/config.json')
-const count = require('$util/count')
 let fields = []
 
 module.exports = class Help extends Command {
@@ -25,7 +24,7 @@ module.exports = class Help extends Command {
   }
 
   async run(message, { command }) {
-    count.cmdRun(this.name, this.group, message)
+    this.client.cmdCount.run(this.name, this.group, message)
 
     if (command !== '') {
       let cmdValid = false

@@ -16,7 +16,7 @@ module.exports = class ClimateOrbiter extends Command {
   }
 
   run(message) {
-    count.cmdRun(this.name, this.group, message)
+    this.client.cmdCount.run(this.name, this.group, message)
     let info = mission.missions.climate_orbiter
 
     message.embed({
