@@ -6,6 +6,12 @@ const info = chalk.yellow
 const embed = chalk.hex(config.embed_color)
 
 module.exports = {
+  /**
+   * runs on bot start to log debug info to console.
+   *
+   * @param  {object} client bot client object
+   * @param  {object} res response from NASA API
+   */
   execute(client, res) {
     if (config.debug) {
       return console.log(
@@ -45,45 +51,8 @@ module.exports = {
         header1(`\n----------------------------------------------------`)
       )
     }
+
+    //logs no debug info if not in debug mode
     console.log(chalk.green(`${client.user.tag} logged in at ${new Date()}`))
   }
 }
-
-/**
- * console.log(`
-      ${header1(`----------------------------------------------------`)} 
-      ${header2(`Discord API Connection Info`)}
-      ${info(`Username: ${reset(client.user.tag)}`)}
-      ${info(`ID: ${reset(client.user.id)}`)}
-      ${info(`Servers: ${reset(client.guilds.cache.size)}`)}
-      ${info(`Owner(s): ${reset(config.user_id.owner)}`)}
-      ${header2(`Database Connection Info`)}
-      ${info(`Host: ${reset(config.mysql.host)}`)}
-      ${info(`User: ${reset(config.mysql.user)}`)}
-      ${info(`Database Name: ${reset(config.mysql.db)}`)}
-      ${header2(`NASA API Connection Info`)}
-      ${info(`API Key: ${reset(config.api_key)}`)}
-      ${header2(`Other Info`)}
-      ${info(`Prefix: ${reset(config.prefix)}`)}
-      ${info(`Invite: ${reset(config.invite)}`)}
-      ${info(`Embed Color: ${embed(config.embed_color)}`)}
-      ${info(`Daily APOD Channel: ${reset(config.channel_id.dpod)}`)}
-      ${header2(`Command Slowdown`)}
-      ${info(
-        `API: ${reset(
-          `Run ${config.command_throttling.api.usages} times over ${config.command_throttling.api.duration} seconds`,
-        )}`,
-      )}
-      ${info(
-        `Mission: ${reset(
-          `Run ${config.command_throttling.missions.usages} times over ${config.command_throttling.missions.duration} seconds`,
-        )}`,
-      )}
-      ${info(
-        `Utilities: ${reset(
-          `Run ${config.command_throttling.utilities.usages} times over ${config.command_throttling.utilities.duration} seconds`,
-        )}`,
-      )}
-      ${header1(`----------------------------------------------------`)}
-      `) 
-*/

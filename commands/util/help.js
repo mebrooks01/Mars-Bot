@@ -95,10 +95,10 @@ module.exports = class Help extends Command {
           thumbnail: { url: config.pfp }
         }
       })
-      await message.react('✅')
+      await message.react('✅').catch(err => {})
     } catch (error) {
       await message.reply('Could not send a DM to you\nYou probably have DMs off')
-      await message.react('❌')
+      await message.react('❌').catch(err => {})
     }
     fields = []
   }

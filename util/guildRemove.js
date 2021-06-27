@@ -3,7 +3,15 @@ const mission = require('$root/mission.json')
 const count = require('$util/count')
 
 module.exports = {
+  /**
+   * runs when bot is removed from guild
+   * logs it
+   *
+   * @param  {object} client
+   * @param  {object} guild
+   */
   execute(client, guild) {
+    //Sends message to log channel
     client.channels.cache.get(config.log_channel).send({
       embed: {
         title: 'Mars Bot was removed from a guild.',

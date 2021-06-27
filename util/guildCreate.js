@@ -3,6 +3,13 @@ const mission = require('$root/mission.json')
 const count = require('$util/count')
 
 module.exports = {
+  /**
+   * ran when bot is added to a new guild
+   * sends welcome message + logs new join
+   *
+   * @param  {object} client bots client object
+   * @param  {object} guild guild object
+   */
   execute(client, guild) {
     //Finds Top Channel of the server
     const channel = guild.channels.cache.find(
@@ -21,6 +28,8 @@ module.exports = {
         footer: { text: mission.credit }
       }
     })
+
+    //Send message in bot log channel
     client.channels.cache.get(config.log_channel).send({
       embed: {
         title: 'Mars Bot was added to a new guild.',

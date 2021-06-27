@@ -1,6 +1,7 @@
 const chalk = require('chalk')
 console.log(chalk.yellow('Please Stand By\nBot Starting...'))
 
+//Discord.js
 const Commando = require('discord.js-commando')
 const Discord = require('discord.js')
 const fs = require('fs')
@@ -25,7 +26,7 @@ const guild_add = require('$util/guildCreate')
 const guild_remove = require('$util/guildRemove')
 const cmdErrYaml = require('$util/commandErrorYaml')
 
-//Log promise rejections
+//Log promise rejections to log channel
 process.on('unhandledRejection', async err => {
   try {
     client.channels.cache.get(config.log_channel).send({
@@ -58,14 +59,13 @@ client.registry
     ['search', 'Image Search']
   ])
   .registerDefaultGroups()
-  //Turn on and off default commands
   .registerDefaultCommands({
     unknownCommand: false,
     help: false
   })
   .registerCommandsIn(path.join(__dirname, 'commands'))
 
-//Connect to MySQL server
+//Connect to MySQL server and log to console
 mysql
   .createConnection({
     host: config.mysql.host,
@@ -78,13 +78,15 @@ mysql
     console.log(chalk.green(`Database Connected Successfully`))
   })
 
-//Bot Login
+//Start bot functions
 client.once('ready', async () => {
   await client.user.setStatus('dnd')
 
+  // Start daily apod and command count
   dpod.execute(client)
   count.start()
 
+  //Check ability to make API requests to NASA
   await axios
     .get(`https://api.nasa.gov/planetary/apod?api_key=${config.api_key}`)
     .then(async res => {
@@ -94,6 +96,7 @@ client.once('ready', async () => {
       console.log(chalk.yellow(error))
     })
 
+  //logs the login of the bot to the console if no debug is present in config
   if (!config.debug) {
     log.send(`${client.user.tag} logged in at ${new Date()}`, config, client)
   }
@@ -103,18 +106,19 @@ client.once('ready', async () => {
   })
   await client.user.setStatus('online')
 
+  //CMD count class shananigans
   client.cmdCount = new count.CmdCount()
 })
 
+//logs to bot log when bot joins/leaves new server
 client.on('guildCreate', guild => {
   guild_add.execute(client, guild)
 })
-
 client.on('guildDelete', guild => {
   guild_remove.execute(client, guild)
 })
 
-// log command errors
+//Log to bot-log channels when an error happens
 client.on('commandError', async (command, err, message) => {
   try {
     let log = true
@@ -142,8 +146,6 @@ client.on('commandError', async (command, err, message) => {
     console.log(chalk.red('ERROR LOGGING COMMAND ERROR\n' + e.stack + 'COMMAND ERROR\n' + (err.stack || err)))
   }
 })
-
-// log client errors
 client.on('error', async err => {
   try {
     client.channels.cache.get(config.log_channel).send({
@@ -159,10 +161,12 @@ client.on('error', async err => {
   }
 })
 
+// Post top.gg stats if not in debug mode
 if (!config.debug) {
   const ap = AutoPoster(config.dblToken, client)
 }
 
+// If you dont know what this is why are you even looking at this code?
 client
   .login(config.token)
   .catch(err => console.log(chalk.red('ERROR CONNECTING TO DISCORD:\n' + err + '\n Fix connection and restart.')))

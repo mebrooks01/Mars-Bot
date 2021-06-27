@@ -1,11 +1,19 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
+// shitty ass code beacuse javascript is wack as fuck
 class CmdCount {
   constructor() {
     this.count = 0
   }
 
+  /**
+   * adds info to csv when run
+   *
+   * @param  {string} name the name of the command run
+   * @param  {object} group the group object of a command being run
+   * @param  {object} message the message object of a command being run
+   */
   run(name, group, message) {
     fs.appendFile(
       'cmd.csv',
@@ -20,6 +28,12 @@ class CmdCount {
   }
 }
 
+/**
+ * sends message to log channel when run & adds info the the guild csv
+ *
+ * @param  {object} guild the guild object of the guild being added/removed from
+ * @param  {object} client the client object of the discord bot
+ */
 function guildChange(guild, client) {
   fs.appendFile(
     'guild.csv',
@@ -32,10 +46,18 @@ function guildChange(guild, client) {
   )
 }
 
+/**
+ * sleep function used to pause a for loop
+ *
+ * @param  {number} ms number of ms to wait
+ */
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
+/**
+ * run on bot start to check cmd.csv & guild.csv. Creates them if needed
+ */
 function start() {
   try {
     if (!fs.existsSync('cmd.csv')) {
