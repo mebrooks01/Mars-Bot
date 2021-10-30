@@ -21,6 +21,9 @@ Mars Bot uses NASA's API and other sources to give you plenty of cool informatio
     <td align="center"><a href="https://github.com/vaporrrr"><img src="https://avatars.githubusercontent.com/u/74574116?v=4?s=128" width="128px;" alt=""/><br /><sub><b>VapoR</b></sub></a><br /><a href="https://github.com/mebrooks01/Mars-Bot/commits?author=Vaporrrr" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/cAttte"><img src="https://avatars.githubusercontent.com/u/26514199?v=4?s=128" width="128px;" alt=""/><br /><sub><b>cattte</b></sub></a><br /><a href="https://github.com/mebrooks01/Mars-Bot/commits?author=cattte" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/arc25275"><img src="https://avatars.githubusercontent.com/u/55003876?v=4?s=128" width="128px;" alt=""/><br /><sub><b>arc25275</b></sub></a><br /><a href="https://github.com/mebrooks01/Mars-Bot/commits?author=arc25275" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
