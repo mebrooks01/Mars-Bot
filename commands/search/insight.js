@@ -127,7 +127,7 @@ module.exports = class Insight extends Command {
         .catch(function (error) {
           console.log(error.stack)
           message.reply(
-            `An API error has occurred: ${error}\nFor help solving this problem please join are support server: ${config.invite}`
+            `An API error has occurred: ${error}\nFor help solving this problem please join our support server: ${config.invite}`
           )
         })
       return
