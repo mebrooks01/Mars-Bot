@@ -14,7 +14,7 @@
     "discord.js": "^12.5.1",
     "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
     "git-last-commit": "^1.0.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "node-schedule": "^2.0.0",
     "oneline": "^1.0.3",
     "path": "^0.12.7",
